@@ -6,12 +6,6 @@ dataset = Import["actorfilms.csv", "Dataset", "HeaderLines" -> 1, Path -> path];
 dataset2 = Import["actorfilms2.csv", "Dataset", "HeaderLines" -> 1, Path -> path];
 
 
-(* itFilms = Select[dataset2, #[[8]] == "it" &]; *)
-
-
-(*SortBy[Select[dataset, #[[1]] == "Fred Astaire" &], #[[4]] &];*)
-
-
 joinds = JoinAcross[dataset, dataset2, "FilmID" -> "imdb_id"];
 
 joinds = KeyDrop[joinds, List["adult", "belongs_to_collection", "Votes", "Rating", 
@@ -19,5 +13,18 @@ joinds = KeyDrop[joinds, List["adult", "belongs_to_collection", "Votes", "Rating
 "production_companies", "production_countries", "release_date", "revenue", "imdb_id", "spoken_languages",
 "runtime", "status", "tagline", "video", "vote_average", "vote_count"]];
 
-joinds = joinds[All,KeyMap[Replace["original_language" -> "Original Language"]]];
-joinds = joinds[All,KeyMap[Replace["original_title" -> "Original Title"]]]
+joinds = joinds[All,KeyMap[Replace["original_language" -> "OriginalLanguage"]]];
+joinds = joinds[All,KeyMap[Replace["original_title" -> "OriginalTitle"]]]
+
+
+italianFilms = joinds[Select[#OriginalLanguage == "it"&]]
+GroupBy[italianFilms, #Actor&]
+(* italianFilms[Select[#Actor == "Marcello Mastroianni"&]] *)
+
+
+Head @ joinds
+joinds[1] // Normal
+
+
+
+
