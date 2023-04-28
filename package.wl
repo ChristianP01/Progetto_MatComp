@@ -1,6 +1,6 @@
 (* ::Package:: *)
 
-path = NotebookDirectory[];
+path = FileNameJoin[{NotebookDirectory[], "data"}];
 
 dataset = Import["actorfilms.csv", "Dataset", "HeaderLines" -> 1, Path -> path];
 dataset2 = Import["actorfilms2.csv", "Dataset", "HeaderLines" -> 1, Path -> path];
