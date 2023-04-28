@@ -1,7 +1,9 @@
 (* ::Package:: *)
 
-path = FileNameJoin[{NotebookDirectory[], "data"}];
-
+{
+ {path = FileNameJoin[{NotebookDirectory[], "data"}];},
+ {\[Placeholder]}
+}
 dataset = Import["actorfilms.csv", "Dataset", "HeaderLines" -> 1, Path -> path];
 dataset2 = Import["actorfilms2.csv", "Dataset", "HeaderLines" -> 1, Path -> path];
 
@@ -22,9 +24,15 @@ GroupBy[italianFilms, #Actor&]
 (* italianFilms[Select[#Actor == "Marcello Mastroianni"&]] *)
 
 
-Head @ joinds
-joinds[1] // Normal
+titles = Normal[italianFilms[[All,"OriginalTitle"]]] // DeleteDuplicates;
+actorsNames = Flatten @@@ Values @ Normal @ italianFilms[GroupBy["OriginalTitle"],List,"Actor"];
 
+actors = Union @@ actorsNames;
+edges =UndirectedEdge @@@Subsets[#,{2}]&/@actorsNames //Flatten//DeleteDuplicates;
+
+gr = Graph[actors, edges, VertexLabels->"Name"];
+shPath = FindShortestPath[gr, "John Turturro", "Rade Serbedzija"]
+Print["La distanza tra gli attori \[EGrave] di ", Length[shPath]-1]
 
 
 
