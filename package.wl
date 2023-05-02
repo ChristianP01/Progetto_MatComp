@@ -41,4 +41,19 @@ Print["La distanza tra gli attori \[EGrave] di ", Length[shPath]-1]
 
 
 
-
+Panel[
+ Grid[{
+   {
+     Button["Calcola", 
+       (* ... *), 
+       ImageSize -> {200, 50}], 
+     
+     Button["Reset",
+       (* ... *),
+       ImageSize -> {200, 50}]
+   }
+ },
+ Spacings -> {3, 0}
+ ],
+ Frame -> True
+]
