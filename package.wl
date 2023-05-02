@@ -36,24 +36,28 @@ actors = Union @@ actorsNames;
 edges = UndirectedEdge @@@Subsets[#, {2}]&/@actorsNames //Flatten//DeleteDuplicates;
 
 gr = Graph[actors, edges, VertexLabels->"Name"];
-shPath = FindShortestPath[gr, "John Turturro", "Rade Serbedzija"]
+shPath = FindShortestPath[gr, "John Turturro", "James Le Gros"]
 Print["La distanza tra gli attori \[EGrave] di ", Length[shPath]-1]
 
 
 
+l = {"esempio1", "esempio2"};
+
 Panel[
  Grid[{
    {
-     Button["Calcola", 
-       (* ... *), 
-       ImageSize -> {200, 50}], 
-     
-     Button["Reset",
-       (* ... *),
-       ImageSize -> {200, 50}]
+     Button["Calcola", (* inserire qui l'azione del pulsante *), ImageSize -> {150, 50}],
+     Button["Reset", (* inserire qui l'azione del pulsante *), ImageSize -> {150, 50}]
+   },
+   
+   {
+     InputField[Dynamic[x]]
    }
- },
- Spacings -> {3, 0}
- ],
- Frame -> True
-]
+  },
+  Spacings -> {2, 1}
+  ],
+ ImageSize -> {800, 200}
+ ]
+
+
+
