@@ -1,10 +1,11 @@
 (* ::Package:: *)
 
 (* Import dei dataset *)
-path = FileNameJoin[{NotebookDirectory[], "data"}];
+path = NotebookDirectory[];
 
-datasetActors = Import["actorfilms.csv", "Dataset", "HeaderLines" -> 1, Path -> path];
-datasetFilms = Import["actorfilms2.csv", "Dataset", "HeaderLines" -> 1, Path -> path];
+(* Import dei file CSV, essi risiedono nella cartella data *)
+datasetActors = Import["data/actorfilms.csv", "Dataset", "HeaderLines" -> 1, Path -> path];
+datasetFilms = Import["data/actorfilms2.csv", "Dataset", "HeaderLines" -> 1, Path -> path];
 
 
 (* Unione dei dataset sull'identificativo del film *)
@@ -37,6 +38,7 @@ edges = UndirectedEdge @@@Subsets[#, {2}]&/@actorsNames //Flatten//DeleteDuplica
 gr = Graph[actors, edges, VertexLabels->"Name"];
 shPath = FindShortestPath[gr, "John Turturro", "Rade Serbedzija"]
 Print["La distanza tra gli attori \[EGrave] di ", Length[shPath]-1]
+
 
 
 
