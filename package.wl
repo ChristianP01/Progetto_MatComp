@@ -79,8 +79,8 @@ Begin["Frontend`"]
 	   
 	   {
 	     Button["Calcola", {
-	       Print[calcShortestPath["Roberto Benigni", "Pierfrancesco Favino"][["actorPath"]]];
-	       Print[calcShortestPath["Roberto Benigni", "Pierfrancesco Favino"][["filmPath"]]];
+	       Print[calcShortestPath[inputActor1, inputActor2][["actorPath"]]];
+	       Print[calcShortestPath[inputActor1, inputActor2][["filmPath"]]];
 	     },
 	     ImageSize -> {150, 50}],
 	     Button["Reset", (* inserire qui l'azione del pulsante *), ImageSize -> {150, 50}]
