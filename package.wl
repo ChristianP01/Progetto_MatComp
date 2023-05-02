@@ -29,47 +29,68 @@ GroupBy[italianFilms, #Actor&]
 (* italianFilms[Select[#Actor == "Marcello Mastroianni"&]] *)
 
 
-titles = Normal[italianFilms[All, "OriginalTitle"]] //DeleteDuplicates;
-actorsNames = Flatten @@@ Values @ Normal @ italianFilms[GroupBy["OriginalTitle"], List, "Actor"];
-
-actors = Union @@ actorsNames;
-edges = UndirectedEdge @@@Subsets[#, {2}]&/@actorsNames //Flatten//DeleteDuplicates;
-
-gr = Graph[actors, edges, VertexLabels->"Name"];
-shPath = FindShortestPath[gr, "John Turturro", "James Le Gros"]
-Print["La distanza tra gli attori \[EGrave] di ", Length[shPath]-1]
 
 
-(* Recuperiamo tutti i film in comune per ogni coppia di attori facente parte del path *)
-finale = {};
-count = 1;
 
-For[i = 1, i <= Length[shPath]-1, i++, 
-  {
-    act1 = shPath[[i]];
-    act2 = shPath[[i+1]];
-    
-    actor1Movies = italianFilms[GroupBy["Actor"]][[act1]][[All, "Film"]];
-    actor2Movies = italianFilms[GroupBy["Actor"]][[act2]][[All, "Film"]];
-    joinedFilmList = Intersection[actor1Movies, actor2Movies];
-    finale = Append[finale, joinedFilmList];
-  }
-]
+Begin["Funzione`"]
+	calcShortestPath[act1_, act2_] := (
+	titles = Normal[italianFilms[All, "OriginalTitle"]] //DeleteDuplicates;
+	actorsNames = Flatten @@@ Values @ Normal @ italianFilms[GroupBy["OriginalTitle"], List, "Actor"];
+	actors = Union @@ actorsNames;
+	edges = UndirectedEdge @@@Subsets[#, {2}]&/@actorsNames //Flatten//DeleteDuplicates;
+	
+	gr = Graph[actors, edges, VertexLabels->"Name"];
+	
+	shPath = FindShortestPath[gr, act1, act2];
+	
+	(* Recuperiamo tutti i film in comune per ogni coppia di attori facente parte del path *)
+	finale = {};
+	count = 1;
+	
+	For[i = 1, i <= Length[shPath]-1, i++, 
+	  {
+	    firstActor = shPath[[i]];
+	    secondActor = shPath[[i+1]];
+	    
+	    actor1Movies = italianFilms[GroupBy["Actor"]][[firstActor]][[All, "Film"]];
+	    actor2Movies = italianFilms[GroupBy["Actor"]][[secondActor]][[All, "Film"]];
+	    joinedFilmList = Intersection[actor1Movies, actor2Movies] // Normal ;
+	    finale = Append[finale, joinedFilmList];
+	  }
+	];
+	<|"actorPath"->shPath,"filmPath"->Flatten@finale|>
+)
+
+End[]
 
 
-Panel[
- Grid[{
-   {
-     Button["Calcola", (* inserire qui l'azione del pulsante *), ImageSize -> {150, 50}],
-     Button["Reset", (* inserire qui l'azione del pulsante *), ImageSize -> {150, 50}]
-   },
-   
-   {
-     InputField[Dynamic[x]]
-   }
-  },
-  Spacings -> {2, 1}
-  ],
- ImageSize -> {800, 200}
- ]
+calcShortestPath["Roberto Benigni", "Pierfrancesco Favino"][["filmPath"]]
+
+
+
+
+
+Begin["Frontend`"]
+	Panel[
+	 Grid[{
+	   {
+	     InputField[Dynamic[inputActor1], String], InputField[Dynamic[inputActor2], String]
+	   },
+	   
+	   {
+	     Button["Calcola", {
+	       Print[calcShortestPath["Roberto Benigni", "Pierfrancesco Favino"][["actorPath"]]];
+	       Print[calcShortestPath["Roberto Benigni", "Pierfrancesco Favino"][["filmPath"]]];
+	     },
+	     ImageSize -> {150, 50}],
+	     Button["Reset", (* inserire qui l'azione del pulsante *), ImageSize -> {150, 50}]
+	   }
+	  },
+	  Spacings -> {2, 1}
+	  ],
+	 ImageSize -> {600, 200}
+	 ]
+End[]
+
+
 
