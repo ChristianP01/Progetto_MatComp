@@ -40,8 +40,22 @@ shPath = FindShortestPath[gr, "John Turturro", "James Le Gros"]
 Print["La distanza tra gli attori \[EGrave] di ", Length[shPath]-1]
 
 
+(* Recuperiamo tutti i film in comune per ogni coppia di attori facente parte del path *)
+finale = {};
+count = 1;
 
-l = {"esempio1", "esempio2"};
+For[i = 1, i <= Length[shPath]-1, i++, 
+  {
+    act1 = shPath[[i]];
+    act2 = shPath[[i+1]];
+    
+    actor1Movies = italianFilms[GroupBy["Actor"]][[act1]][[All, "Film"]];
+    actor2Movies = italianFilms[GroupBy["Actor"]][[act2]][[All, "Film"]];
+    joinedFilmList = Intersection[actor1Movies, actor2Movies];
+    finale = Append[finale, joinedFilmList];
+  }
+]
+
 
 Panel[
  Grid[{
@@ -58,6 +72,4 @@ Panel[
   ],
  ImageSize -> {800, 200}
  ]
-
-
 
