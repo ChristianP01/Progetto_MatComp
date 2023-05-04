@@ -69,36 +69,57 @@ End[]
 
 
 Begin["Frontend`"]
-	Panel[
-	 Grid[{
-	   {
-	     InputField[Dynamic[inputActor1], String], InputField[Dynamic[inputActor2], String]
-	   },
-	   
-	   {
-	     Button["Calcola", {
-	       Which[
+
+	checkForm[] := (
+		Which[
 	         (* Controllo se gli InputField non contengono SOLO caratteri alfabetici. *)
 	         Not[StringFreeQ[inputActor1, DigitCharacter]] == True || Not[StringFreeQ[inputActor2, DigitCharacter]] == True,
-	           (CreateDialog[{TextCell["Errore, il nome inserito non \[EGrave] valido."], DefaultButton[]}, WindowSize -> {250, 70}];),
+	           (CreateDialog[{TextCell["Errore, uno o pi\[UGrave] nomi inseriti non sono validi."], DefaultButton[]}, WindowSize -> {250, 70}];),
 	         
 	         (* Controllo se gli InputField non sono vuote. *)
 	         (StringLength[inputActor1] == 0 || StringLength[inputActor2] == 0),
-	           (CreateDialog[{TextCell["Errore, uno dei box di testo risulta vuoto."], DefaultButton[]}, WindowSize -> {250, 70}];),
+	           (CreateDialog[{TextCell["Errore, uno o pi\[UGrave] box di testo risultano vuoti."], DefaultButton[]}, WindowSize -> {250, 70}];),
 
 			(* Se uno o pi\[UGrave] attori non sono presenti nel dataset. *)
 			(MemberQ[actors, inputActor1] == False || MemberQ[actors, inputActor2] == False),
-				(CreateDialog[{TextCell["Errore, uno dei due attori non \[EGrave] stato trovato."], DefaultButton[]}, WindowSize -> {250, 70}];),
+				(CreateDialog[{TextCell["Errore, uno o pi\[UGrave] attori non sono stati trovati."], DefaultButton[]}, WindowSize -> {250, 70}];),
 
 	         (* Campo default, in caso l'input sia corretto. *)
-	         True, Print[ShortestPathEnv`calcShortestPath[inputActor1, inputActor2]];
+	         True, (
+	           output = ShortestPathEnv`calcShortestPath[inputActor1, inputActor2];
+	         )
 	       ]
-	     },
-	     ImageSize -> {150, 50}],
-	     Button["Reset", (* inserire qui l'azione del pulsante *), ImageSize -> {150, 50}]
+	);
+	
+	Panel[
+	 Grid[{
+	   {
+	     InputField[Dynamic[inputActor1], String, FieldHint -> "Inserisci il primo attore..."],
+	     InputField[Dynamic[inputActor2], String, FieldHint -> "Inserisci il secondo attore..."],
+	     InputField[Dynamic[answer], Number, FieldHint -> "Indovina la distanza..."]
+	   },
+	   
+	   {
+	     Button[Style["Calcola", Medium], (
+	       checkForm[];  
+	     ), ImageSize -> {100, 50}],
+	     
+	     Button[Style["Reset", Medium], (
+	       (* Resetto i valori eventualmente contenuti all'interno dei tre box di testo. *)
+	       inputActor1 = inputActor2 = "";
+	       answer = "";
+	     ), ImageSize -> {100, 50}],
+	     
+	     Button[Style["Indovina", Medium],(
+	       checkForm[];
+	       If[answer == output[["dist"]],
+	         (CreateDialog[{TextCell["Complimenti, hai indovinato!"], DefaultButton[]}, WindowSize -> {250, 70}];),
+	         (CreateDialog[{TextCell["Peccato, risposta errata!"], DefaultButton[]}, WindowSize -> {250, 70}];)
+	       ]
+	     ), ImageSize->{100, 50}]
 	   }
 	  },
-	  Spacings -> {2, 1}
+	  Spacings -> {4, 1}
 	  ],
 	 ImageSize -> {600, 200}
 	 ]
