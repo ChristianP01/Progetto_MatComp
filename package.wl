@@ -44,24 +44,38 @@ Begin["ShortestPathEnv`"]
 		count = 1;
 		actorFilm = {shPath[[1]]};
 		dist=Length[shPath]-1;
-		For[i = 1, i <= Length[shPath]-1, i++, 
-		  {
+		
+		actorCouple = {};
+		filmCouple = {};
+		
+		For[i = 1, i <= Length[shPath]-1, i++, {
 		    firstActor = shPath[[i]];
 		    secondActor = shPath[[i+1]];
 		    
 		    actor1Movies = italianFilms[GroupBy["Actor"]][[firstActor]][[All, "Film"]];
 		    actor2Movies = italianFilms[GroupBy["Actor"]][[secondActor]][[All, "Film"]];
 		    joinedFilmList = Intersection[actor1Movies, actor2Movies] // Normal;
-		    finale = Append[finale, joinedFilmList];
 		    
+		    resultAssociation[{firstActor, secondActor}] = joinedFilmList;
+		    
+
 		    actorFilm = Append[actorFilm,joinedFilmList];
 		    actorFilm = Append[actorFilm,secondActor];
-		  }
-		];
-		<|"actorPath"->shPath,"filmPath"->finale,"list"->actorFilm,"dist"->dist|>
-	);
-	
+		}];
+	resultAssociation["Distanza"] = dist;
+	resultAssociation
+	)
 End[]
+
+
+shPath = FindShortestPath[gr, "Roberto Benigni", "Maria Grazia Cucinotta"];
+		dist=Length[shPath]-1;
+		
+		actorCouple = {};
+		filmCouple = {};
+		resultAssociation = <||>;
+
+
 
 
 (* ::Input:: *)
@@ -74,19 +88,20 @@ Begin["Frontend`"]
 		Which[
 	         (* Controllo se gli InputField non contengono SOLO caratteri alfabetici. *)
 	         Not[StringFreeQ[inputActor1, DigitCharacter]] == True || Not[StringFreeQ[inputActor2, DigitCharacter]] == True,
-	           (CreateDialog[{TextCell["Errore, uno o pi\[UGrave] nomi inseriti non sono validi."], DefaultButton[]}, WindowSize -> {250, 70}];),
+	           (CreateDialog[{TextCell["Errore, uno o pi\[UGrave] nomi inseriti non sono validi."], DefaultButton[]}, WindowSize -> {300, 70}];),
 	         
 	         (* Controllo se gli InputField non sono vuote. *)
 	         (StringLength[inputActor1] == 0 || StringLength[inputActor2] == 0),
-	           (CreateDialog[{TextCell["Errore, uno o pi\[UGrave] box di testo risultano vuoti."], DefaultButton[]}, WindowSize -> {250, 70}];),
+	           (CreateDialog[{TextCell["Errore, uno o pi\[UGrave] box di testo risultano vuoti."], DefaultButton[]}, WindowSize -> {300, 70}];),
 
 			(* Se uno o pi\[UGrave] attori non sono presenti nel dataset. *)
 			(MemberQ[actors, inputActor1] == False || MemberQ[actors, inputActor2] == False),
-				(CreateDialog[{TextCell["Errore, uno o pi\[UGrave] attori non sono stati trovati."], DefaultButton[]}, WindowSize -> {250, 70}];),
+				(CreateDialog[{TextCell["Errore, uno o pi\[UGrave] attori non sono stati trovati."], DefaultButton[]}, WindowSize -> {300, 70}];),
 
 	         (* Campo default, in caso l'input sia corretto. *)
 	         True, (
 	           output = ShortestPathEnv`calcShortestPath[inputActor1, inputActor2];
+	           Print[output];
 	         )
 	       ]
 	);
@@ -111,11 +126,22 @@ Begin["Frontend`"]
 	     ), ImageSize -> {100, 50}],
 	     
 	     Button[Style["Indovina", Medium],(
-	       checkForm[];
-	       If[answer == output[["dist"]],
-	         (CreateDialog[{TextCell["Complimenti, hai indovinato!"], DefaultButton[]}, WindowSize -> {250, 70}];),
-	         (CreateDialog[{TextCell["Peccato, risposta errata!"], DefaultButton[]}, WindowSize -> {250, 70}];)
-	       ]
+	       Which[
+	         (* Controllo che l'utente abbia inserito un valore. *)
+	         Not[NumberQ[answer]],
+	           (CreateDialog[{TextCell["\[CapitalEGrave] necessario inserire un numero per provare ad indovinare."], DefaultButton[]}, WindowSize -> {300, 70}];),
+
+	         (* Campo default, in caso l'input sia corretto. *)
+	         True, (
+	           checkForm[];
+	           If[answer == output[["Distanza"]],
+	            (CreateDialog[{TextCell["Complimenti, hai indovinato!"], DefaultButton[]}, WindowSize -> {300, 70}];),
+	            (CreateDialog[{TextCell["Peccato, risposta errata!"], DefaultButton[]}, WindowSize -> {300, 70}];)
+	          ]
+	         )
+	       ];
+	       
+	       
 	     ), ImageSize->{100, 50}]
 	   }
 	  },
@@ -130,5 +156,4 @@ SetOptions[$FrontEnd, MessageOptions -> {"ShowMessagesInConsole" -> False}]
 
 
 
-(* ::Print:: *)
-(**)
+
