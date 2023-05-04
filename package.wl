@@ -42,7 +42,8 @@ Begin["ShortestPathEnv`"]
 	(* Recuperiamo tutti i film in comune per ogni coppia di attori facente parte del path *)
 	finale = {};
 	count = 1;
-	
+	actorFilm = {shPath[[1]]};
+	dist=Length[shPath]-1;
 	For[i = 1, i <= Length[shPath]-1, i++, 
 	  {
 	    firstActor = shPath[[i]];
@@ -50,14 +51,21 @@ Begin["ShortestPathEnv`"]
 	    
 	    actor1Movies = italianFilms[GroupBy["Actor"]][[firstActor]][[All, "Film"]];
 	    actor2Movies = italianFilms[GroupBy["Actor"]][[secondActor]][[All, "Film"]];
-	    joinedFilmList = Intersection[actor1Movies, actor2Movies] // Normal ;
+	    joinedFilmList = Intersection[actor1Movies, actor2Movies] // Normal;
 	    finale = Append[finale, joinedFilmList];
+	    
+	    actorFilm = Append[actorFilm,joinedFilmList];
+	    actorFilm = Append[actorFilm,secondActor];
 	  }
 	];
-	<|"actorPath"->shPath,"filmPath"->finale|>
+	<|"actorPath"->shPath,"filmPath"->finale,"list"->actorFilm,"dist"->dist|>
 )
 
 End[]
+
+
+(* ::Input:: *)
+(**)
 
 
 Begin["Frontend`"]
@@ -83,6 +91,9 @@ Begin["Frontend`"]
 	 ImageSize -> {600, 200}
 	 ]
 End[]
+
+
+
 
 
 
