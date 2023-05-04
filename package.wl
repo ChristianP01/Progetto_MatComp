@@ -26,13 +26,9 @@ joinDataset = joinDataset[All,KeyMap[Replace["original_title" -> "OriginalTitle"
 italianFilms = joinDataset[Select[#OriginalLanguage == "it"&]]
 
 GroupBy[italianFilms, #Actor&]
-(* italianFilms[Select[#Actor == "Marcello Mastroianni"&]] *)
 
 
-
-
-
-Begin["Funzione`"]
+Begin["ShortestPathEnv`"]
 	calcShortestPath[act1_, act2_] := (
 	titles = Normal[italianFilms[All, "OriginalTitle"]] //DeleteDuplicates;
 	actorsNames = Flatten @@@ Values @ Normal @ italianFilms[GroupBy["OriginalTitle"], List, "Actor"];
@@ -58,16 +54,10 @@ Begin["Funzione`"]
 	    finale = Append[finale, joinedFilmList];
 	  }
 	];
-	<|"actorPath"->shPath,"filmPath"->Flatten@finale|>
+	<|"actorPath"->shPath,"filmPath"->finale|>
 )
 
 End[]
-
-
-calcShortestPath["Roberto Benigni", "Pierfrancesco Favino"][["filmPath"]]
-
-
-
 
 
 Begin["Frontend`"]
@@ -79,8 +69,10 @@ Begin["Frontend`"]
 	   
 	   {
 	     Button["Calcola", {
-	       Print[calcShortestPath[inputActor1, inputActor2][["actorPath"]]];
-	       Print[calcShortestPath[inputActor1, inputActor2][["filmPath"]]];
+	       output = ShortestPathEnv`calcShortestPath[inputActor1, inputActor2];
+	       Print[output];
+
+	       
 	     },
 	     ImageSize -> {150, 50}],
 	     Button["Reset", (* inserire qui l'azione del pulsante *), ImageSize -> {150, 50}]
@@ -91,6 +83,7 @@ Begin["Frontend`"]
 	 ImageSize -> {600, 200}
 	 ]
 End[]
+
 
 
 
