@@ -48,6 +48,8 @@ Begin["ShortestPathEnv`"]
 	    firstActor = shPath[[i]];
 	    secondActor = shPath[[i+1]];
 	    
+	    Print["Attore: ", secondActor];
+	    
 	    actor1Movies = italianFilms[GroupBy["Actor"]][[firstActor]][[All, "Film"]];
 	    actor2Movies = italianFilms[GroupBy["Actor"]][[secondActor]][[All, "Film"]];
 	    joinedFilmList = Intersection[actor1Movies, actor2Movies] // Normal ;
@@ -69,10 +71,18 @@ Begin["Frontend`"]
 	   
 	   {
 	     Button["Calcola", {
-	       output = ShortestPathEnv`calcShortestPath[inputActor1, inputActor2];
-	       Print[output];
+	       Which[
+	         (* Controllo se gli InputField non contengono SOLO caratteri alfabetici. *)
+	         Not[StringFreeQ[inputActor1, DigitCharacter]] == True || Not[StringFreeQ[inputActor2, DigitCharacter]] == True,
+	           (CreateDialog[{TextCell["Errore, il nome inserito non \[EGrave] valido."], DefaultButton[]}, WindowSize -> {200, 70}];),
+	         
+	         (* Controllo se gli InputField non sono vuote. *)
+	         (StringLength[inputActor1] == 0 || StringLength[inputActor2] == 0),
+	           (CreateDialog[{TextCell["Errore, uno dei box di testo risulta vuoto."], DefaultButton[]}, WindowSize -> {200, 70}];),
 
-	       
+	         (* Campo default, in caso l'input sia corretto. *)
+	         True, Print[ShortestPathEnv`calcShortestPath[inputActor1, inputActor2]];
+	       ]
 	     },
 	     ImageSize -> {150, 50}],
 	     Button["Reset", (* inserire qui l'azione del pulsante *), ImageSize -> {150, 50}]
@@ -84,6 +94,13 @@ Begin["Frontend`"]
 	 ]
 End[]
 
+(* Sopprimiamo la comparsa della finestra Messages di Mathematica *)
+(* SetOptions[$FrontEnd, MessageOptions -> {"ShowMessagesInConsole" -> False}] *)
 
 
 
+ShortestPathEnv`calcShortestPath["", "Pierfrancescod Favino"]
+
+
+var1 = "123";
+Print[Not[StringFreeQ["Ciao", DigitCharacter]]];
