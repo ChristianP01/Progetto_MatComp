@@ -55,57 +55,38 @@ edges = UndirectedEdge @@@Subsets[#, {2}]&/@actorsNames //Flatten//DeleteDuplica
 gr = Graph[actors, edges, VertexLabels->"Name"];
 
 
-Begin["ShortestPathEnv`"]
-	calcShortestPath[act1_, act2_] := (
-	
+calcShortestPath[act1_, act2_] :=
+	(
 		shPath = FindShortestPath[gr, act1, act2];
-		
-		(* Recuperiamo tutti i film in comune per ogni coppia di attori facente parte del path *)
-		finale = {};
-		count = 1;
-		actorFilm = {shPath[[1]]};
-		dist=Length[shPath]-1;
-		
+		(* Recuperiamo tutti i film in comune per ogni coppia di attori facente
+			 parte del path *)
+		dist = Length[shPath] - 1;
 		actorCouple = {};
 		filmCouple = {};
 		
-		For[i = 1, i <= Length[shPath]-1, i++, {
-		    firstActor = shPath[[i]];
-		    secondActor = shPath[[i+1]];
-		    
-		    actor1Movies = italianFilms[GroupBy["Actor"]][[firstActor]][[All, "Film"]];
-		    actor2Movies = italianFilms[GroupBy["Actor"]][[secondActor]][[All, "Film"]];
-		    joinedFilmList = Intersection[actor1Movies, actor2Movies] // Normal;
-		    
-		    resultAssociation[{firstActor, secondActor}] = joinedFilmList;
-		    
-
-		    actorFilm = Append[actorFilm,joinedFilmList];
-		    actorFilm = Append[actorFilm,secondActor];
-		}];
-	resultAssociation["Distanza"] = dist;
-	resultAssociation
+		(*Inizializzazione lista output*)
+		resultAssociation = <||>; 
+		
+		For[i = 1, i <= Length[shPath] - 1, i++,
+			{
+				firstActor = shPath[[i]];
+				secondActor = shPath[[i + 1]];
+				actor1Movies = italianFilms[GroupBy["Actor"]][[firstActor]][[All,
+					 "Film"]];
+				actor2Movies = italianFilms[GroupBy["Actor"]][[secondActor]][[All,
+					 "Film"]];
+				joinedFilmList = Intersection[actor1Movies, actor2Movies] // Normal
+					;
+				resultAssociation[{firstActor, secondActor}] = joinedFilmList;
+			}
+		];
+		
+		resultAssociation["Distanza"] = dist;
+		resultAssociation
 	)
-End[]
 
 
-shPath = FindShortestPath[gr, "Roberto Benigni", "Maria Grazia Cucinotta"];
-		dist=Length[shPath]-1;
-		
-		actorCouple = {};
-		filmCouple = {};
-		resultAssociation = <||>;
-
-
-
-
-(* ::Input:: *)
-(**)
-
-
-Begin["Frontend`"]
-
-	checkForm[] := (
+checkForm[inputActor1_, inputActor2_] := (
 		Which[
 	         (* Controllo se gli InputField non contengono SOLO caratteri alfabetici. *)
 	         Not[StringFreeQ[inputActor1, DigitCharacter]] == True || Not[StringFreeQ[inputActor2, DigitCharacter]] == True,
@@ -121,12 +102,18 @@ Begin["Frontend`"]
 
 	         (* Campo default, in caso l'input sia corretto. *)
 	         True, (
-	           output = ShortestPathEnv`calcShortestPath[inputActor1, inputActor2];
+	           output = calcShortestPath[inputActor1, inputActor2];
 	           Print[output];
 	         )
 	       ]
 	);
-	
+
+
+(* ::Input:: *)
+(**)
+
+
+Begin["Frontend`"]
 	Panel[
 	 Grid[{
 	   {
@@ -137,13 +124,13 @@ Begin["Frontend`"]
 	   
 	   {
 	     Button[Style["Calcola", Medium], (
-	       checkForm[];  
+	       checkForm[inputActor1, inputActor2];  
 	     ), ImageSize -> {100, 50}],
 	     
 	     Button[Style["Reset", Medium], (
 	       (* Resetto i valori eventualmente contenuti all'interno dei tre box di testo. *)
-	       inputActor1 = inputActor2 = "";
-	       answer = "";
+	       inputActor1 = inputActor2 = Null;
+	       answer = Null;
 	     ), ImageSize -> {100, 50}],
 	     
 	     Button[Style["Indovina", Medium],(
@@ -154,26 +141,43 @@ Begin["Frontend`"]
 
 	         (* Campo default, in caso l'input sia corretto. *)
 	         True, (
-	           checkForm[];
+	           checkForm[inputActor1, inputActor2];
 	           If[answer == output[["Distanza"]],
 	            (CreateDialog[{TextCell["Complimenti, hai indovinato!"], DefaultButton[]}, WindowSize -> {300, 70}];),
 	            (CreateDialog[{TextCell["Peccato, risposta errata!"], DefaultButton[]}, WindowSize -> {300, 70}];)
 	          ]
 	         )
 	       ];
-	       
-	       
-	     ), ImageSize->{100, 50}]
+	     ), ImageSize->{100, 50}],
+	     
+	     (* Estrae due nomi casuali dal dataset e calcola la distanza tra loro *)
+         Button[Style["Casuale", Medium], (
+           inputActor1 = RandomChoice[actors];
+           inputActor2 = RandomChoice[actors];
+           checkForm[inputActor1, inputActor2];
+         ), ImageSize -> {100, 50}]
 	   }
 	  },
 	  Spacings -> {4, 1}
 	  ],
-	 ImageSize -> {600, 200}
+	 ImageSize -> {800, 200}
 	 ]
 End[]
 
 (* Sopprimiamo la comparsa della finestra Messages di Mathematica *)
-SetOptions[$FrontEnd, MessageOptions -> {"ShowMessagesInConsole" -> False}]
+(*SetOptions[$FrontEnd, MessageOptions -> {"ShowMessagesInConsole" -> False}]*)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
