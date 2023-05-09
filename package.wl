@@ -40,21 +40,47 @@ joinDataset = KeyDrop[joinDataset, List["adult", "belongs_to_collection", "Votes
 
 (* Rinomina di colonne per leggibilit\[AGrave] *)
 joinDataset = joinDataset[All,KeyMap[Replace["original_language" -> "OriginalLanguage"]]];
-joinDataset = joinDataset[All,KeyMap[Replace["original_title" -> "OriginalTitle"]]]
-
+joinDataset = joinDataset[All,KeyMap[Replace["original_title" -> "OriginalTitle"]]];
 
 (* Filtro del dataset sui film con lingua originale in italiano *)
 italianFilms = joinDataset[Select[#OriginalLanguage == "it"&]];
 
-GroupBy[italianFilms, #Actor&];
 
 titles = Normal[italianFilms[All, "OriginalTitle"]] //DeleteDuplicates;
-actorsNames = Flatten @@@ Values @ Normal @ italianFilms[GroupBy["OriginalTitle"], List, "Actor"];
-actors = Union @@ actorsNames;
-edges = UndirectedEdge @@@Subsets[#, {2}]&/@actorsNames //Flatten//DeleteDuplicates;
-gr = Graph[actors, edges, VertexLabels->"Name"];
+actors = Union @@ Flatten @@@ Values @ Normal @ italianFilms[GroupBy["OriginalTitle"], List, "Actor"];
 
 
+GenerateGraph[dataset_, entityName_, groupingAttribute_] :=
+		    Module[{entities, groups, edges, buildEdge},
+		        (* list of unique entities in the dataset, which are in the column entityName *)
+		        entities =
+		            dataset[All, entityName] //
+		            Normal //
+		            DeleteDuplicates;
+		         
+		        (* association list containing all entities related to a certain group, in the form <|group -> {entity_1, ..., entity_n}|> *)
+		        groups = Flatten /@ Normal @ dataset[GroupBy[groupingAttribute], List, entityName];
+		        
+		        (* function that creates an edge between each entity in a group, assigning the group name as an edge tag *) 
+		        buildEdge[groupName_, group_] :=
+		            Module[{subsets},
+		                subsets = Normal @ Subsets[group, {2}];
+		                UndirectedEdge[#[[1]], #[[2]], groupName]& /@ subsets
+		                    
+		            ];
+		            
+		        (* mapping the function above onto the entire list of groups *)
+		        edges =
+		            (* KeyValueMap used instead of Map since groups is an association list *)
+		            KeyValueMap[buildEdge, groups] //
+		            Flatten //
+		            DeleteDuplicates;
+		            
+		        (* creation of the graph *) 
+		        Graph[edges, VertexLabels -> "Name", EdgeLabels -> "EdgeTag"]]
+
+
+(* OLD
 calcShortestPath[act1_, act2_] :=
 	(
 		shPath = FindShortestPath[gr, act1, act2];
@@ -84,6 +110,23 @@ calcShortestPath[act1_, act2_] :=
 		resultAssociation["Distanza"] = dist;
 		resultAssociation
 	)
+*)
+
+
+CalcShortestPath[graph_, firstEntity_, secondEntity_] := Module[{entityPath, groupsPath},
+			(* getting the vertices in the shortest path *)
+			entityPath = FindShortestPath[graph, firstEntity, secondEntity];
+			splittedEntityPath = Partition[entityPath, 2];
+			
+			(* entityPath is first partitioned in lists of 2 elements with offset 1, then tag is extracted for each couple *) 
+			groupsPath = EdgeTags[graph, #]& /@ Partition[entityPath, 2, 1];
+			Print[groupsPath];
+			<| "entityPath" -> splittedEntityPath, "groupsPath" -> groupsPath, "Distance" -> Length[splittedEntityPath] |>
+		]
+
+
+actorGraph = GenerateGraph[italianFilms, "Actor", "OriginalTitle"];
+CalcShortestPath[actorGraph, "Roberto Benigni", "Pierfrancesco Favino"];
 
 
 checkForm[inputActor1_, inputActor2_] := (
@@ -102,7 +145,7 @@ checkForm[inputActor1_, inputActor2_] := (
 
 	         (* Campo default, in caso l'input sia corretto. *)
 	         True, (
-	           output = calcShortestPath[inputActor1, inputActor2];
+	           output = CalcShortestPath[actorGraph, inputActor1, inputActor2];
 	           Print[output];
 	         )
 	       ]
@@ -119,7 +162,7 @@ Begin["Frontend`"]
 	   {
 	     InputField[Dynamic[inputActor1], String, FieldHint -> "Inserisci il primo attore..."],
 	     InputField[Dynamic[inputActor2], String, FieldHint -> "Inserisci il secondo attore..."],
-	     InputField[Dynamic[answer], Number, FieldHint -> "Indovina la distanza..."]
+	     InputField[Dynamic[answer], Number, FieldHint -> "Indovina la Distance..."]
 	   },
 	   
 	   {
@@ -142,7 +185,7 @@ Begin["Frontend`"]
 	         (* Campo default, in caso l'input sia corretto. *)
 	         True, (
 	           checkForm[inputActor1, inputActor2];
-	           If[answer == output[["Distanza"]],
+	           If[answer == output[["Distance"]],
 	            (CreateDialog[{TextCell["Complimenti, hai indovinato!"], DefaultButton[]}, WindowSize -> {300, 70}];),
 	            (CreateDialog[{TextCell["Peccato, risposta errata!"], DefaultButton[]}, WindowSize -> {300, 70}];)
 	          ]
@@ -150,7 +193,7 @@ Begin["Frontend`"]
 	       ];
 	     ), ImageSize->{100, 50}],
 	     
-	     (* Estrae due nomi casuali dal dataset e calcola la distanza tra loro *)
+	     (* Estrae due nomi casuali dal dataset e calcola la Distance tra loro *)
          Button[Style["Casuale", Medium], (
            inputActor1 = RandomChoice[actors];
            inputActor2 = RandomChoice[actors];
@@ -182,3 +225,5 @@ End[]
 
 
 
+(* ::Print:: *)
+(*CalcShortestPath["Roberto Benigni","Pierfrancesco Favino"]*)
