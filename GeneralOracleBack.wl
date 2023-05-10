@@ -61,6 +61,7 @@ CalcShortestPath[graph_, firstEntity_, secondEntity_] :=
             1];
         <|"entityPath" -> entityPath, "groupsPath" -> groupsPath|>
     ];
+    
 
 
 RandomExtract[graph_, seed_] :=
@@ -76,6 +77,7 @@ RandomExtract[graph_, seed_] :=
         (* return CalcShortestPath of the extracted entities *)
         CalcShortestPath[graph, randomPicks[[1]], randomPicks[[2]]]
     ];
+
 
 End[]
 
