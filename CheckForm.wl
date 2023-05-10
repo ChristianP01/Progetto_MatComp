@@ -11,11 +11,11 @@ CheckFormQ[entity1_, entity2_] :=
 		{},
 		(Which[
 	         (* Controllo se gli InputField non contengono SOLO caratteri alfabetici. *)
-	         Not[StringFreeQ[inputActor1, DigitCharacter]] == True || Not[StringFreeQ[inputActor2, DigitCharacter]] == True,
+	         Not[StringFreeQ[entity1, DigitCharacter]] == True || Not[StringFreeQ[entity2, DigitCharacter]] == True,
 	           False(*(CreateDialog[{TextCell["Errore, uno o pi\[UGrave] nomi inseriti non sono validi."], DefaultButton[]}, WindowSize -> {300, 70}];)*),
 	         
 	         (* Controllo se gli InputField non sono vuote. *)
-	         (StringLength[inputActor1] == 0 || StringLength[inputActor2] == 0),
+	         (StringLength[entity1] == 0 || StringLength[entity2] == 0),
 	           False(*(CreateDialog[{TextCell["Errore, uno o pi\[UGrave] box di testo risultano vuoti."], DefaultButton[]}, WindowSize -> {300, 70}];)*),
 (*
 			(* Se uno o pi\[UGrave] attori non sono presenti nel dataset. *)
