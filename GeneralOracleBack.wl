@@ -10,7 +10,7 @@ CalcShortestPath::usage = "CalcShortestPath[graph, firstEntity, secondEntity] re
 			containing, respectively, the vertices and the edges of the shortest path between firstEntity and secondEntity
 	";
 
-RandomExtract::usage = "RandomExtract[graph, seed] returns CalcShortestPath output generated from two entities randomly extracted using a given seed
+RandomExtract::usage = "RandomExtract[graph, seed] ritorna una lista di due entit\[AGrave] estratte casualmente usando un seed.
     ";
 
 Begin["`Private`"]
@@ -73,9 +73,7 @@ RandomExtract[graph_, seed_] :=
         (* set the seed for all the Random methods *)
         SeedRandom[seed];
         (* extract two entities *)
-        randomPicks = RandomChoice[entities, 2];
-        (* return CalcShortestPath of the extracted entities *)
-        CalcShortestPath[graph, randomPicks[[1]], randomPicks[[2]]]
+        randomPicks = RandomChoice[entities, 2]
     ];
 
 

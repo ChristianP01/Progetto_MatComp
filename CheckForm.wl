@@ -11,7 +11,7 @@ Begin["`Private`"]
 
 InputCorrection[string_]:=
 	StringRiffle[#, {"", " ", ""}]& @ StringSplit @ StringTrim @ StringReplace[
-		#, WordBoundary ~~ x :> ToUpperCase[x]]& @ ToLowerCase @ string
+		#, WordBoundary ~~ x_ :> ToUpperCase[x]]& @ ToLowerCase @ string
 
 CheckForm[graph_, entity1_, entity2_] :=
 	Module[
