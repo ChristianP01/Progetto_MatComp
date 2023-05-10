@@ -5,7 +5,7 @@ BeginPackage["CheckForm`"]
 InputCorrection::usage = "InputCorrection[string] ToDo!!!!!!!!!!";
 
 CheckForm::usage = "CheckForm[graph, entity1, entity2] ritorna una stringa di errore
-						in se l'input ricevuto non \[EGrave] adeguato, altrimenti ritorna \"OK\"";
+						in se l'input ricevuto non \[EGrave] adeguato, altrimenti ritorna True";
 
 Begin["`Private`"]
 
@@ -34,7 +34,7 @@ CheckForm[graph_, entity1_, entity2_] :=
 
 	         (* Campo default, in caso l'input sia corretto. *)
 	         True,
-	            "OK"
+	            True
 	        ]
 		)
 	]
