@@ -2,32 +2,41 @@
 
 BeginPackage["CheckForm`"]
 
-CheckForm::usage = "";
+InputCorrection::usage = "InputCorrection[string] ToDo!!!!!!!!!!";
+
+CheckForm::usage = "CheckForm[graph, entity1, entity2] ritorna una stringa di errore
+						in se l'input ricevuto non \[EGrave] adeguato, altrimenti ritorna \"OK\"";
 
 Begin["`Private`"]
 
-CheckForm[entity1_, entity2_] :=
+InputCorrection[string_]:=
+	StringRiffle[#, {"", " ", ""}]& @ StringSplit @ StringTrim @ StringReplace[
+		#, WordBoundary ~~ x :> ToUpperCase[x]]& @ ToLowerCase @ string
+
+CheckForm[graph_, entity1_, entity2_] :=
 	Module[
 		{},
 		(Which[
-	         (* Controllo se gli InputField non contengono SOLO caratteri alfabetici. *)
-	         Not[StringFreeQ[entity1, DigitCharacter]] == True || Not[StringFreeQ[entity2, DigitCharacter]] == True,
-	           "Errore, uno o pi\[UGrave] nomi inseriti non sono validi."(*(CreateDialog[{TextCell["Errore, uno o pi\[UGrave] nomi inseriti non sono validi."], DefaultButton[]}, WindowSize -> {300, 70}];)*),
+			 (* Controlla se le entit\[AGrave] sono stringhe vuote. *)
+	         StringLength[entity1] == 0 || StringLength[entity2] == 0,
+	            "Errore, uno o pi\[UGrave] box di testo risultano vuoti.",
 	         
-	         (* Controllo se gli InputField non sono vuote. *)
-	         (StringLength[entity1] == 0 || StringLength[entity2] == 0),
-	           "Errore, uno o pi\[UGrave] box di testo risultano vuoti."(*(CreateDialog[{TextCell["Errore, uno o pi\[UGrave] box di testo risultano vuoti."], DefaultButton[]}, WindowSize -> {300, 70}];)*),
-(*
-			(* Se uno o pi\[UGrave] attori non sono presenti nel dataset. *)
-			(MemberQ[actors, inputActor1] == False || MemberQ[actors, inputActor2] == False),
-				False(*(CreateDialog[{TextCell["Errore, uno o pi\[UGrave] attori non sono stati trovati."], DefaultButton[]}, WindowSize -> {300, 70}];)*),
-*)
+	         (* Controlla se le entit\[AGrave] contengono SOLO caratteri alfabetici. *)
+	         StringMatchQ[entity1, RegularExpression["^[a-zA-Z]+$"]] == True 
+	            || StringMatchQ[entity2, RegularExpression["^[a-zA-Z]+$"]] == True,
+	            "Errore, uno o pi\[UGrave] nomi contengono caratteri non validi; Sono ammessi 
+					solo caratteri alfabetici.",
+
+			 (* Controlla se le entit\[AGrave] appartengono al grafo. *)
+			 MemberQ[VertexList[graph], entity1] == False 
+			    || MemberQ[VertexList[graph], entity2] == False,
+				"Errore, il valore immesso non \[EGrave] presente nel dataset",
+
 	         (* Campo default, in caso l'input sia corretto. *)
-	         True, (
-	           "OK"
-	         )
-	       ]
-	)
+	         True,
+	            "OK"
+	        ]
+		)
 	]
 
 End[]
