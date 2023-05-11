@@ -12,6 +12,7 @@ CalcShortestPath::usage = "CalcShortestPath[graph, firstEntity, secondEntity] re
 
 RandomExtract::usage = "RandomExtract[graph, seed] ritorna una lista di due entit\[AGrave] estratte casualmente usando un seed.
     ";
+displaySolution::usage = "displaySolution[output] graphically shows the list returned by CalcShortestPath";
 
 Begin["`Private`"]
 
@@ -75,6 +76,25 @@ RandomExtract[graph_, seed_] :=
         (* extract two entities *)
         randomPicks = RandomChoice[entities, 2]
     ];
+
+
+displaySoution[output_]:=
+Module[
+	{dist, list, graphPlot},
+	(*esempio 
+	output = \[LeftAssociation]"entityPath"\[Rule]{"Roberto Benigni","Jim Belushi","Quentin Tarantino"},"groupsPath"\[Rule]{{"Pinocchio"},{"Destiny Turns on the Radio"}}\[RightAssociation]
+	list = {"Roberto Benigni",{"Pinocchio"},"Jim Belushi",{"Destiny Turns on the Radio"},"Quentin Tarantino"}
+	*)
+	dist = Length[output[["entityPath"]]]-1;
+	list = Riffle[output[["entityPath"]], output[["groupsPath"]]] //Flatten;
+	graphPlot = {};
+	For[i = 1, i < Length[list], i++, {
+		If[OddQ[i],label = "was in", label = "with"];
+   	 graphPlot = Append[graphPlot, {list[[i]]-> list[[i+1]],label}];
+    }];
+	 LayeredGraphPlot[ graphPlot,VertexShapeFunction -> (Text[Framed[Style[#2, 8, Black], Background -> White], #1] &),
+	        EdgeLabels->({If[#3 =!= None, {Line[#], Inset[#3, Mean[#1], Automatic, Automatic, #[[1]] - #[[2]], Background -> White]}, Line[#]]} &)]
+];
 
 
 End[]
