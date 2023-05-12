@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     37924,        847]
-NotebookOptionsPosition[     36939,        824]
-NotebookOutlinePosition[     37373,        841]
-CellTagsIndexPosition[     37330,        838]
+NotebookDataLength[     41015,        930]
+NotebookOptionsPosition[     40027,        907]
+NotebookOutlinePosition[     40463,        924]
+CellTagsIndexPosition[     40420,        921]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -476,9 +476,10 @@ generare risultati casuali.\>\"", "]"}], ",", " ",
    3.8928739982796793`*^9, 3.892873998405675*^9}, {3.892874029147504*^9, 
    3.892874031209258*^9}, {3.892874753171619*^9, 3.89287476326661*^9}, {
    3.892874839772332*^9, 3.892874887427114*^9}, {3.892874947285521*^9, 
-   3.892874952280328*^9}, {3.892875005528713*^9, 3.8928750138872538`*^9}},
+   3.892874952280328*^9}, {3.892875005528713*^9, 3.8928750138872538`*^9}, 
+   3.892876519562292*^9},
  CellLabel->
-  "In[107]:=",ExpressionUUID->"00d5bd17-e6e9-4a2f-90d2-7138a293aa93"],
+  "In[115]:=",ExpressionUUID->"00d5bd17-e6e9-4a2f-90d2-7138a293aa93"],
 
 Cell[BoxData[
  PanelBox[
@@ -596,106 +597,188 @@ $CellContext`inputActor1 = Part[$CellContext`re, 1]; $CellContext`inputActor2 =
    3.892875753945286*^9, 3.892875841489951*^9, {3.8928760253932257`*^9, 
    3.892876051490369*^9}, {3.892876095376046*^9, 3.892876098052606*^9}, 
    3.892876239404971*^9, 3.892876300339652*^9, {3.8928764378524647`*^9, 
-   3.892876466531698*^9}, 3.892876511675458*^9},
+   3.892876466531698*^9}, {3.892876511675458*^9, 3.892876521534999*^9}, {
+   3.892877695336112*^9, 3.892877697151306*^9}, {3.892877761912898*^9, 
+   3.8928777633081617`*^9}},
  CellLabel->
-  "Out[107]=",ExpressionUUID->"db0f0e64-f67a-4de3-a4e3-fff39bf42049"],
+  "Out[115]=",ExpressionUUID->"2c8cf936-77cd-4f93-a8c2-d0e188c87ef7"],
 
 Cell[BoxData[
  GraphicsBox[{
    {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[
-    1.25], {ArrowBox[{{0., 10.}, {0., 9.}}, 0.06561181434599156], InsetBox[
+    1.25], {ArrowBox[{{0., 14.}, {0., 13.}}, 0.07779783393501805], InsetBox[
       StyleBox["\<\"Was in\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[1],
-       FrontFaceColor->GrayLevel[1],
-       BackFaceColor->GrayLevel[1],
-       GraphicsColor->GrayLevel[1],
-       FontColor->GrayLevel[1]], {0., 9.5}, ImageScaled[{0.5, 0.5}],
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontColor->GrayLevel[0]], {0., 13.5}, ImageScaled[{0.5, 0.5}],
       BaseStyle->"Graphics"]}, {
-     ArrowBox[{{0., 9.}, {0., 8.}}, 0.06561181434599156], InsetBox[
+     ArrowBox[{{0., 13.}, {0., 12.}}, 0.07779783393501805], InsetBox[
       StyleBox["\<\"With\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[1],
-       FrontFaceColor->GrayLevel[1],
-       BackFaceColor->GrayLevel[1],
-       GraphicsColor->GrayLevel[1],
-       FontColor->GrayLevel[1]], {0., 8.5}, ImageScaled[{0.5, 0.5}],
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontColor->GrayLevel[0]], {0., 12.5}, ImageScaled[{0.5, 0.5}],
       BaseStyle->"Graphics"]}, {
-     ArrowBox[{{0., 8.}, {0., 7.}}, 0.06561181434599156], InsetBox[
+     ArrowBox[{{0., 12.}, {0., 11.}}, 0.07779783393501805], InsetBox[
       StyleBox["\<\"Was in\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[1],
-       FrontFaceColor->GrayLevel[1],
-       BackFaceColor->GrayLevel[1],
-       GraphicsColor->GrayLevel[1],
-       FontColor->GrayLevel[1]], {0., 7.5}, ImageScaled[{0.5, 0.5}],
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontColor->GrayLevel[0]], {0., 11.5}, ImageScaled[{0.5, 0.5}],
       BaseStyle->"Graphics"]}, {
-     ArrowBox[{{0., 7.}, {0., 6.}}, 0.06561181434599156], InsetBox[
+     ArrowBox[{{0., 11.}, {0., 10.}}, 0.07779783393501805], InsetBox[
       StyleBox["\<\"With\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[1],
-       FrontFaceColor->GrayLevel[1],
-       BackFaceColor->GrayLevel[1],
-       GraphicsColor->GrayLevel[1],
-       FontColor->GrayLevel[1]], {0., 6.5}, ImageScaled[{0.5, 0.5}],
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontColor->GrayLevel[0]], {0., 10.5}, ImageScaled[{0.5, 0.5}],
       BaseStyle->"Graphics"]}, {
-     ArrowBox[{{0., 6.}, {0., 5.}}, 0.06561181434599156], InsetBox[
+     ArrowBox[{{0., 10.}, {0., 9.}}, 0.07779783393501805], InsetBox[
       StyleBox["\<\"Was in\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[1],
-       FrontFaceColor->GrayLevel[1],
-       BackFaceColor->GrayLevel[1],
-       GraphicsColor->GrayLevel[1],
-       FontColor->GrayLevel[1]], {0., 5.5}, ImageScaled[{0.5, 0.5}],
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontColor->GrayLevel[0]], {0., 9.5}, ImageScaled[{0.5, 0.5}],
       BaseStyle->"Graphics"]}, {
-     ArrowBox[{{0., 5.}, {0., 4.}}, 0.06561181434599156], InsetBox[
+     ArrowBox[{{0., 9.}, {0., 8.}}, 0.07779783393501805], InsetBox[
       StyleBox["\<\"With\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[1],
-       FrontFaceColor->GrayLevel[1],
-       BackFaceColor->GrayLevel[1],
-       GraphicsColor->GrayLevel[1],
-       FontColor->GrayLevel[1]], {0., 4.5}, ImageScaled[{0.5, 0.5}],
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontColor->GrayLevel[0]], {0., 8.5}, ImageScaled[{0.5, 0.5}],
       BaseStyle->"Graphics"]}, {
-     ArrowBox[{{0., 4.}, {0., 3.}}, 0.06561181434599156], InsetBox[
+     ArrowBox[{{0., 8.}, {0., 7.}}, 0.07779783393501805], InsetBox[
       StyleBox["\<\"Was in\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[1],
-       FrontFaceColor->GrayLevel[1],
-       BackFaceColor->GrayLevel[1],
-       GraphicsColor->GrayLevel[1],
-       FontColor->GrayLevel[1]], {0., 3.5}, ImageScaled[{0.5, 0.5}],
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontColor->GrayLevel[0]], {0., 7.5}, ImageScaled[{0.5, 0.5}],
       BaseStyle->"Graphics"]}, {
-     ArrowBox[{{0., 3.}, {0., 2.}}, 0.06561181434599156], InsetBox[
+     ArrowBox[{{0., 7.}, {0., 6.}}, 0.07779783393501805], InsetBox[
       StyleBox["\<\"With\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[1],
-       FrontFaceColor->GrayLevel[1],
-       BackFaceColor->GrayLevel[1],
-       GraphicsColor->GrayLevel[1],
-       FontColor->GrayLevel[1]], {0., 2.5}, ImageScaled[{0.5, 0.5}],
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontColor->GrayLevel[0]], {0., 6.5}, ImageScaled[{0.5, 0.5}],
       BaseStyle->"Graphics"]}, {
-     ArrowBox[{{0., 2.}, {0., 1.}}, 0.06561181434599156], InsetBox[
+     ArrowBox[{{0., 6.}, {0., 5.}}, 0.07779783393501805], InsetBox[
       StyleBox["\<\"Was in\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[1],
-       FrontFaceColor->GrayLevel[1],
-       BackFaceColor->GrayLevel[1],
-       GraphicsColor->GrayLevel[1],
-       FontColor->GrayLevel[1]], {0., 1.5}, ImageScaled[{0.5, 0.5}],
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontColor->GrayLevel[0]], {0., 5.5}, ImageScaled[{0.5, 0.5}],
       BaseStyle->"Graphics"]}, {
-     ArrowBox[{{0., 1.}, {0., 0.}}, 0.06561181434599156], InsetBox[
+     ArrowBox[{{0., 5.}, {0., 4.}}, 0.07779783393501805], InsetBox[
       StyleBox["\<\"With\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[1],
-       FrontFaceColor->GrayLevel[1],
-       BackFaceColor->GrayLevel[1],
-       GraphicsColor->GrayLevel[1],
-       FontColor->GrayLevel[1]], {0., 0.5}, ImageScaled[{0.5, 0.5}],
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontColor->GrayLevel[0]], {0., 4.5}, ImageScaled[{0.5, 0.5}],
+      BaseStyle->"Graphics"]}, {
+     ArrowBox[{{0., 4.}, {0., 3.}}, 0.07779783393501805], InsetBox[
+      StyleBox["\<\"Was in\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontColor->GrayLevel[0]], {0., 3.5}, ImageScaled[{0.5, 0.5}],
+      BaseStyle->"Graphics"]}, {
+     ArrowBox[{{0., 3.}, {0., 2.}}, 0.07779783393501805], InsetBox[
+      StyleBox["\<\"With\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontColor->GrayLevel[0]], {0., 2.5}, ImageScaled[{0.5, 0.5}],
+      BaseStyle->"Graphics"]}, {
+     ArrowBox[{{0., 2.}, {0., 1.}}, 0.07779783393501805], InsetBox[
+      StyleBox["\<\"Was in\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontColor->GrayLevel[0]], {0., 1.5}, ImageScaled[{0.5, 0.5}],
+      BaseStyle->"Graphics"]}, {
+     ArrowBox[{{0., 1.}, {0., 0.}}, 0.07779783393501805], InsetBox[
+      StyleBox["\<\"With\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontColor->GrayLevel[0]], {0., 0.5}, ImageScaled[{0.5, 0.5}],
       BaseStyle->"Graphics"]}}, 
    {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], InsetBox[
      FrameBox[
-      StyleBox["\<\"Roberto Benigni\"\>",
+      StyleBox["\<\"Debbie Harry\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontSize->8,
+       FontColor->GrayLevel[0]],
+      Background->GrayLevel[1],
+      StripOnInput->False], {0., 14.}], InsetBox[
+     FrameBox[
+      StyleBox["\<\"A Good Night to Die\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontSize->8,
+       FontColor->GrayLevel[0]],
+      Background->GrayLevel[1],
+      StripOnInput->False], {0., 13.}], InsetBox[
+     FrameBox[
+      StyleBox["\<\"James Russo\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontSize->8,
+       FontColor->GrayLevel[0]],
+      Background->GrayLevel[1],
+      StripOnInput->False], {0., 12.}], InsetBox[
+     FrameBox[
+      StyleBox["\<\"Trauma\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontSize->8,
+       FontColor->GrayLevel[0]],
+      Background->GrayLevel[1],
+      StripOnInput->False], {0., 11.}], InsetBox[
+     FrameBox[
+      StyleBox["\<\"Asia Argento\"\>",
        StripOnInput->False,
        LineColor->GrayLevel[0],
        FrontFaceColor->GrayLevel[0],
@@ -706,7 +789,7 @@ Cell[BoxData[
       Background->GrayLevel[1],
       StripOnInput->False], {0., 10.}], InsetBox[
      FrameBox[
-      StyleBox["\<\"La Luna\"\>",
+      StyleBox["\<\"Il cielo \[EGrave] sempre pi\[UGrave] blu\"\>",
        StripOnInput->False,
        LineColor->GrayLevel[0],
        FrontFaceColor->GrayLevel[0],
@@ -717,7 +800,7 @@ Cell[BoxData[
       Background->GrayLevel[1],
       StripOnInput->False], {0., 9.}], InsetBox[
      FrameBox[
-      StyleBox["\<\"Alida Valli\"\>",
+      StyleBox["\<\"Dario Argento\"\>",
        StripOnInput->False,
        LineColor->GrayLevel[0],
        FrontFaceColor->GrayLevel[0],
@@ -728,7 +811,7 @@ Cell[BoxData[
       Background->GrayLevel[1],
       StripOnInput->False], {0., 8.}], InsetBox[
      FrameBox[
-      StyleBox["\<\"Edipo re\"\>",
+      StyleBox["\<\"Suspiria\"\>",
        StripOnInput->False,
        LineColor->GrayLevel[0],
        FrontFaceColor->GrayLevel[0],
@@ -739,7 +822,7 @@ Cell[BoxData[
       Background->GrayLevel[1],
       StripOnInput->False], {0., 7.}], InsetBox[
      FrameBox[
-      StyleBox["\<\"Silvana Mangano\"\>",
+      StyleBox["\<\"Alida Valli\"\>",
        StripOnInput->False,
        LineColor->GrayLevel[0],
        FrontFaceColor->GrayLevel[0],
@@ -750,7 +833,7 @@ Cell[BoxData[
       Background->GrayLevel[1],
       StripOnInput->False], {0., 6.}], InsetBox[
      FrameBox[
-      StyleBox["\<\"Morte a Venezia\"\>",
+      StyleBox["\<\"Novecento\"\>",
        StripOnInput->False,
        LineColor->GrayLevel[0],
        FrontFaceColor->GrayLevel[0],
@@ -761,7 +844,7 @@ Cell[BoxData[
       Background->GrayLevel[1],
       StripOnInput->False], {0., 5.}], InsetBox[
      FrameBox[
-      StyleBox["\<\"Dirk Bogarde\"\>",
+      StyleBox["\<\"Burt Lancaster\"\>",
        StripOnInput->False,
        LineColor->GrayLevel[0],
        FrontFaceColor->GrayLevel[0],
@@ -772,7 +855,7 @@ Cell[BoxData[
       Background->GrayLevel[1],
       StripOnInput->False], {0., 4.}], InsetBox[
      FrameBox[
-      StyleBox["\<\"La caduta degli dei\"\>",
+      StyleBox["\<\"Il gattopardo\"\>",
        StripOnInput->False,
        LineColor->GrayLevel[0],
        FrontFaceColor->GrayLevel[0],
@@ -783,7 +866,7 @@ Cell[BoxData[
       Background->GrayLevel[1],
       StripOnInput->False], {0., 3.}], InsetBox[
      FrameBox[
-      StyleBox["\<\"Charlotte Rampling\"\>",
+      StyleBox["\<\"Terence Hill\"\>",
        StripOnInput->False,
        LineColor->GrayLevel[0],
        FrontFaceColor->GrayLevel[0],
@@ -794,7 +877,7 @@ Cell[BoxData[
       Background->GrayLevel[1],
       StripOnInput->False], {0., 2.}], InsetBox[
      FrameBox[
-      StyleBox["\<\"Le chiavi di casa\"\>",
+      StyleBox["\<\"Porgi l'altra guancia\"\>",
        StripOnInput->False,
        LineColor->GrayLevel[0],
        FrontFaceColor->GrayLevel[0],
@@ -805,7 +888,7 @@ Cell[BoxData[
       Background->GrayLevel[1],
       StripOnInput->False], {0., 1.}], InsetBox[
      FrameBox[
-      StyleBox["\<\"Pierfrancesco Favino\"\>",
+      StyleBox["\<\"Robert Loggia\"\>",
        StripOnInput->False,
        LineColor->GrayLevel[0],
        FrontFaceColor->GrayLevel[0],
@@ -818,12 +901,12 @@ Cell[BoxData[
   FormatType->TraditionalForm,
   FrameTicks->None,
   ImageSize->{150, 1100}]], "Print",
- CellChangeTimes->{3.8928765141788807`*^9},
- CellLabel->"",ExpressionUUID->"4705b04b-69dc-43b4-a6ce-136e472b470d"]
+ CellChangeTimes->{3.892877766925849*^9},
+ CellLabel->"",ExpressionUUID->"6a270fe4-8bb1-4c74-8d74-f73bd0301fe2"]
 }, Open  ]]
 },
 WindowSize->{1440, 747},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowMargins->{{0, Automatic}, {Automatic, -24}},
 TaggingRules-><|"TryRealOnly" -> False|>,
 FrontEndVersion->"13.2 for Linux x86 (64-bit) (January 31, 2023)",
 StyleDefinitions->"Default.nb",
@@ -845,9 +928,9 @@ Cell[859, 27, 927, 16, 112, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd30
 Cell[1789, 45, 486, 8, 53, "Code",ExpressionUUID->"b07ff995-a9e0-4728-b640-a906d452269c"],
 Cell[2278, 55, 390, 9, 53, "Code",ExpressionUUID->"e94f7fc6-894c-4186-b371-7689900a0b90"],
 Cell[CellGroupData[{
-Cell[2693, 68, 20915, 412, 1511, "Code",ExpressionUUID->"00d5bd17-e6e9-4a2f-90d2-7138a293aa93"],
-Cell[23611, 482, 5291, 118, 219, "Output",ExpressionUUID->"db0f0e64-f67a-4de3-a4e3-fff39bf42049"],
-Cell[28905, 602, 8018, 219, 1108, "Print",ExpressionUUID->"4705b04b-69dc-43b4-a6ce-136e472b470d"]
+Cell[2693, 68, 20941, 413, 1511, "Code",ExpressionUUID->"00d5bd17-e6e9-4a2f-90d2-7138a293aa93"],
+Cell[23637, 483, 5417, 120, 219, "Output",ExpressionUUID->"2c8cf936-77cd-4f93-a8c2-d0e188c87ef7"],
+Cell[29057, 605, 10954, 299, 1108, "Print",ExpressionUUID->"6a270fe4-8bb1-4c74-8d74-f73bd0301fe2"]
 }, Open  ]]
 }
 ]
