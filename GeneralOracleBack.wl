@@ -78,7 +78,7 @@ RandomExtract[graph_, seed_] :=
     ];
 
 
-displaySoution[output_]:=
+displaySolution[output_]:=
 Module[
 	{dist, list, graphPlot},
 	(*esempio 
@@ -89,11 +89,18 @@ Module[
 	list = Riffle[output[["entityPath"]], output[["groupsPath"]]] //Flatten;
 	graphPlot = {};
 	For[i = 1, i < Length[list], i++, {
-		If[OddQ[i],label = "was in", label = "with"];
-   	 graphPlot = Append[graphPlot, {list[[i]]-> list[[i+1]],label}];
+		If[OddQ[i],label = "Was in", label = "With"];
+   	 graphPlot = Append[graphPlot, {list[[i]]-> list[[i+1]], Style[label, Black]}];
     }];
-	 LayeredGraphPlot[ graphPlot,VertexShapeFunction -> (Text[Framed[Style[#2, 8, Black], Background -> White], #1] &),
-	        EdgeLabels->({If[#3 =!= None, {Line[#], Inset[#3, Mean[#1], Automatic, Automatic, #[[1]] - #[[2]], Background -> White]}, Line[#]]} &)]
+	
+	(*LayeredGraphPlot[ graphPlot,VertexShapeFunction -> (Text[Framed[Style[#2, 8, Black], Background -> White], #1] &),
+	        EdgeLabels->({If[#3 =!= None, {Line[#], Inset[#3, Mean[#1], Automatic, Automatic, #[[1]] - #[[2]], Background -> White]}, Line[#]]} &), ImageSize->{150,1100}] *)
+	
+	LayeredGraphPlot[graphPlot,
+ VertexShapeFunction -> (Text[Framed[Style[#2, 8, Black], Background -> White], #1] &),
+ EdgeLabels -> ({If[#3 =!= None, {Line[#], Inset[#3, Mean[#1], Automatic, Automatic, #[[1]] - #[[2]], Background -> White]}, Line[#]]} &),
+ ImageSize -> {150, 1100}]
+
 ];
 
 

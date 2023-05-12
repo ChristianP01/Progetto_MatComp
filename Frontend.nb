@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     28458,        605]
-NotebookOptionsPosition[     27565,        583]
-NotebookOutlinePosition[     28006,        600]
-CellTagsIndexPosition[     27963,        597]
+NotebookDataLength[     37924,        847]
+NotebookOptionsPosition[     36939,        824]
+NotebookOutlinePosition[     37373,        841]
+CellTagsIndexPosition[     37330,        838]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -23,7 +23,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.892621033638291*^9, 3.8926210449536467`*^9}, {
   3.8926286729392776`*^9, 3.892628673681201*^9}, {3.89262877358202*^9, 
   3.8926287780286427`*^9}},
- CellLabel->"In[21]:=",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
+ CellLabel->"In[8]:=",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
 
 Cell[BoxData[{
  RowBox[{
@@ -41,7 +41,7 @@ Cell[BoxData[{
   3.8926251397685423`*^9}, {3.89262866842148*^9, 3.892628668869989*^9}, {
   3.892629149113268*^9, 3.892629211285699*^9}, {3.89262951428176*^9, 
   3.892629514762271*^9}, {3.892711731236623*^9, 3.892711742697357*^9}},
- CellLabel->"In[15]:=",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67"],
+ CellLabel->"In[1]:=",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67"],
 
 Cell[BoxData[
  RowBox[{
@@ -62,7 +62,7 @@ Cell[BoxData[
      "\"\<OriginalTitle\>\""}], "]"}]}], ";"}]], "Code",
  CellChangeTimes->{{3.892622677704234*^9, 3.892622743671658*^9}, 
    3.8927182521092453`*^9},
- CellLabel->"In[6]:=",ExpressionUUID->"e94f7fc6-894c-4186-b371-7689900a0b90"],
+ CellLabel->"In[23]:=",ExpressionUUID->"e94f7fc6-894c-4186-b371-7689900a0b90"],
 
 Cell[CellGroupData[{
 
@@ -161,23 +161,28 @@ Cell[BoxData[
                   RowBox[{
                   "gr", ",", " ", "inputActor1", ",", " ", "inputActor2"}], 
                   "]"}]}], ";", "\n", "\t        ", 
-                RowBox[{"(*", 
+                RowBox[{"Print", "[", 
+                 RowBox[{"displaySolution", "[", "sp", "]"}], "]"}], ";"}]}], 
+              "\n", "\t        ", 
+              RowBox[{"(*", 
+               RowBox[{
+               "mostra", " ", "il", " ", "grafico", " ", "in", " ", "una", 
+                " ", "nuova", " ", "finestra", "\n", "\t        ", 
+                RowBox[{"CreateDocument", "[", 
                  RowBox[{
-                 "mostra", " ", "il", " ", "grafico", " ", "in", " ", "una", 
-                  " ", "nuova", " ", "finestra", "\n", "\t        ", 
-                  RowBox[{"CreateDocument", "[", 
-                   RowBox[{
-                    RowBox[{"Dynamic", "[", 
-                    RowBox[{"displaySoution", "[", "sp", "]"}], "]"}], ",", 
-                    " ", 
-                    RowBox[{"WindowSize", " ", "->", " ", 
-                    RowBox[{"{", 
+                  RowBox[{"Dynamic", "[", 
+                   RowBox[{"displaySoution", "[", "sp", "]"}], "]"}], ",", 
+                  " ", 
+                  RowBox[{"WindowSize", " ", "->", " ", 
+                   RowBox[{"{", 
                     RowBox[{"500", ",", " ", "500"}], "}"}]}]}], "]"}]}], 
-                 "*)"}], "\n", "\t        ", 
-                RowBox[{"(*", 
-                 RowBox[{
-                 "mostra", " ", "il", " ", "grafico", " ", "in", " ", "una", 
-                  " ", "cella"}], "*)"}], "\n", "\t        ", 
+               "*)"}], "\n", "\t        ", 
+              RowBox[{"(*", 
+               RowBox[{
+               "mostra", " ", "il", " ", "grafico", " ", "in", " ", "una", 
+                " ", "cella"}], "*)"}], "\n", "\t        ", 
+              RowBox[{"(*", 
+               RowBox[{
                 RowBox[{"AttachCell", "[", 
                  RowBox[{
                   RowBox[{"EvaluationCell", "[", "]"}], ",", 
@@ -195,9 +200,9 @@ Cell[BoxData[
                     RowBox[{"[", "\"\<entityPath\>\"", "]"}], "]"}], "]"}], 
                     "-", "1"}]}], "}"}], "]"}], "}"}], ",", 
                     RowBox[{"{", 
-                    RowBox[{"displaySoution", "[", "sp", "]"}], "}"}]}], 
-                    "}"}], "]"}], "]"}]}], "]"}], ";"}]}], "\n", "\t     ", 
-              "]"}]}], ")"}], ",", " ", 
+                    RowBox[{"displaySolution", "[", "sp", "]"}], "}"}]}], 
+                    "}"}], "]"}], "]"}]}], "]"}], ";"}], "*)"}], "\n", 
+              "\t     ", "]"}]}], ")"}], ",", " ", 
            RowBox[{"ImageSize", " ", "->", " ", 
             RowBox[{"{", 
              RowBox[{"100", ",", " ", "50"}], "}"}]}]}], "]"}], ",", "\n", 
@@ -461,8 +466,19 @@ generare risultati casuali.\>\"", "]"}], ",", " ",
    3.892829925454968*^9, 3.892829965258325*^9}, {3.892830033848588*^9, 
    3.892830037095766*^9}, {3.892830164200364*^9, 3.892830224928866*^9}, {
    3.8928303498470097`*^9, 3.892830364009688*^9}, {3.892830435201531*^9, 
-   3.8928304550353403`*^9}, {3.892830488911044*^9, 3.892830517842989*^9}},
- CellLabel->"In[33]:=",ExpressionUUID->"00d5bd17-e6e9-4a2f-90d2-7138a293aa93"],
+   3.8928304550353403`*^9}, {3.892830488911044*^9, 3.892830517842989*^9}, {
+   3.892872683223634*^9, 3.892872686024827*^9}, {3.8928728084611073`*^9, 
+   3.892872835850033*^9}, {3.892872876574874*^9, 3.892872906061799*^9}, {
+   3.89287333176355*^9, 3.892873349718107*^9}, {3.89287350699557*^9, 
+   3.8928737022632523`*^9}, {3.892873743632222*^9, 3.892873783089514*^9}, {
+   3.8928738154635983`*^9, 3.8928738802669773`*^9}, {3.8928739125344477`*^9, 
+   3.892873914907048*^9}, {3.892873949361252*^9, 3.8928739564226027`*^9}, {
+   3.8928739982796793`*^9, 3.892873998405675*^9}, {3.892874029147504*^9, 
+   3.892874031209258*^9}, {3.892874753171619*^9, 3.89287476326661*^9}, {
+   3.892874839772332*^9, 3.892874887427114*^9}, {3.892874947285521*^9, 
+   3.892874952280328*^9}, {3.892875005528713*^9, 3.8928750138872538`*^9}},
+ CellLabel->
+  "In[107]:=",ExpressionUUID->"00d5bd17-e6e9-4a2f-90d2-7138a293aa93"],
 
 Cell[BoxData[
  PanelBox[
@@ -494,13 +510,8 @@ $CellContext`inputActor2]; If[
             TextCell[$CellContext`cfOutput], 
             DefaultButton[]}, WindowSize -> {300, 70}], $CellContext`sp = 
            GeneralOracleBack`CalcShortestPath[$CellContext`gr, \
-$CellContext`inputActor1, $CellContext`inputActor2]; AttachCell[
-            EvaluationCell[], 
-            Panel[
-             Grid[{{
-                Row[{"La distanza \[EGrave] ", Length[
-                    Part[$CellContext`sp, "entityPath"]] - 1}]}, {
-                $CellContext`displaySoution[$CellContext`sp]}}]]]; Null]),
+$CellContext`inputActor1, $CellContext`inputActor2]; Print[
+            GeneralOracleBack`displaySolution[$CellContext`sp]]; Null]),
        Evaluator->Automatic,
        ImageSize->{100, 50},
        Method->"Preemptive"], 
@@ -561,7 +572,6 @@ $CellContext`inputActor1, $CellContext`inputActor2]; Null];
 risultati casuali."], 
             DefaultButton[]}, WindowSize -> {300, 70}]; Null, 
          True, $CellContext`re = 
-          
           GeneralOracleBack`RandomExtract[$CellContext`gr, $CellContext`seed]; \
 $CellContext`inputActor1 = Part[$CellContext`re, 1]; $CellContext`inputActor2 = 
           Part[$CellContext`re, 2]; Null],
@@ -577,14 +587,245 @@ $CellContext`inputActor1 = Part[$CellContext`re, 1]; $CellContext`inputActor2 =
  CellChangeTimes->{
   3.892829835077589*^9, {3.892829950013587*^9, 3.892829966114224*^9}, 
    3.8928300382919607`*^9, 3.892830193784152*^9, 3.892830227612956*^9, 
-   3.892830457416382*^9, {3.892830497808712*^9, 3.892830518719516*^9}},
- CellLabel->"Out[33]=",ExpressionUUID->"73942b92-a306-4528-8da7-14ed28e110d0"]
+   3.892830457416382*^9, {3.892830497808712*^9, 3.892830518719516*^9}, 
+   3.8928727637024937`*^9, {3.892872861606305*^9, 3.892872910229742*^9}, 
+   3.892872986727374*^9, {3.892874013258628*^9, 3.89287403161125*^9}, 
+   3.8928747680615187`*^9, {3.8928748447374983`*^9, 3.892874889845046*^9}, 
+   3.892874952995763*^9, 3.892875014383585*^9, {3.892875279608934*^9, 
+   3.892875299222744*^9}, 3.892875533665801*^9, 3.892875588324552*^9, 
+   3.892875753945286*^9, 3.892875841489951*^9, {3.8928760253932257`*^9, 
+   3.892876051490369*^9}, {3.892876095376046*^9, 3.892876098052606*^9}, 
+   3.892876239404971*^9, 3.892876300339652*^9, {3.8928764378524647`*^9, 
+   3.892876466531698*^9}, 3.892876511675458*^9},
+ CellLabel->
+  "Out[107]=",ExpressionUUID->"db0f0e64-f67a-4de3-a4e3-fff39bf42049"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[
+    1.25], {ArrowBox[{{0., 10.}, {0., 9.}}, 0.06561181434599156], InsetBox[
+      StyleBox["\<\"Was in\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[1],
+       FrontFaceColor->GrayLevel[1],
+       BackFaceColor->GrayLevel[1],
+       GraphicsColor->GrayLevel[1],
+       FontColor->GrayLevel[1]], {0., 9.5}, ImageScaled[{0.5, 0.5}],
+      BaseStyle->"Graphics"]}, {
+     ArrowBox[{{0., 9.}, {0., 8.}}, 0.06561181434599156], InsetBox[
+      StyleBox["\<\"With\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[1],
+       FrontFaceColor->GrayLevel[1],
+       BackFaceColor->GrayLevel[1],
+       GraphicsColor->GrayLevel[1],
+       FontColor->GrayLevel[1]], {0., 8.5}, ImageScaled[{0.5, 0.5}],
+      BaseStyle->"Graphics"]}, {
+     ArrowBox[{{0., 8.}, {0., 7.}}, 0.06561181434599156], InsetBox[
+      StyleBox["\<\"Was in\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[1],
+       FrontFaceColor->GrayLevel[1],
+       BackFaceColor->GrayLevel[1],
+       GraphicsColor->GrayLevel[1],
+       FontColor->GrayLevel[1]], {0., 7.5}, ImageScaled[{0.5, 0.5}],
+      BaseStyle->"Graphics"]}, {
+     ArrowBox[{{0., 7.}, {0., 6.}}, 0.06561181434599156], InsetBox[
+      StyleBox["\<\"With\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[1],
+       FrontFaceColor->GrayLevel[1],
+       BackFaceColor->GrayLevel[1],
+       GraphicsColor->GrayLevel[1],
+       FontColor->GrayLevel[1]], {0., 6.5}, ImageScaled[{0.5, 0.5}],
+      BaseStyle->"Graphics"]}, {
+     ArrowBox[{{0., 6.}, {0., 5.}}, 0.06561181434599156], InsetBox[
+      StyleBox["\<\"Was in\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[1],
+       FrontFaceColor->GrayLevel[1],
+       BackFaceColor->GrayLevel[1],
+       GraphicsColor->GrayLevel[1],
+       FontColor->GrayLevel[1]], {0., 5.5}, ImageScaled[{0.5, 0.5}],
+      BaseStyle->"Graphics"]}, {
+     ArrowBox[{{0., 5.}, {0., 4.}}, 0.06561181434599156], InsetBox[
+      StyleBox["\<\"With\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[1],
+       FrontFaceColor->GrayLevel[1],
+       BackFaceColor->GrayLevel[1],
+       GraphicsColor->GrayLevel[1],
+       FontColor->GrayLevel[1]], {0., 4.5}, ImageScaled[{0.5, 0.5}],
+      BaseStyle->"Graphics"]}, {
+     ArrowBox[{{0., 4.}, {0., 3.}}, 0.06561181434599156], InsetBox[
+      StyleBox["\<\"Was in\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[1],
+       FrontFaceColor->GrayLevel[1],
+       BackFaceColor->GrayLevel[1],
+       GraphicsColor->GrayLevel[1],
+       FontColor->GrayLevel[1]], {0., 3.5}, ImageScaled[{0.5, 0.5}],
+      BaseStyle->"Graphics"]}, {
+     ArrowBox[{{0., 3.}, {0., 2.}}, 0.06561181434599156], InsetBox[
+      StyleBox["\<\"With\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[1],
+       FrontFaceColor->GrayLevel[1],
+       BackFaceColor->GrayLevel[1],
+       GraphicsColor->GrayLevel[1],
+       FontColor->GrayLevel[1]], {0., 2.5}, ImageScaled[{0.5, 0.5}],
+      BaseStyle->"Graphics"]}, {
+     ArrowBox[{{0., 2.}, {0., 1.}}, 0.06561181434599156], InsetBox[
+      StyleBox["\<\"Was in\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[1],
+       FrontFaceColor->GrayLevel[1],
+       BackFaceColor->GrayLevel[1],
+       GraphicsColor->GrayLevel[1],
+       FontColor->GrayLevel[1]], {0., 1.5}, ImageScaled[{0.5, 0.5}],
+      BaseStyle->"Graphics"]}, {
+     ArrowBox[{{0., 1.}, {0., 0.}}, 0.06561181434599156], InsetBox[
+      StyleBox["\<\"With\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[1],
+       FrontFaceColor->GrayLevel[1],
+       BackFaceColor->GrayLevel[1],
+       GraphicsColor->GrayLevel[1],
+       FontColor->GrayLevel[1]], {0., 0.5}, ImageScaled[{0.5, 0.5}],
+      BaseStyle->"Graphics"]}}, 
+   {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], InsetBox[
+     FrameBox[
+      StyleBox["\<\"Roberto Benigni\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontSize->8,
+       FontColor->GrayLevel[0]],
+      Background->GrayLevel[1],
+      StripOnInput->False], {0., 10.}], InsetBox[
+     FrameBox[
+      StyleBox["\<\"La Luna\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontSize->8,
+       FontColor->GrayLevel[0]],
+      Background->GrayLevel[1],
+      StripOnInput->False], {0., 9.}], InsetBox[
+     FrameBox[
+      StyleBox["\<\"Alida Valli\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontSize->8,
+       FontColor->GrayLevel[0]],
+      Background->GrayLevel[1],
+      StripOnInput->False], {0., 8.}], InsetBox[
+     FrameBox[
+      StyleBox["\<\"Edipo re\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontSize->8,
+       FontColor->GrayLevel[0]],
+      Background->GrayLevel[1],
+      StripOnInput->False], {0., 7.}], InsetBox[
+     FrameBox[
+      StyleBox["\<\"Silvana Mangano\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontSize->8,
+       FontColor->GrayLevel[0]],
+      Background->GrayLevel[1],
+      StripOnInput->False], {0., 6.}], InsetBox[
+     FrameBox[
+      StyleBox["\<\"Morte a Venezia\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontSize->8,
+       FontColor->GrayLevel[0]],
+      Background->GrayLevel[1],
+      StripOnInput->False], {0., 5.}], InsetBox[
+     FrameBox[
+      StyleBox["\<\"Dirk Bogarde\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontSize->8,
+       FontColor->GrayLevel[0]],
+      Background->GrayLevel[1],
+      StripOnInput->False], {0., 4.}], InsetBox[
+     FrameBox[
+      StyleBox["\<\"La caduta degli dei\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontSize->8,
+       FontColor->GrayLevel[0]],
+      Background->GrayLevel[1],
+      StripOnInput->False], {0., 3.}], InsetBox[
+     FrameBox[
+      StyleBox["\<\"Charlotte Rampling\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontSize->8,
+       FontColor->GrayLevel[0]],
+      Background->GrayLevel[1],
+      StripOnInput->False], {0., 2.}], InsetBox[
+     FrameBox[
+      StyleBox["\<\"Le chiavi di casa\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontSize->8,
+       FontColor->GrayLevel[0]],
+      Background->GrayLevel[1],
+      StripOnInput->False], {0., 1.}], InsetBox[
+     FrameBox[
+      StyleBox["\<\"Pierfrancesco Favino\"\>",
+       StripOnInput->False,
+       LineColor->GrayLevel[0],
+       FrontFaceColor->GrayLevel[0],
+       BackFaceColor->GrayLevel[0],
+       GraphicsColor->GrayLevel[0],
+       FontSize->8,
+       FontColor->GrayLevel[0]],
+      Background->GrayLevel[1],
+      StripOnInput->False], {0., 0.}]}},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  ImageSize->{150, 1100}]], "Print",
+ CellChangeTimes->{3.8928765141788807`*^9},
+ CellLabel->"",ExpressionUUID->"4705b04b-69dc-43b4-a6ce-136e472b470d"]
 }, Open  ]]
 },
-WindowSize->{Full, Full},
-WindowMargins->{{316, Automatic}, {Automatic, 50}},
+WindowSize->{1440, 747},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 TaggingRules-><|"TryRealOnly" -> False|>,
-FrontEndVersion->"13.2 for Mac OS X x86 (64-bit) (January 30, 2023)",
+FrontEndVersion->"13.2 for Linux x86 (64-bit) (January 31, 2023)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"f0a40eb4-f91c-4156-819c-a22d067d8762"
 ]
@@ -599,13 +840,14 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 299, 5, 52, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
-Cell[860, 27, 928, 16, 110, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67"],
-Cell[1791, 45, 486, 8, 52, "Code",ExpressionUUID->"b07ff995-a9e0-4728-b640-a906d452269c"],
-Cell[2280, 55, 389, 9, 52, "Code",ExpressionUUID->"e94f7fc6-894c-4186-b371-7689900a0b90"],
+Cell[558, 20, 298, 5, 51, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
+Cell[859, 27, 927, 16, 112, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67"],
+Cell[1789, 45, 486, 8, 53, "Code",ExpressionUUID->"b07ff995-a9e0-4728-b640-a906d452269c"],
+Cell[2278, 55, 390, 9, 53, "Code",ExpressionUUID->"e94f7fc6-894c-4186-b371-7689900a0b90"],
 Cell[CellGroupData[{
-Cell[2694, 68, 19985, 396, 1414, "Code",ExpressionUUID->"00d5bd17-e6e9-4a2f-90d2-7138a293aa93"],
-Cell[22682, 466, 4867, 114, 219, "Output",ExpressionUUID->"73942b92-a306-4528-8da7-14ed28e110d0"]
+Cell[2693, 68, 20915, 412, 1511, "Code",ExpressionUUID->"00d5bd17-e6e9-4a2f-90d2-7138a293aa93"],
+Cell[23611, 482, 5291, 118, 219, "Output",ExpressionUUID->"db0f0e64-f67a-4de3-a4e3-fff39bf42049"],
+Cell[28905, 602, 8018, 219, 1108, "Print",ExpressionUUID->"4705b04b-69dc-43b4-a6ce-136e472b470d"]
 }, Open  ]]
 }
 ]
