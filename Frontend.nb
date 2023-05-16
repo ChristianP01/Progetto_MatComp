@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     18089,        476]
-NotebookOptionsPosition[     17293,        455]
-NotebookOutlinePosition[     17727,        472]
-CellTagsIndexPosition[     17684,        469]
+NotebookDataLength[      8241,        203]
+NotebookOptionsPosition[      7541,        183]
+NotebookOutlinePosition[      7978,        200]
+CellTagsIndexPosition[      7935,        197]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -23,7 +23,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.892621033638291*^9, 3.8926210449536467`*^9}, {
   3.8926286729392776`*^9, 3.892628673681201*^9}, {3.89262877358202*^9, 
   3.8926287780286427`*^9}},
- CellLabel->"In[1]:=",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
+ CellLabel->"In[11]:=",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
 
 Cell[BoxData[{
  RowBox[{
@@ -53,410 +53,138 @@ Cell[BoxData[
  CellLabel->"In[6]:=",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
 
 Cell[BoxData[
- PanelBox[
-  TagBox[GridBox[{
-     {
-      InputFieldBox[Dynamic[$CellContext`inputActor1], String,
-       FieldHint->"Inserisci il primo attore..."], 
-      InputFieldBox[Dynamic[$CellContext`inputActor2], String,
-       FieldHint->"Inserisci il secondo attore..."], 
-      InputFieldBox[Dynamic[$CellContext`answer], Number,
-       FieldHint->"Indovina la distanza..."], 
-      InputFieldBox[Dynamic[$CellContext`seed], Number,
-       FieldHint->"Scegli un seed..."]},
-     {
-      ButtonBox[
-       StyleBox["\<\"Calcola\"\>",
-        StripOnInput->False,
-        FontSize->Medium],
-       Appearance->Automatic,
-       ButtonFunction:>($CellContext`inputActor1 = 
-         CheckForm`InputCorrection[$CellContext`inputActor1]; \
-$CellContext`inputActor2 = 
-         CheckForm`InputCorrection[$CellContext`inputActor2]; \
-$CellContext`cfOutput = 
-         CheckForm`CheckForm[$CellContext`gr, $CellContext`inputActor1, \
-$CellContext`inputActor2]; If[
-          StringQ[$CellContext`cfOutput], 
-          CreateDialog[{
-            TextCell[$CellContext`cfOutput], 
-            DefaultButton[]}, 
-           WindowSize -> {$CellContext`labelX, $CellContext`labelY}], \
-$CellContext`sp = 
-           GeneralOracleBack`CalcShortestPath[$CellContext`gr, \
-$CellContext`inputActor1, $CellContext`inputActor2]; Print[
-            GeneralOracleBack`displaySolution[$CellContext`sp]]; Null]),
-       Evaluator->Automatic,
-       ImageSize->{100, 50},
-       Method->"Preemptive"], 
-      ButtonBox[
-       StyleBox["\<\"Reset\"\>",
-        StripOnInput->False,
-        FontSize->Medium],
-       Appearance->Automatic,
-       ButtonFunction:>($CellContext`inputActor1 = ($CellContext`inputActor2 = 
-          Null); $CellContext`answer = Null; $CellContext`seed = Null; Null),
-       Evaluator->Automatic,
-       ImageSize->{100, 50},
-       Method->"Preemptive"], 
-      ButtonBox[
-       StyleBox["\<\"Indovina\"\>",
-        StripOnInput->False,
-        FontSize->Medium],
-       Appearance->Automatic,
-       ButtonFunction:>(Which[
-          Not[
-           NumberQ[$CellContext`answer]], CreateDialog[{
-             TextCell[
-             "\[CapitalEGrave] necessario inserire un numero per provare ad \
+ DynamicModuleBox[{$CellContext`inputActor1$$, $CellContext`inputActor2$$, \
+$CellContext`answer$$, $CellContext`seed$$, $CellContext`cfOutput$$, \
+$CellContext`sp$$, $CellContext`re$$}, 
+  PanelBox[
+   TagBox[GridBox[{
+      {
+       InputFieldBox[Dynamic[$CellContext`inputActor1$$], String,
+        FieldHint->"Inserisci il primo attore..."], 
+       InputFieldBox[Dynamic[$CellContext`inputActor2$$], String,
+        FieldHint->"Inserisci il secondo attore..."], 
+       InputFieldBox[Dynamic[$CellContext`answer$$], Number,
+        FieldHint->"Indovina la distanza..."], 
+       InputFieldBox[Dynamic[$CellContext`seed$$], Number,
+        FieldHint->"Scegli un seed..."]},
+      {
+       ButtonBox[
+        StyleBox["\<\"Calcola\"\>",
+         StripOnInput->False,
+         FontSize->Medium],
+        Appearance->Automatic,
+        ButtonFunction:>($CellContext`inputActor1$$ = 
+          CheckForm`InputCorrection[$CellContext`inputActor1$$]; \
+$CellContext`inputActor2$$ = 
+          CheckForm`InputCorrection[$CellContext`inputActor2$$]; \
+$CellContext`cfOutput$$ = 
+          CheckForm`CheckForm[$CellContext`gr, $CellContext`inputActor1$$, \
+$CellContext`inputActor2$$]; If[
+           StringQ[$CellContext`cfOutput$$], 
+           CreateDialog[{
+             TextCell[$CellContext`cfOutput$$], 
+             DefaultButton[]}, 
+            WindowSize -> {$CellContext`labelX, $CellContext`labelY}], \
+$CellContext`sp$$ = 
+            GeneralOracleBack`CalcShortestPath[$CellContext`gr, \
+$CellContext`inputActor1$$, $CellContext`inputActor2$$]; 
+           NotebookClose[$CellContext`outputWindow]; \
+$CellContext`outputWindow = CreateDocument[
+              Dynamic[
+               GeneralOracleBack`displaySolution[$CellContext`sp$$]], 
+              WindowSize -> {500, 500}]]),
+        Evaluator->Automatic,
+        ImageSize->{100, 50},
+        Method->"Preemptive"], 
+       ButtonBox[
+        StyleBox["\<\"Reset\"\>",
+         StripOnInput->False,
+         FontSize->Medium],
+        Appearance->Automatic,
+        ButtonFunction:>($CellContext`inputActor1$$ = \
+($CellContext`inputActor2$$ = Null); $CellContext`answer$$ = 
+          Null; $CellContext`seed$$ = Null; Null),
+        Evaluator->Automatic,
+        ImageSize->{100, 50},
+        Method->"Preemptive"], 
+       ButtonBox[
+        StyleBox["\<\"Indovina\"\>",
+         StripOnInput->False,
+         FontSize->Medium],
+        Appearance->Automatic,
+        ButtonFunction:>(Which[
+           Not[
+            NumberQ[$CellContext`answer$$]], CreateDialog[{
+              TextCell[
+              "\[CapitalEGrave] necessario inserire un numero per provare ad \
 indovinare."], 
+              DefaultButton[]}, 
+             WindowSize -> {$CellContext`labelX, $CellContext`labelY}]; Null, 
+           True, $CellContext`inputActor1$$ = 
+            CheckForm`InputCorrection[$CellContext`inputActor1$$]; \
+$CellContext`inputActor2$$ = 
+            CheckForm`InputCorrection[$CellContext`inputActor2$$]; \
+$CellContext`cfOutput$$ = 
+            CheckForm`CheckForm[$CellContext`gr, $CellContext`inputActor1$$, \
+$CellContext`inputActor2$$]; If[
+             StringQ[$CellContext`cfOutput$$], 
+             CreateDialog[{
+               TextCell[$CellContext`cfOutput$$], 
+               DefaultButton[]}, 
+              WindowSize -> {$CellContext`labelX, $CellContext`labelY}], \
+$CellContext`sp$$ = 
+              GeneralOracleBack`CalcShortestPath[$CellContext`gr, \
+$CellContext`inputActor1$$, $CellContext`inputActor2$$]; Null]; 
+           If[$CellContext`answer$$ == Length[
+                Part[$CellContext`sp$$, "entityPath"]] - 1, CreateDialog[{
+                TextCell["Complimenti, hai indovinato!"], 
+                DefaultButton[]}, 
+               WindowSize -> {$CellContext`labelX, $CellContext`labelY}]; 
+             Null, CreateDialog[{
+                TextCell["Peccato, risposta errata!"], 
+                DefaultButton[]}, 
+               WindowSize -> {$CellContext`labelX, $CellContext`labelY}]; 
+             Null]]; Null),
+        Evaluator->Automatic,
+        ImageSize->{100, 50},
+        Method->"Preemptive"], 
+       ButtonBox[
+        StyleBox["\<\"Casuale\"\>",
+         StripOnInput->False,
+         FontSize->Medium],
+        Appearance->Automatic,
+        ButtonFunction:>Which[
+          Not[
+           NumberQ[$CellContext`seed$$]], CreateDialog[{
+             TextCell[
+             "\[CapitalEGrave] necessario inserire un seed per generare \
+risultati casuali."], 
              DefaultButton[]}, 
             WindowSize -> {$CellContext`labelX, $CellContext`labelY}]; Null, 
-          True, $CellContext`inputActor1 = 
-           CheckForm`InputCorrection[$CellContext`inputActor1]; \
-$CellContext`inputActor2 = 
-           CheckForm`InputCorrection[$CellContext`inputActor2]; \
-$CellContext`cfOutput = 
-           CheckForm`CheckForm[$CellContext`gr, $CellContext`inputActor1, \
-$CellContext`inputActor2]; If[
-            StringQ[$CellContext`cfOutput], 
-            CreateDialog[{
-              TextCell[$CellContext`cfOutput], 
-              DefaultButton[]}, 
-             WindowSize -> {$CellContext`labelX, $CellContext`labelY}], \
-$CellContext`sp = 
-             GeneralOracleBack`CalcShortestPath[$CellContext`gr, \
-$CellContext`inputActor1, $CellContext`inputActor2]; Null]; 
-          If[$CellContext`answer == Length[
-               Part[$CellContext`sp, "entityPath"]] - 1, CreateDialog[{
-               TextCell["Complimenti, hai indovinato!"], 
-               DefaultButton[]}, 
-              WindowSize -> {$CellContext`labelX, $CellContext`labelY}]; Null,
-             CreateDialog[{
-               TextCell["Peccato, risposta errata!"], 
-               DefaultButton[]}, 
-              WindowSize -> {$CellContext`labelX, $CellContext`labelY}]; 
-            Null]]; Null),
-       Evaluator->Automatic,
-       ImageSize->{100, 50},
-       Method->"Preemptive"], 
-      ButtonBox[
-       StyleBox["\<\"Casuale\"\>",
-        StripOnInput->False,
-        FontSize->Medium],
-       Appearance->Automatic,
-       ButtonFunction:>Which[
-         Not[
-          NumberQ[$CellContext`seed]], CreateDialog[{
-            TextCell[
-            "\[CapitalEGrave] necessario inserire un seed per generare \
-risultati casuali."], 
-            DefaultButton[]}, 
-           WindowSize -> {$CellContext`labelX, $CellContext`labelY}]; Null, 
-         True, $CellContext`re = 
-          
-          GeneralOracleBack`RandomExtract[$CellContext`gr, $CellContext`seed]; \
-$CellContext`inputActor1 = Part[$CellContext`re, 1]; $CellContext`inputActor2 = 
-          Part[$CellContext`re, 2]; Null],
-       Evaluator->Automatic,
-       ImageSize->{100, 50},
-       Method->"Preemptive"]}
-    },
-    AutoDelete->False,
-    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
-    GridBoxSpacings->{"Columns" -> {{4}}, "Rows" -> {{1}}}],
-   "Grid"],
-  ImageSize->{900, 200}]], "Output",
- CellChangeTimes->{{3.89314916271073*^9, 3.893149188868148*^9}, 
-   3.89314935708887*^9, 3.893149726232939*^9, 3.893149829992269*^9},
- CellLabel->"Out[6]=",ExpressionUUID->"1ca4566b-7e40-48f4-b7b4-11175327219e"],
-
-Cell[BoxData[
- GraphicsBox[{
-   {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[
-    1.25], {ArrowBox[{{0., 13.}, {0., 12.}}, 0.07509363295880149], InsetBox[
-      StyleBox["\<\"Was in\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontColor->GrayLevel[0]], {0., 12.5}, ImageScaled[{0.5, 0.5}],
-      BaseStyle->"Graphics"]}, {
-     ArrowBox[{{0., 12.}, {0., 11.}}, 0.07509363295880149], InsetBox[
-      StyleBox["\<\"With\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontColor->GrayLevel[0]], {0., 11.5}, ImageScaled[{0.5, 0.5}],
-      BaseStyle->"Graphics"]}, {
-     ArrowBox[{{0., 11.}, {0., 10.}}, 0.07509363295880149], InsetBox[
-      StyleBox["\<\"Was in\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontColor->GrayLevel[0]], {0., 10.5}, ImageScaled[{0.5, 0.5}],
-      BaseStyle->"Graphics"]}, {
-     ArrowBox[{{0., 10.}, {0., 9.}}, 0.07509363295880149], InsetBox[
-      StyleBox["\<\"With\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontColor->GrayLevel[0]], {0., 9.5}, ImageScaled[{0.5, 0.5}],
-      BaseStyle->"Graphics"]}, {
-     ArrowBox[{{0., 9.}, {0., 8.}}, 0.07509363295880149], InsetBox[
-      StyleBox["\<\"Was in\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontColor->GrayLevel[0]], {0., 8.5}, ImageScaled[{0.5, 0.5}],
-      BaseStyle->"Graphics"]}, {
-     ArrowBox[{{0., 8.}, {0., 7.}}, 0.07509363295880149], InsetBox[
-      StyleBox["\<\"With\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontColor->GrayLevel[0]], {0., 7.5}, ImageScaled[{0.5, 0.5}],
-      BaseStyle->"Graphics"]}, {
-     ArrowBox[{{0., 7.}, {0., 6.}}, 0.07509363295880149], InsetBox[
-      StyleBox["\<\"Was in\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontColor->GrayLevel[0]], {0., 6.5}, ImageScaled[{0.5, 0.5}],
-      BaseStyle->"Graphics"]}, {
-     ArrowBox[{{0., 6.}, {0., 5.}}, 0.07509363295880149], InsetBox[
-      StyleBox["\<\"With\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontColor->GrayLevel[0]], {0., 5.5}, ImageScaled[{0.5, 0.5}],
-      BaseStyle->"Graphics"]}, {
-     ArrowBox[{{0., 5.}, {0., 4.}}, 0.07509363295880149], InsetBox[
-      StyleBox["\<\"Was in\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontColor->GrayLevel[0]], {0., 4.5}, ImageScaled[{0.5, 0.5}],
-      BaseStyle->"Graphics"]}, {
-     ArrowBox[{{0., 4.}, {0., 3.}}, 0.07509363295880149], InsetBox[
-      StyleBox["\<\"With\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontColor->GrayLevel[0]], {0., 3.5}, ImageScaled[{0.5, 0.5}],
-      BaseStyle->"Graphics"]}, {
-     ArrowBox[{{0., 3.}, {0., 2.}}, 0.07509363295880149], InsetBox[
-      StyleBox["\<\"Was in\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontColor->GrayLevel[0]], {0., 2.5}, ImageScaled[{0.5, 0.5}],
-      BaseStyle->"Graphics"]}, {
-     ArrowBox[{{0., 2.}, {0., 1.}}, 0.07509363295880149], InsetBox[
-      StyleBox["\<\"With\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontColor->GrayLevel[0]], {0., 1.5}, ImageScaled[{0.5, 0.5}],
-      BaseStyle->"Graphics"]}, {
-     ArrowBox[{{0., 1.}, {0., 0.}}, 0.07509363295880149], InsetBox[
-      StyleBox["\<\"Was in\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontColor->GrayLevel[0]], {0., 0.5}, ImageScaled[{0.5, 0.5}],
-      BaseStyle->"Graphics"]}}, 
-   {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], InsetBox[
-     FrameBox[
-      StyleBox["\<\"Pierfrancesco Favino\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontSize->8,
-       FontColor->GrayLevel[0]],
-      Background->GrayLevel[1],
-      StripOnInput->False], {0., 13.}], InsetBox[
-     FrameBox[
-      StyleBox["\<\"Le confessioni\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontSize->8,
-       FontColor->GrayLevel[0]],
-      Background->GrayLevel[1],
-      StripOnInput->False], {0., 12.}], InsetBox[
-     FrameBox[
-      StyleBox["\<\"Connie Nielsen\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontSize->8,
-       FontColor->GrayLevel[0]],
-      Background->GrayLevel[1],
-      StripOnInput->False], {0., 11.}], InsetBox[
-     FrameBox[
-      StyleBox["\<\"Vacanze Di Natale '91\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontSize->8,
-       FontColor->GrayLevel[0]],
-      Background->GrayLevel[1],
-      StripOnInput->False], {0., 10.}], InsetBox[
-     FrameBox[
-      StyleBox["\<\"Ornella Muti\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontSize->8,
-       FontColor->GrayLevel[0]],
-      Background->GrayLevel[1],
-      StripOnInput->False], {0., 9.}], InsetBox[
-     FrameBox[
-      StyleBox["\<\"I Nuovi Mostri\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontSize->8,
-       FontColor->GrayLevel[0]],
-      Background->GrayLevel[1],
-      StripOnInput->False], {0., 8.}], InsetBox[
-     FrameBox[
-      StyleBox["\<\"Vittorio Gassman\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontSize->8,
-       FontColor->GrayLevel[0]],
-      Background->GrayLevel[1],
-      StripOnInput->False], {0., 7.}], InsetBox[
-     FrameBox[
-      StyleBox["\<\"I soliti ignoti\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontSize->8,
-       FontColor->GrayLevel[0]],
-      Background->GrayLevel[1],
-      StripOnInput->False], {0., 6.}], InsetBox[
-     FrameBox[
-      StyleBox["\<\"A mezzanotte va la ronda del piacere\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontSize->8,
-       FontColor->GrayLevel[0]],
-      Background->GrayLevel[1],
-      StripOnInput->False], {0., 5.}], InsetBox[
-     FrameBox[
-      StyleBox["\<\"Audace colpo dei soliti ignoti\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontSize->8,
-       FontColor->GrayLevel[0]],
-      Background->GrayLevel[1],
-      StripOnInput->False], {0., 4.}], InsetBox[
-     FrameBox[
-      StyleBox["\<\"L'udienza\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontSize->8,
-       FontColor->GrayLevel[0]],
-      Background->GrayLevel[1],
-      StripOnInput->False], {0., 3.}], InsetBox[
-     FrameBox[
-      StyleBox["\<\"Claudia Cardinale\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontSize->8,
-       FontColor->GrayLevel[0]],
-      Background->GrayLevel[1],
-      StripOnInput->False], {0., 2.}], InsetBox[
-     FrameBox[
-      StyleBox["\<\"Il gattopardo\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontSize->8,
-       FontColor->GrayLevel[0]],
-      Background->GrayLevel[1],
-      StripOnInput->False], {0., 1.}], InsetBox[
-     FrameBox[
-      StyleBox["\<\"Terence Hill\"\>",
-       StripOnInput->False,
-       LineColor->GrayLevel[0],
-       FrontFaceColor->GrayLevel[0],
-       BackFaceColor->GrayLevel[0],
-       GraphicsColor->GrayLevel[0],
-       FontSize->8,
-       FontColor->GrayLevel[0]],
-      Background->GrayLevel[1],
-      StripOnInput->False], {0., 0.}]}},
-  FormatType->TraditionalForm,
-  FrameTicks->None,
-  ImageSize->{150, 1100}]], "Print",
- CellChangeTimes->{3.893149841508514*^9},
- CellLabel->"",ExpressionUUID->"c89a32ae-e231-44eb-bcb8-4f89738904ab"]
+          True, $CellContext`re$$ = 
+           GeneralOracleBack`RandomExtract[$CellContext`gr, \
+$CellContext`seed$$]; $CellContext`inputActor1$$ = 
+           Part[$CellContext`re$$, 1]; $CellContext`inputActor2$$ = 
+           Part[$CellContext`re$$, 2]; Null],
+        Evaluator->Automatic,
+        ImageSize->{100, 50},
+        Method->"Preemptive"]}
+     },
+     AutoDelete->False,
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+     GridBoxSpacings->{"Columns" -> {{4}}, "Rows" -> {{1}}}],
+    "Grid"],
+   ImageSize->{900, 200}],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{3.893219770659094*^9, 3.893220219774426*^9, 
+  3.893220903065804*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"dac88d75-2d39-417f-8503-b5a60f0fd417"]
 }, Open  ]]
 },
 WindowSize->{1440, 747},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 TaggingRules-><|"TryRealOnly" -> False|>,
-FrontEndVersion->"13.2 for Linux x86 (64-bit) (January 31, 2023)",
+FrontEndVersion->"13.2 for Mac OS X x86 (64-bit) (January 30, 2023)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"f0a40eb4-f91c-4156-819c-a22d067d8762"
 ]
@@ -471,12 +199,11 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 298, 5, 51, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
-Cell[859, 27, 1047, 18, 132, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67"],
+Cell[558, 20, 299, 5, 52, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
+Cell[860, 27, 1047, 18, 129, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67"],
 Cell[CellGroupData[{
-Cell[1931, 49, 203, 3, 51, "Code",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
-Cell[2137, 54, 4874, 117, 219, "Output",ExpressionUUID->"1ca4566b-7e40-48f4-b7b4-11175327219e"],
-Cell[7014, 173, 10263, 279, 1108, "Print",ExpressionUUID->"c89a32ae-e231-44eb-bcb8-4f89738904ab"]
+Cell[1932, 49, 203, 3, 52, "Code",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
+Cell[2138, 54, 5387, 126, 219, "Output",ExpressionUUID->"dac88d75-2d39-417f-8503-b5a60f0fd417"]
 }, Open  ]]
 }
 ]

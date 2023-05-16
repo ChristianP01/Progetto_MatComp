@@ -18,11 +18,15 @@ labelY = 70;
 panelX = 900;
 panelY = 200;
 
+owX = 550;
+owY = 1100;
+outputWindow = Null;
+
 
 showFrontend[] := 
 	DynamicModule[
 	{inputActor1, inputActor2, answer, seed, cfOutput, sp, re}, 
-	{
+	
 	
 		Panel[
 	 Grid[{
@@ -43,7 +47,15 @@ showFrontend[] :=
 	        (CreateDialog[{TextCell[cfOutput], DefaultButton[]}, WindowSize -> {labelX, labelY}]), 
 	        (*Print[CalcShortestPath[gr, inputActor1, inputActor2]];*)
 	        sp = CalcShortestPath[gr, inputActor1, inputActor2];
-	        Print[displaySolution[sp]];
+	        (*Print[displaySolution[sp]];*)
+
+            
+            (* Close the previous output window, if present *)
+            NotebookClose[outputWindow];
+
+            (* Create a new dialog box and print the LayeredGraph *)
+            outputWindow=CreateDocument[Dynamic[displaySolution[sp]], WindowSize->{owX,owY}] 
+	         
 	        (*mostra il grafico in una nuova finestra
 	        CreateDocument[Dynamic[displaySoution[sp]], WindowSize -> {500, 500}]*)
 	        (*mostra il grafico in una cella*)
@@ -95,6 +107,6 @@ showFrontend[] :=
 	  ],
 	 ImageSize -> {panelX, panelY}
 	]
-	}
+	
 ]
 
