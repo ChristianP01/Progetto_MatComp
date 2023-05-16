@@ -10,14 +10,133 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8851,        214]
-NotebookOptionsPosition[      8151,        194]
-NotebookOutlinePosition[      8588,        211]
-CellTagsIndexPosition[      8545,        208]
+NotebookDataLength[     14715,        370]
+NotebookOptionsPosition[     12334,        319]
+NotebookOutlinePosition[     12771,        336]
+CellTagsIndexPosition[     12728,        333]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Progetto d\[CloseCurlyQuote]esame di Matematica Computazionale, Universit\
+\[AGrave] di Bologna, a.a. 2022/2023\
+\>", "Title",
+ CellChangeTimes->{{3.893235576485714*^9, 3.893235612057968*^9}, 
+   3.893235650043154*^9, {3.893236547525814*^9, 
+   3.89323657171355*^9}},ExpressionUUID->"3009b2f4-301e-4fba-a648-\
+5c205258bf66"],
+
+Cell["\<\
+Michele Bianco, Chiara Mengoli, Akira Petrolini, Christian Preti, Riccardo \
+Scotti\
+\>", "Subtitle",
+ CellChangeTimes->{{3.893235576485714*^9, 
+  3.8932356903851557`*^9}},ExpressionUUID->"9a04fdf7-003b-4472-98a5-\
+27c811e52c95"],
+
+Cell[CellGroupData[{
+
+Cell["Descrizione del progetto", "Section",
+ CellChangeTimes->{{3.893235719457225*^9, 
+  3.893235741540801*^9}},ExpressionUUID->"87b13a26-9a99-4cf4-9ee6-\
+04659ff4ee8e"],
+
+Cell["\<\
+Il progetto \[EGrave] un\[CloseCurlyQuote]implementazione nel linguaggio \
+Mathematica dell\[CloseCurlyQuote]Oracolo di Bacon \
+(https://oracleofbacon.org/).\[LineSeparator]L\[CloseCurlyQuote]Oracolo di \
+Bacon \[EGrave] in grado, dati nome e cognome di due attori, di fornire all\
+\[CloseCurlyQuote]utente la \[OpenCurlyDoubleQuote]distanza\
+\[CloseCurlyDoubleQuote] tra di essi, oltre che il percorso che li collega.  
+Nel nostro progetto abbiamo utilizzato un database di 10.000 attori, filtrato \
+solo su film in lingua originale italiana, e offriamo \
+all\[CloseCurlyQuote]utente finale la possibilit\[AGrave] di utilizzare su di \
+esso 4 funzionalit\[AGrave] a partire da un men\[UGrave] con 4 input e 4 \
+bottoni.\
+\>", "Text",
+ CellChangeTimes->{{3.8932358207466*^9, 3.893235874241817*^9}, {
+  3.893235980484462*^9, 3.893236029686389*^9}, {3.893236104220552*^9, 
+  3.8932361199330263`*^9}, {3.8932361946341133`*^9, 3.893236337263832*^9}, {
+  3.893236414452976*^9, 
+  3.893236442690774*^9}},ExpressionUUID->"f084fac3-fe91-47cd-ae2c-\
+53792a18ac82"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Celle di input", "Section",
+ CellChangeTimes->{{3.893236450751597*^9, 
+  3.893236465610218*^9}},ExpressionUUID->"7e97bb09-1829-43ec-b7ca-\
+666a6d97d2ea"],
+
+Cell["Le celle di input sono ottenute con un DynamicModule bla bla", "Text",
+ CellChangeTimes->{{3.893236511959878*^9, 3.8932365386316423`*^9}, {
+  3.8932365924621077`*^9, 
+  3.893236598521015*^9}},ExpressionUUID->"3f4be705-ac79-44f3-85da-\
+4cbf163d1876"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Funzionalit\[AGrave]", "Section",
+ CellChangeTimes->{{3.893236606250127*^9, 
+  3.8932366186173353`*^9}},ExpressionUUID->"0ace0b0a-644a-4228-b477-\
+4e836d644b4f"],
+
+Cell[CellGroupData[{
+
+Cell["Calcola", "Subsection",
+ CellChangeTimes->{{3.893236637487542*^9, 
+  3.893236739737768*^9}},ExpressionUUID->"2c477141-b0c1-4f62-90ab-\
+f8180c593ee7"],
+
+Cell["blabla", "Text",
+ CellChangeTimes->{{3.893236742875012*^9, 
+  3.893236756850257*^9}},ExpressionUUID->"ca9f17e1-f89d-454d-b7e0-\
+ffa3c7c7d3a6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Reset", "Subsection",
+ CellChangeTimes->{{3.893236764391839*^9, 
+  3.893236765283536*^9}},ExpressionUUID->"662e80ad-7090-4b9a-b3e9-\
+f63b77a8d5b6"],
+
+Cell["blabla", "Text",
+ CellChangeTimes->{{3.893236774489708*^9, 3.893236787864653*^9}, 
+   3.893236870174326*^9},ExpressionUUID->"3c95bbb4-2d59-42d8-8980-\
+2ac842429277"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Indovina", "Subsection",
+ CellChangeTimes->{{3.893236865126842*^9, 
+  3.8932368819778223`*^9}},ExpressionUUID->"d7be7479-0b0f-4832-b24b-\
+375187218438"],
+
+Cell["blabla", "Text",
+ CellChangeTimes->{{3.893236937723926*^9, 
+  3.8932369385535173`*^9}},ExpressionUUID->"9e7a8cb4-4d1d-488e-bd65-\
+8f29c5e63f2e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Casuale", "Subsection",
+ CellChangeTimes->{{3.893236950594796*^9, 
+  3.893236951686653*^9}},ExpressionUUID->"9d2d0105-cfb9-4fce-9a9f-\
+503a6a1b12f7"],
+
+Cell["blabla", "Text",
+ CellChangeTimes->{{3.8932369580647907`*^9, 
+  3.893236959013611*^9}},ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-\
+a45d9897f190"],
+
 Cell[BoxData[
  RowBox[{"Quit", "[", "]"}]], "Code",
  CellChangeTimes->{{3.892621033638291*^9, 3.8926210449536467`*^9}, {
@@ -54,15 +173,18 @@ Cell[BoxData[
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`inputActor1$$ = 
-  Null, $CellContext`inputActor2$$ = Null, $CellContext`answer$$ = 
+  "", $CellContext`inputActor2$$ = Null, $CellContext`answer$$ = 
   Null, $CellContext`seed$$ = Null, $CellContext`cfOutput$$ = 
-  True, $CellContext`sp$$ = <|
+  "Errore, uno o pi\[UGrave] nomi contengono caratteri non validi; Sono \
+ammessi \n\t\t\t\t\tsolo caratteri alfabetici.", $CellContext`sp$$ = <|
   "entityPath" -> {
-    "David Hemmings", "Dario Argento", "Alida Valli", "Burt Lancaster", 
-     "Terence Hill", "Victor Buono"}, 
-   "groupsPath" -> {{"Profondo Rosso"}, {"Suspiria"}, {"Novecento"}, {
-     "Il gattopardo"}, {"La collina degli stivali"}}|>, $CellContext`re$$ = {
-  "David Hemmings", "Victor Buono"}}, 
+    "Liv Ullmann", "Catherine Deneuve", "Marcello Mastroianni", 
+     "Giancarlo Giannini", "Claudine Auger"}, 
+   "groupsPath" -> {{"Speriamo che sia femmina"}, {"La cagna"}, {
+     "Fatto di sangue fra due uomini per causa di una vedova. Si sospettano \
+moventi politici", "Dramma della gelosia (tutti i particolari in cronaca)"}, {
+     "Viaggio con Anita"}}|>, $CellContext`re$$ = {
+  "Liv Ullmann", "Claudine Auger"}}, 
   PanelBox[
    TagBox[GridBox[{
       {
@@ -191,6 +313,9 @@ $CellContext`seed$$]; $CellContext`inputActor1$$ =
    3.893221842922428*^9}},
  CellLabel->"Out[6]=",ExpressionUUID->"f169374f-52f8-4b3d-9e0d-d0023b81ad82"]
 }, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
 },
 WindowSize->{1440, 747},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
@@ -210,11 +335,42 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 298, 5, 52, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
-Cell[859, 27, 1047, 18, 129, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67"],
 Cell[CellGroupData[{
-Cell[1931, 49, 203, 3, 52, "Code",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
-Cell[2137, 54, 5998, 137, 219, "Output",ExpressionUUID->"f169374f-52f8-4b3d-9e0d-d0023b81ad82"]
+Cell[580, 22, 334, 7, 160, "Title",ExpressionUUID->"3009b2f4-301e-4fba-a648-5c205258bf66"],
+Cell[917, 31, 239, 6, 53, "Subtitle",ExpressionUUID->"9a04fdf7-003b-4472-98a5-27c811e52c95"],
+Cell[CellGroupData[{
+Cell[1181, 41, 169, 3, 67, "Section",ExpressionUUID->"87b13a26-9a99-4cf4-9ee6-04659ff4ee8e"],
+Cell[1353, 46, 1065, 18, 104, "Text",ExpressionUUID->"f084fac3-fe91-47cd-ae2c-53792a18ac82"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2455, 69, 159, 3, 67, "Section",ExpressionUUID->"7e97bb09-1829-43ec-b7ca-666a6d97d2ea"],
+Cell[2617, 74, 255, 4, 35, "Text",ExpressionUUID->"3f4be705-ac79-44f3-85da-4cbf163d1876"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2909, 83, 167, 3, 67, "Section",ExpressionUUID->"0ace0b0a-644a-4228-b477-4e836d644b4f"],
+Cell[CellGroupData[{
+Cell[3101, 90, 155, 3, 54, "Subsection",ExpressionUUID->"2c477141-b0c1-4f62-90ab-f8180c593ee7"],
+Cell[3259, 95, 148, 3, 35, "Text",ExpressionUUID->"ca9f17e1-f89d-454d-b7e0-ffa3c7c7d3a6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3444, 103, 153, 3, 54, "Subsection",ExpressionUUID->"662e80ad-7090-4b9a-b3e9-f63b77a8d5b6"],
+Cell[3600, 108, 171, 3, 35, "Text",ExpressionUUID->"3c95bbb4-2d59-42d8-8980-2ac842429277"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3808, 116, 158, 3, 54, "Subsection",ExpressionUUID->"d7be7479-0b0f-4832-b24b-375187218438"],
+Cell[3969, 121, 150, 3, 35, "Text",ExpressionUUID->"9e7a8cb4-4d1d-488e-bd65-8f29c5e63f2e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4156, 129, 155, 3, 54, "Subsection",ExpressionUUID->"9d2d0105-cfb9-4fce-9a9f-503a6a1b12f7"],
+Cell[4314, 134, 150, 3, 35, "Text",ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-a45d9897f190"],
+Cell[4467, 139, 298, 5, 52, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
+Cell[4768, 146, 1047, 18, 129, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67"],
+Cell[CellGroupData[{
+Cell[5840, 168, 203, 3, 52, "Code",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
+Cell[6046, 173, 6236, 140, 219, "Output",ExpressionUUID->"f169374f-52f8-4b3d-9e0d-d0023b81ad82"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]]
 }
 ]
