@@ -15,7 +15,6 @@ RandomExtract::usage = "RandomExtract[graph, seed] ritorna una lista di due enti
 displaySolution::usage = "displaySolution[output] graphically shows the list returned by CalcShortestPath";
 
 Begin["`Private`"]
-
 GenerateGraph[dataset_, entityName_, groupingAttribute_] :=
     Module[
         {entities, groups, edges, buildEdge}
@@ -80,11 +79,14 @@ RandomExtract[graph_, seed_] :=
 
 displaySolution[output_]:=
 Module[
-	{dist, list, graphPlot},
+	{dist, list, graphPlot, imageSizeX, imageSizeY},
 	(*esempio 
 	output = \[LeftAssociation]"entityPath"\[Rule]{"Roberto Benigni","Jim Belushi","Quentin Tarantino"},"groupsPath"\[Rule]{{"Pinocchio"},{"Destiny Turns on the Radio"}}\[RightAssociation]
 	list = {"Roberto Benigni",{"Pinocchio"},"Jim Belushi",{"Destiny Turns on the Radio"},"Quentin Tarantino"}
 	*)
+	(* Hardcoded variables defining the size of various output components *)
+	imageSizeX = 150;
+	imageSizeY = 1100;
 	dist = Length[output[["entityPath"]]]-1;
 	list = Riffle[output[["entityPath"]], output[["groupsPath"]]] //Flatten;
 	graphPlot = {};
@@ -97,9 +99,10 @@ Module[
 	        EdgeLabels->({If[#3 =!= None, {Line[#], Inset[#3, Mean[#1], Automatic, Automatic, #[[1]] - #[[2]], Background -> White]}, Line[#]]} &), ImageSize->{150,1100}] *)
 	
 	LayeredGraphPlot[graphPlot,
- VertexShapeFunction -> (Text[Framed[Style[#2, 8, Black], Background -> White], #1] &),
- EdgeLabels -> ({If[#3 =!= None, {Line[#], Inset[#3, Mean[#1], Automatic, Automatic, #[[1]] - #[[2]], Background -> White]}, Line[#]]} &),
- ImageSize -> {150, 1100}]
+         VertexShapeFunction -> (Text[Framed[Style[#2, 8, Black], Background -> White], #1] &),
+         EdgeLabels -> ({If[#3 =!= None, {Line[#], Inset[#3, Mean[#1], Automatic, Automatic, #[[1]] - #[[2]], Background -> White]}, Line[#]]} &),
+         EdgeShapeFunction -> None, (* Rimozione Frecce per evitare il baco delle frecce giganti*)
+         ImageSize -> {imageSizeX, imageSizeY}] 
 
 ];
 
