@@ -24,7 +24,7 @@ buttonX = 100;
 buttonY = 50;
 
 labelX = 300;
-labelY = 70;
+labelY = 90;
 
 panelX = 900;
 panelY = 200;
@@ -82,13 +82,13 @@ showFrontend[] :=
 	     Button[Style["Indovina", Medium],(
 	       Which[
 	       
+	          (* Controllo che l'utente abbia inserito un valore. *)
+	          Not[NumberQ[answer]],
+	           (CreateDialog[{TextCell["\[CapitalEGrave] necessario inserire un numero per provare ad indovinare."], DefaultButton[]}, WindowSize -> {labelX, labelY}];),
+	       
 	         (* Controllo che l'utente non abbia inserito valori < -1 *)
 	         answer < -1,
-	           (CreateDialog[{TextCell["Non \[EGrave] possibile inserire valori negativi, eccezion fatta per -1."], DefaultButton[]}, WindowSize -> {labelX, labelY}]), 
-	       
-	         (* Controllo che l'utente abbia inserito un valore. *)
-	         Not[NumberQ[answer]],
-	           (CreateDialog[{TextCell["\[CapitalEGrave] necessario inserire un numero per provare ad indovinare."], DefaultButton[]}, WindowSize -> {labelX, labelY}];),
+	           (CreateDialog[{TextCell["Non \[EGrave] possibile inserire valori negativi, eccezion fatta per -1."], DefaultButton[]}, WindowSize -> {labelX, labelY}];), 
 
 	         (* Campo default, in caso l'input sia corretto. *)
 	         True, (
