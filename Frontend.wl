@@ -20,9 +20,9 @@ panelY = 200;
 
 
 showFrontend[] := 
-	Module[
-	{}, 
-	
+	DynamicModule[
+	{inputActor1, inputActor2, answer, seed, cfOutput, sp, re}, 
+	{
 	
 		Panel[
 	 Grid[{
@@ -95,5 +95,6 @@ showFrontend[] :=
 	  ],
 	 ImageSize -> {panelX, panelY}
 	]
+	}
 ]
 
