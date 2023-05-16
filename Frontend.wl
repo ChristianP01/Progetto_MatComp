@@ -38,7 +38,6 @@ showFrontend[] :=
 	DynamicModule[
 	{inputActor1, inputActor2, answer, seed, cfOutput, sp, re}, 
 	
-	
 		Panel[
 	 Grid[{
 	   {
@@ -65,7 +64,7 @@ showFrontend[] :=
             NotebookClose[outputWindow];
 
             (* Create a new dialog box and print the LayeredGraph *)
-            outputWindow=CreateDocument[Dynamic[displaySolution[sp]], WindowSize->{owX,owY}] 
+            outputWindow=CreateDocument[{Dynamic[displaySolution[sp]], Print["Distance between actors is ", Length[sp[["entityPath"]]]-1]}, WindowSize->{owX,owY}] 
 	         
 	        (*mostra il grafico in una nuova finestra
 	        CreateDocument[Dynamic[displaySoution[sp]], WindowSize -> {500, 500}]*)
@@ -82,6 +81,11 @@ showFrontend[] :=
 	     
 	     Button[Style["Indovina", Medium],(
 	       Which[
+	       
+	         (* Controllo che l'utente non abbia inserito valori < -1 *)
+	         answer < -1,
+	           (CreateDialog[{TextCell["Non \[EGrave] possibile inserire valori negativi, eccezion fatta per -1."], DefaultButton[]}, WindowSize -> {labelX, labelY}]), 
+	       
 	         (* Controllo che l'utente abbia inserito un valore. *)
 	         Not[NumberQ[answer]],
 	           (CreateDialog[{TextCell["\[CapitalEGrave] necessario inserire un numero per provare ad indovinare."], DefaultButton[]}, WindowSize -> {labelX, labelY}];),
