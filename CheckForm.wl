@@ -22,8 +22,8 @@ CheckForm[graph_, entity1_, entity2_] :=
 	            "Errore, uno o pi\[UGrave] box di testo risultano vuoti.",
 	         
 	         (* Controlla se le entit\[AGrave] contengono SOLO caratteri alfabetici. *)
-	         StringMatchQ[entity1, RegularExpression["^[a-zA-Z]+$"]] == True 
-	            || StringMatchQ[entity2, RegularExpression["^[a-zA-Z]+$"]] == True,
+	         StringMatchQ[entity1, RegularExpression["^[a-zA-Z ]+$"]] == False 
+	            || StringMatchQ[entity2, RegularExpression["^[a-zA-Z ]+$"]] == False,
 	            "Errore, uno o pi\[UGrave] nomi contengono caratteri non validi; Sono ammessi 
 					solo caratteri alfabetici.",
 
