@@ -85,7 +85,7 @@ Module[
 	list = {"Roberto Benigni",{"Pinocchio"},"Jim Belushi",{"Destiny Turns on the Radio"},"Quentin Tarantino"}
 	*)
 	(* Hardcoded variables defining the size of various output components *)
-	imageSizeX = 150;
+	imageSizeX = 550;
 	imageSizeY = 1100;
 	dist = Length[output[["entityPath"]]]-1;
 	list = Riffle[output[["entityPath"]], output[["groupsPath"]]] //Flatten;
@@ -99,7 +99,10 @@ Module[
 	        EdgeLabels->({If[#3 =!= None, {Line[#], Inset[#3, Mean[#1], Automatic, Automatic, #[[1]] - #[[2]], Background -> White]}, Line[#]]} &), ImageSize->{150,1100}] *)
 	
 	LayeredGraphPlot[graphPlot,
-         VertexShapeFunction -> (Text[Framed[Style[#2, 8, Black], Background -> White], #1] &),
+         VertexShapeFunction -> ({If[MemberQ[output[["entityPath"]], #2], 
+            Text[Framed[Style[#2, 8, Black], Background -> LightBlue], #1],
+            Text[Framed[Style[#2, 8, Black], Background -> LightGreen], #1]
+         ]} &),
          EdgeLabels -> ({If[#3 =!= None, {Line[#], Inset[#3, Mean[#1], Automatic, Automatic, #[[1]] - #[[2]], Background -> White]}, Line[#]]} &),
          EdgeShapeFunction -> None, (* Rimozione Frecce per evitare il baco delle frecce giganti*)
          ImageSize -> {imageSizeX, imageSizeY}] 

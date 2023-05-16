@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8241,        203]
-NotebookOptionsPosition[      7541,        183]
-NotebookOutlinePosition[      7978,        200]
-CellTagsIndexPosition[      7935,        197]
+NotebookDataLength[      8851,        214]
+NotebookOptionsPosition[      8151,        194]
+NotebookOutlinePosition[      8588,        211]
+CellTagsIndexPosition[      8545,        208]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -23,7 +23,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.892621033638291*^9, 3.8926210449536467`*^9}, {
   3.8926286729392776`*^9, 3.892628673681201*^9}, {3.89262877358202*^9, 
   3.8926287780286427`*^9}},
- CellLabel->"In[11]:=",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
+ CellLabel->"In[9]:=",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
 
 Cell[BoxData[{
  RowBox[{
@@ -53,9 +53,16 @@ Cell[BoxData[
  CellLabel->"In[6]:=",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
 
 Cell[BoxData[
- DynamicModuleBox[{$CellContext`inputActor1$$, $CellContext`inputActor2$$, \
-$CellContext`answer$$, $CellContext`seed$$, $CellContext`cfOutput$$, \
-$CellContext`sp$$, $CellContext`re$$}, 
+ DynamicModuleBox[{$CellContext`inputActor1$$ = 
+  Null, $CellContext`inputActor2$$ = Null, $CellContext`answer$$ = 
+  Null, $CellContext`seed$$ = Null, $CellContext`cfOutput$$ = 
+  True, $CellContext`sp$$ = <|
+  "entityPath" -> {
+    "David Hemmings", "Dario Argento", "Alida Valli", "Burt Lancaster", 
+     "Terence Hill", "Victor Buono"}, 
+   "groupsPath" -> {{"Profondo Rosso"}, {"Suspiria"}, {"Novecento"}, {
+     "Il gattopardo"}, {"La collina degli stivali"}}|>, $CellContext`re$$ = {
+  "David Hemmings", "Victor Buono"}}, 
   PanelBox[
    TagBox[GridBox[{
       {
@@ -92,7 +99,7 @@ $CellContext`inputActor1$$, $CellContext`inputActor2$$];
 $CellContext`outputWindow = CreateDocument[
               Dynamic[
                GeneralOracleBack`displaySolution[$CellContext`sp$$]], 
-              WindowSize -> {500, 500}]]),
+              WindowSize -> {$CellContext`owX, $CellContext`owY}]]),
         Evaluator->Automatic,
         ImageSize->{100, 50},
         Method->"Preemptive"], 
@@ -176,9 +183,13 @@ $CellContext`seed$$]; $CellContext`inputActor1$$ =
     "Grid"],
    ImageSize->{900, 200}],
   DynamicModuleValues:>{}]], "Output",
- CellChangeTimes->{3.893219770659094*^9, 3.893220219774426*^9, 
-  3.893220903065804*^9},
- CellLabel->"Out[6]=",ExpressionUUID->"dac88d75-2d39-417f-8503-b5a60f0fd417"]
+ CellChangeTimes->{
+  3.893219770659094*^9, 3.893220219774426*^9, 3.893220903065804*^9, 
+   3.893220971124543*^9, 3.893221009004833*^9, 3.893221093777492*^9, 
+   3.8932212921084538`*^9, 3.8932213434045353`*^9, 3.893221448814789*^9, 
+   3.893221594407728*^9, 3.893221755057733*^9, {3.893221813271448*^9, 
+   3.893221842922428*^9}},
+ CellLabel->"Out[6]=",ExpressionUUID->"f169374f-52f8-4b3d-9e0d-d0023b81ad82"]
 }, Open  ]]
 },
 WindowSize->{1440, 747},
@@ -199,11 +210,11 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 299, 5, 52, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
-Cell[860, 27, 1047, 18, 129, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67"],
+Cell[558, 20, 298, 5, 52, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
+Cell[859, 27, 1047, 18, 129, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67"],
 Cell[CellGroupData[{
-Cell[1932, 49, 203, 3, 52, "Code",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
-Cell[2138, 54, 5387, 126, 219, "Output",ExpressionUUID->"dac88d75-2d39-417f-8503-b5a60f0fd417"]
+Cell[1931, 49, 203, 3, 52, "Code",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
+Cell[2137, 54, 5998, 137, 219, "Output",ExpressionUUID->"f169374f-52f8-4b3d-9e0d-d0023b81ad82"]
 }, Open  ]]
 }
 ]
