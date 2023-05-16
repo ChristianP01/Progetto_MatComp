@@ -4,6 +4,51 @@
 (**)
 
 
+(* ::Section:: *)
+(*ItalianActorPreprocessing*)
+
+
+(* ::Text:: *)
+(*Questo pacchetto \[EGrave] specifico e relativo al Database usato nel progetto, e in particolare sono i comandi necessari a caricare ed elaborare il dataset.*)
+
+
+(* ::Subsection:: *)
+(*Costruzione del Dataset*)
+
+
+(* ::Text:: *)
+(*Utilizzeremo due dataset con cui ne otterremo uno finale su cui costruire un grafo necessario all'analisi per il calcolo del grado di separazione tra attori.*)
+(*Il primo dataset (actorFilms.csv) \[EGrave] stato reperito al seguente link (https://www.kaggle.com/datasets/darinhawley/imdb-films-by-actor-for-10k-actors).*)
+(*Contiene 10000 attori e indica in ogni sua riga un film (e alcune sue caratteristiche) in cui l'attore ha recitato.*)
+(*Gli attributi del dataset necessari per il progetto sono:*)
+(*	Actor: Nome e Cognome dell'attore.*)
+(*	ActorID: Codice univoco collegato a ogni attore, in particolare riferito all'ID presente su IMDB.*)
+(*	Film: Nome del film in cui esso ha recitato.*)
+(*	Year: Anno di uscita del film*)
+(*	FilmID: Codice univoco collegato a ogni film, in particolare riferito all'ID presente su IMDB.*)
+(*Il secondo dataset (actorFilms2.csv) \[EGrave] stato reperito al seguente link (https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset?select=movies_metadata.csv).*)
+(*Esso contiene metadati interessanti su ogni film, utilizzando lo stesso FilmID di IMDB, in modo da consentirci di avere informazioni ulteriori da aggiungere*)
+(*al dataset precedente, in particolare noi sfrutteremo l'attributo che ne dice la lingua originale, per effettuare in seguito un filtro sugli attori presenti in film*)
+(*in lingua originale italiana.*)
+(*Gli attributi del dataset necessari per il progetto nel secondo dataset sono:*)
+(*	original_language: La lingua originale del film.*)
+(*	original_title: Il titolo originale (dunque non tradotto in inglese) del film.*)
+(**)
+
+
+(* ::Subsection:: *)
+(*Filtro applicato al dataset*)
+
+
+(* ::Text:: *)
+(*Come accennato nella sottosezione precedente, sfruttiamo l'attributo OriginalLanguage per ottenere dal dataset ottenuto in precedenza solo le righe contenenti film in lingua originale italiana. *)
+(*In seguito, viene utilizzata la funzione GroupBy per aggregare ogni attore in una sola riga.*)
+
+
+(* ::Section:: *)
+(*Implementazione*)
+
+
 BeginPackage["ItalianActorPreprocessing`"]
 
 GetDataset::usage = "";
