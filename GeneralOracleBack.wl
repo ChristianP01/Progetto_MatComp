@@ -1,5 +1,49 @@
 (* ::Package:: *)
 
+(* ::Chapter:: *)
+(*GeneralOracleBack: Descrizione*)
+
+
+(* ::Text:: *)
+(*Questo pacchetto contiene funzioni per la gestione generica di un database per il calcolo di gradi di separazione, e potrebbe essere usato anche nel caso in cui si dovesse creare un progetto su un differente Database (ad esempio giocatori di club sportivi, ricercatori che hanno pubblicato articoli insieme, amici sui social, ecc...).*)
+
+
+(* ::Subsection:: *)
+(*GenerateGraph*)
+
+
+(* ::Text:: *)
+(*Funzione che ritorna all'utente un grafo a partire da un dataset i cui nodi sono gli elementi della colonna entityName e gli archi sono costruiti a partire da groupingAttribute (Ad esempio, nel caso del database degli attori i nodi sono gli attori mentre gli archi i film).*)
+
+
+(* ::Subsection:: *)
+(*CalcShortestPath*)
+
+
+(* ::Text:: *)
+(*Ritorna una lista di associazioni che ha come chiavi entityPath e groupsPath, che contengono, rispettivamente, nodi e archi del cammino minimo tra firstEntity e secondEntity (Ad esempio il cammino minimo tra due attori inseriti dall'utente).*)
+
+
+(* ::Subsection:: *)
+(*RandomExtract*)
+
+
+(* ::Text:: *)
+(*Ritorna una lista di due entit\[AGrave] estratte casualmente  da un grafo usando un seed fornito in input.*)
+
+
+(* ::Subsection:: *)
+(*displaySolution*)
+
+
+(* ::Text:: *)
+(*Mostra graficamente la lista ritornata da CalcShortestPath. *)
+
+
+(* ::Section:: *)
+(*Implementazione*)
+
+
 BeginPackage["GeneralOracleBack`"]
 
 GenerateGraph::usage = "GenerateGraph[dataset, entityName, groupingAttribute] returns a graph from dataset whose 
