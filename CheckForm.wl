@@ -1,5 +1,33 @@
 (* ::Package:: *)
 
+(* ::Section:: *)
+(*CheckForm*)
+
+
+(* ::Text:: *)
+(*Questo pacchetto contiene tutte le funzioni utili al controllo dell'input inserito da utente.*)
+
+
+(* ::Subsection:: *)
+(*InputCorrection*)
+
+
+(* ::Text:: *)
+(*A partire da una stringa di input, ne restituisce una di output nella forma "Nome Cognome", eliminando eventuali spazi di troppo e correggendo un uso errato di maiuscole e minuscole. (Ad esempio la stringa "  noMe CoGnOme     " viene restituita come "Nome Cognome").*)
+
+
+(* ::Subsection:: *)
+(*CheckForm*)
+
+
+(* ::Text:: *)
+(*Ritorna una stringa di errore nel caso in cui la stringa sia fornita con caratteri non validi o se l'attore non \[EGrave] presente all'interno del dataset, True altrimenti.*)
+
+
+(* ::Section:: *)
+(*Implementazione*)
+
+
 BeginPackage["CheckForm`"]
 
 InputCorrection::usage = "InputCorrection[string] ToDo!!!!!!!!!!";

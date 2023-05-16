@@ -1,6 +1,17 @@
 (* ::Package:: *)
 
-loadData::usage = "Function that retrieves the dataset and generates the relative graph. ";
+(* ::Section:: *)
+(*Frontend*)
+
+
+(* ::Text:: *)
+(*Pacchetto dedicato alla costruzione del men\[UGrave] utilizzabile nel notebook, con annessa implementazione delle funzionalit\[AGrave] dei bottoni. *)
+
+
+(* ::Section:: *)
+(*Implementazione*)
+
+
 showFrontend::usage = "Function used to show frontend of the project";
 
 
