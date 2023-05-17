@@ -51,7 +51,9 @@
 
 BeginPackage["ItalianActorPreprocessing`"]
 
-GetDataset::usage = "";
+GetDataset::usage = "GetDataset[] ritorna un dataset di attori e film con lingua originale in italiano; 
+	ogni entry del dataset \[EGrave] costituita dalla coppia attore-film, gli identificativi dell'attore e del 
+	film, l'anno di produzione del film, il titolo del film e la lingua in cui \[EGrave] stato prodotto.";
 
 Begin["`Private`"]
 
@@ -81,7 +83,7 @@ GetDataset[] :=
         joinDataset = joinDataset[All, KeyMap[Replace["original_title"
              -> "OriginalTitle"]]];
         (* Filtro del dataset sui film con lingua originale in italiano *)
-        italianFilms = joinDataset[Select[#OriginalLanguage == "it"&]
+        joinDataset[Select[#OriginalLanguage == "it"&]
             ]
     ]
 

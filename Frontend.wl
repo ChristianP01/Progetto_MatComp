@@ -12,7 +12,8 @@
 (*Implementazione*)
 
 
-showFrontend::usage = "Function used to show frontend of the project";
+showFrontend::usage = "showFrontend[] ritorna una struttura grafica utilizzata per interagire con il 
+	programma.";
 
 
 italianFilms = GetDataset[];
@@ -48,32 +49,27 @@ showFrontend[] :=
 	   },
 	   
 	   {
-	   (*Bottone che calcola la distanza tra due attori forniti in input*)
+	   (* Bottone che calcola la distanza tra due attori forniti in input *)
 	     Button[Style["Calcola", Medium], (
-	     inputActor1 = InputCorrection[inputActor1]; (*Correzione nomi attori*)
+	     inputActor1 = InputCorrection[inputActor1]; (* Correzione nomi attori *)
 	     inputActor2 = InputCorrection[inputActor2];
 	     cfOutput = CheckForm[gr, inputActor1, inputActor2];
 		 If[StringQ[cfOutput], 
 	        (CreateDialog[{TextCell[cfOutput], DefaultButton[]}, WindowSize -> {labelX, labelY}]), 
-	        (*Print[CalcShortestPath[gr, inputActor1, inputActor2]];*)
 	        sp = CalcShortestPath[gr, inputActor1, inputActor2];
-	        (*Print[displaySolution[sp]];*)
 
             
-            (* Close the previous output window, if present *)
+            (* Chiude la finestra di output precedente, se presente *)
             NotebookClose[outputWindow];
 
-            (* Create a new dialog box and print the LayeredGraph *)
-            outputWindow=CreateDocument[{Dynamic[displaySolution[sp]], Print["Distance between actors is ", Length[sp[["entityPath"]]]-1]}, WindowSize->{owX,owY}] 
+            (* Crea una nuova box di dialogo e stampa il grafo *)
+            outputWindow = CreateDocument[{Dynamic[displaySolution[sp]], Print["Distance between actors is ", 
+                Length[sp[["entityPath"]]]-1]}, WindowSize->{owX,owY}] 
 	         
-	        (*mostra il grafico in una nuova finestra
-	        CreateDocument[Dynamic[displaySoution[sp]], WindowSize -> {500, 500}]*)
-	        (*mostra il grafico in una cella*)
-	        (*AttachCell[EvaluationCell[],Panel[Grid[{{Row[{"La distanza \[EGrave] ", Length[sp[["entityPath"]]]-1}]},{displaySolution[sp]}}]]];*)
 	     ]), ImageSize -> {buttonX, buttonY}],
 	     
 	     Button[Style["Reset", Medium], (
-	       (* Resetto i valori eventualmente contenuti all'interno dei tre box di cfOutput. *)
+	       (* Resetto i valori eventualmente contenuti all'interno dei tre box di cfOutput *)
 	       inputActor1 = inputActor2 = Null;
 	       answer = Null;
 	       seed = Null;
@@ -82,17 +78,19 @@ showFrontend[] :=
 	     Button[Style["Indovina", Medium],(
 	       Which[
 	       
-	          (* Controllo che l'utente abbia inserito un valore. *)
+	          (* Controllo che l'utente abbia inserito un valore *)
 	          Not[NumberQ[answer]],
-	           (CreateDialog[{TextCell["\[CapitalEGrave] necessario inserire un numero per provare ad indovinare."], DefaultButton[]}, WindowSize -> {labelX, labelY}];),
+	           (CreateDialog[{TextCell["\[CapitalEGrave] necessario inserire un numero per provare ad indovinare."], 
+	               DefaultButton[]}, WindowSize -> {labelX, labelY}];),
 	       
 	         (* Controllo che l'utente non abbia inserito valori < -1 *)
 	         answer < -1,
-	           (CreateDialog[{TextCell["Non \[EGrave] possibile inserire valori negativi, eccezion fatta per -1."], DefaultButton[]}, WindowSize -> {labelX, labelY}];), 
+	           (CreateDialog[{TextCell["Non \[EGrave] possibile inserire valori negativi, eccezion fatta per -1."], 
+	               DefaultButton[]}, WindowSize -> {labelX, labelY}];), 
 
-	         (* Campo default, in caso l'input sia corretto. *)
+	         (* Campo default, in caso l'input sia corretto *)
 	         True, (
-	           inputActor1 = InputCorrection[inputActor1]; (*Correzione nomi attori*)
+	           inputActor1 = InputCorrection[inputActor1]; (* Correzione nomi attori *)
 	           inputActor2 = InputCorrection[inputActor2];
 	           cfOutput = CheckForm[gr, inputActor1, inputActor2];
 		       If[StringQ[cfOutput], 
@@ -100,8 +98,10 @@ showFrontend[] :=
 	              sp = CalcShortestPath[gr, inputActor1, inputActor2];
 	           ];
 	           If[answer == Length[sp[["entityPath"]]]-1,
-	            (CreateDialog[{TextCell["Complimenti, hai indovinato!"], DefaultButton[]}, WindowSize -> {labelX, labelY}];),
-	            (CreateDialog[{TextCell["Peccato, risposta errata!"], DefaultButton[]}, WindowSize -> {labelX, labelY}];)
+	                (CreateDialog[{TextCell["Complimenti, hai indovinato!"], DefaultButton[]}, 
+	                    WindowSize -> {labelX, labelY}];),
+	                (CreateDialog[{TextCell["Peccato, risposta errata!"], DefaultButton[]}, 
+	                    WindowSize -> {labelX, labelY}];)
 	          ]
 	         )
 	       ]; 
@@ -111,7 +111,8 @@ showFrontend[] :=
          Button[Style["Casuale", Medium], (
              Which[
              Not[NumberQ[seed]],
-                 (CreateDialog[{TextCell["\[CapitalEGrave] necessario inserire un seed per generare risultati casuali."], DefaultButton[]}, WindowSize -> {labelX, labelY}];),
+                 (CreateDialog[{TextCell["\[CapitalEGrave] necessario inserire un seed per generare risultati casuali."], 
+                     DefaultButton[]}, WindowSize -> {labelX, labelY}];),
              True,
                  (re = RandomExtract[gr, seed]; inputActor1 = re[[1]]; inputActor2 = re[[2]];)
              ]
