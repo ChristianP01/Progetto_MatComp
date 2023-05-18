@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     17614,        432]
-NotebookOptionsPosition[     15097,        378]
-NotebookOutlinePosition[     15534,        395]
-CellTagsIndexPosition[     15491,        392]
+NotebookDataLength[     18894,        454]
+NotebookOptionsPosition[     16375,        400]
+NotebookOutlinePosition[     16812,        417]
+CellTagsIndexPosition[     16769,        414]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -111,9 +111,19 @@ Cell["Calcola", "Subsection",
   3.893236739737768*^9}},ExpressionUUID->"2c477141-b0c1-4f62-90ab-\
 f8180c593ee7"],
 
-Cell["blabla", "Text",
- CellChangeTimes->{{3.893236742875012*^9, 
-  3.893236756850257*^9}},ExpressionUUID->"ca9f17e1-f89d-454d-b7e0-\
+Cell["\<\
+Se presenti due attori nelle celle di input, calcola in una nuova finestra \
+(chiudendo la precedente, se presente) la distanza tra di essi, stampando \
+inoltre il grafico che mostra il loro collegamento. Si occupa inoltre di \
+correggere eventuali errori nell\[CloseCurlyQuote]input per riportarli alla \
+forma \[OpenCurlyDoubleQuote]Nome Cognome\[CloseCurlyDoubleQuote], nel caso \
+in cui fossero inseriti spazi superflui o maiuscole e minuscole in posizioni \
+errate. \[CapitalEGrave] inoltre segnalato un errore nel caso in cui gli \
+attori scritti in input non fossero presenti nel dataset.\
+\>", "Text",
+ CellChangeTimes->{{3.893236742875012*^9, 3.893236756850257*^9}, {
+  3.893389461694746*^9, 3.8933896801191053`*^9}, {3.893389723076981*^9, 
+  3.893389736497149*^9}},ExpressionUUID->"ca9f17e1-f89d-454d-b7e0-\
 ffa3c7c7d3a6"]
 }, Open  ]],
 
@@ -124,9 +134,11 @@ Cell["Reset", "Subsection",
   3.893236765283536*^9}},ExpressionUUID->"662e80ad-7090-4b9a-b3e9-\
 f63b77a8d5b6"],
 
-Cell["blabla", "Text",
+Cell["Cancella tutte le celle di input.", "Text",
  CellChangeTimes->{{3.893236774489708*^9, 3.893236787864653*^9}, 
-   3.893236870174326*^9},ExpressionUUID->"3c95bbb4-2d59-42d8-8980-\
+   3.893236870174326*^9, {3.8933896853328238`*^9, 3.893389692073442*^9}, {
+   3.8933897494193573`*^9, 
+   3.893389752894779*^9}},ExpressionUUID->"3c95bbb4-2d59-42d8-8980-\
 2ac842429277"]
 }, Open  ]],
 
@@ -137,9 +149,16 @@ Cell["Indovina", "Subsection",
   3.8932368819778223`*^9}},ExpressionUUID->"d7be7479-0b0f-4832-b24b-\
 375187218438"],
 
-Cell["blabla", "Text",
- CellChangeTimes->{{3.893236937723926*^9, 
-  3.8932369385535173`*^9}},ExpressionUUID->"9e7a8cb4-4d1d-488e-bd65-\
+Cell["\<\
+Se presenti un numero nella cella di input e i due attori, segnala all\
+\[CloseCurlyQuote]utente se ha indovinato la distanza tra di essi. (Nel caso \
+in cui l\[CloseCurlyQuote]utente pensi che non \[EGrave] presente un \
+collegamento tra essi pu\[OGrave] scrivere -1, ma non altri numeri negativi).\
+\
+\>", "Text",
+ CellChangeTimes->{{3.893236937723926*^9, 3.8932369385535173`*^9}, {
+  3.8933897546782293`*^9, 
+  3.893389848496717*^9}},ExpressionUUID->"9e7a8cb4-4d1d-488e-bd65-\
 8f29c5e63f2e"]
 }, Open  ]],
 
@@ -150,10 +169,13 @@ Cell["Casuale", "Subsection",
   3.893236951686653*^9}},ExpressionUUID->"9d2d0105-cfb9-4fce-9a9f-\
 503a6a1b12f7"],
 
-Cell["blabla", "Text",
+Cell["\<\
+Se presente un seed, estrae in base a esso due attori dal dataset e li \
+inserisce nelle celle di input del primo e del secondo attore.\
+\>", "Text",
  CellChangeTimes->{{3.8932369580647907`*^9, 3.893236959013611*^9}, {
-  3.893237323638069*^9, 
-  3.893237348052678*^9}},ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-\
+  3.893237323638069*^9, 3.893237348052678*^9}, {3.893389856294259*^9, 
+  3.893389895030031*^9}},ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-\
 a45d9897f190"]
 }, Open  ]]
 }, Open  ]],
@@ -222,18 +244,15 @@ Cell[BoxData[
  CellChangeTimes->{{3.8931491502053003`*^9, 3.8931491514582*^9}, {
   3.893237451451663*^9, 3.893237466519153*^9}, {3.893351199848407*^9, 
   3.893351203394071*^9}},
- CellLabel->"In[8]:=",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
+ CellLabel->"In[19]:=",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`inputActor1$$ = 
-  "David Hemmings", $CellContext`inputActor2$$ = 
-  "Victor Buono", $CellContext`answer$$ = -1, $CellContext`seed$$ = 
+  "Roberto Benigni", $CellContext`inputActor2$$ = 
+  "Roberto Benigni", $CellContext`answer$$ = 0, $CellContext`seed$$ = 
   433, $CellContext`cfOutput$$ = True, $CellContext`sp$$ = <|
-  "entityPath" -> {
-    "David Hemmings", "Dario Argento", "Alida Valli", "Burt Lancaster", 
-     "Terence Hill", "Victor Buono"}, 
-   "groupsPath" -> {{"Profondo Rosso"}, {"Suspiria"}, {"Novecento"}, {
-     "Il gattopardo"}, {"La collina degli stivali"}}|>, $CellContext`re$$ = {
+  "entityPath" -> {"Roberto Benigni"}, 
+   "groupsPath" -> {}|>, $CellContext`re$$ = {
   "David Hemmings", "Victor Buono"}}, 
   PanelBox[
    TagBox[GridBox[{
@@ -300,8 +319,10 @@ $CellContext`outputWindow = CreateDocument[{
               "\[CapitalEGrave] necessario inserire un numero per provare ad \
 indovinare."], 
               DefaultButton[]}, 
-             WindowSize -> {$CellContext`labelX, $CellContext`labelY}]; 
-           Null, $CellContext`answer$$ < -1, CreateDialog[{
+             WindowSize -> {$CellContext`labelX, $CellContext`labelY}]; Null, 
+           
+           And[$CellContext`answer$$ < 0, $CellContext`answer$$ != -1], 
+           CreateDialog[{
               TextCell[
               "Non \[EGrave] possibile inserire valori negativi, eccezion \
 fatta per -1."], 
@@ -370,8 +391,9 @@ $CellContext`seed$$]; $CellContext`inputActor1$$ =
    3.893221594407728*^9, 3.893221755057733*^9, {3.893221813271448*^9, 
    3.893221842922428*^9}, 3.893240715409546*^9, 3.893240852577015*^9, 
    3.8933511934514604`*^9, 3.893351975954342*^9, {3.893387198852242*^9, 
-   3.893387202204105*^9}, 3.893387460837192*^9, 3.8933875855616426`*^9},
- CellLabel->"Out[8]=",ExpressionUUID->"ce1bdfd6-46d4-4cc0-94dd-7a9891ebda3f"]
+   3.893387202204105*^9}, 3.893387460837192*^9, 3.8933875855616426`*^9, 
+   3.893388877818713*^9, 3.893389326883965*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"21e68823-c706-40a5-969a-a3e755bbc4b4"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -409,28 +431,28 @@ Cell[CellGroupData[{
 Cell[3927, 101, 167, 3, 67, "Section",ExpressionUUID->"0ace0b0a-644a-4228-b477-4e836d644b4f"],
 Cell[CellGroupData[{
 Cell[4119, 108, 155, 3, 54, "Subsection",ExpressionUUID->"2c477141-b0c1-4f62-90ab-f8180c593ee7"],
-Cell[4277, 113, 148, 3, 35, "Text",ExpressionUUID->"ca9f17e1-f89d-454d-b7e0-ffa3c7c7d3a6"]
+Cell[4277, 113, 842, 13, 81, "Text",ExpressionUUID->"ca9f17e1-f89d-454d-b7e0-ffa3c7c7d3a6"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4462, 121, 153, 3, 54, "Subsection",ExpressionUUID->"662e80ad-7090-4b9a-b3e9-f63b77a8d5b6"],
-Cell[4618, 126, 171, 3, 35, "Text",ExpressionUUID->"3c95bbb4-2d59-42d8-8980-2ac842429277"]
+Cell[5156, 131, 153, 3, 54, "Subsection",ExpressionUUID->"662e80ad-7090-4b9a-b3e9-f63b77a8d5b6"],
+Cell[5312, 136, 302, 5, 35, "Text",ExpressionUUID->"3c95bbb4-2d59-42d8-8980-2ac842429277"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4826, 134, 158, 3, 54, "Subsection",ExpressionUUID->"d7be7479-0b0f-4832-b24b-375187218438"],
-Cell[4987, 139, 150, 3, 35, "Text",ExpressionUUID->"9e7a8cb4-4d1d-488e-bd65-8f29c5e63f2e"]
+Cell[5651, 146, 158, 3, 54, "Subsection",ExpressionUUID->"d7be7479-0b0f-4832-b24b-375187218438"],
+Cell[5812, 151, 504, 10, 58, "Text",ExpressionUUID->"9e7a8cb4-4d1d-488e-bd65-8f29c5e63f2e"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5174, 147, 155, 3, 54, "Subsection",ExpressionUUID->"9d2d0105-cfb9-4fce-9a9f-503a6a1b12f7"],
-Cell[5332, 152, 199, 4, 35, "Text",ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-a45d9897f190"]
+Cell[6353, 166, 155, 3, 54, "Subsection",ExpressionUUID->"9d2d0105-cfb9-4fce-9a9f-503a6a1b12f7"],
+Cell[6511, 171, 382, 7, 35, "Text",ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-a45d9897f190"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5580, 162, 215, 4, 67, "Section",ExpressionUUID->"7f347ff3-cdf0-46be-9dc7-3b90649750f9"],
-Cell[5798, 168, 638, 12, 52, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
-Cell[6439, 182, 1469, 28, 129, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67"],
+Cell[6942, 184, 215, 4, 67, "Section",ExpressionUUID->"7f347ff3-cdf0-46be-9dc7-3b90649750f9"],
+Cell[7160, 190, 638, 12, 52, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
+Cell[7801, 204, 1469, 28, 129, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67"],
 Cell[CellGroupData[{
-Cell[7933, 214, 474, 10, 52, "Code",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
-Cell[8410, 226, 6647, 147, 219, "Output",ExpressionUUID->"ce1bdfd6-46d4-4cc0-94dd-7a9891ebda3f"]
+Cell[9295, 236, 475, 10, 52, "Code",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
+Cell[9773, 248, 6562, 147, 219, "Output",ExpressionUUID->"21e68823-c706-40a5-969a-a3e755bbc4b4"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
