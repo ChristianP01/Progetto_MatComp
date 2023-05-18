@@ -65,7 +65,7 @@ showFrontend[] :=
             (* Crea una nuova box di dialogo e stampa distanza e grafo *)
 	        outputWindow = CreateDocument[
             {
-                TextCell["Distance between actors is " <> ToString[Length[sp[["entityPath"]]] - 1], Magnification->2],
+                TextCell["Il grado di separazione tra gli attori \[EGrave] " <> ToString[Length[sp[["entityPath"]]] - 1], Magnification->2],
                 displaySolution[sp]
             },
             WindowSize -> {owX, owY}
