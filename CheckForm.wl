@@ -70,6 +70,3 @@ CheckForm[graph_, entity1_, entity2_] :=
 End[]
 
 EndPackage[]
-
-
-

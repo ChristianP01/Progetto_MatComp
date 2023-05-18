@@ -65,7 +65,7 @@ showFrontend[] :=
             (* Crea una nuova box di dialogo e stampa distanza e grafo *)
 	        outputWindow = CreateDocument[
             {
-                TextCell["Distance between actors is " <> ToString[Length[sp[["entityPath"]]] - 1]],
+                TextCell["Distance between actors is " <> ToString[Length[sp[["entityPath"]]] - 1], Magnification->2],
                 displaySolution[sp]
             },
             WindowSize -> {owX, owY}
@@ -87,8 +87,8 @@ showFrontend[] :=
 	           (CreateDialog[{TextCell["\[CapitalEGrave] necessario inserire un numero per provare ad indovinare."], 
 	               DefaultButton[]}, WindowSize -> {labelX, labelY}];),
 	       
-	         (* Controllo che l'utente non abbia inserito valori < -1 *)
-	         answer < -1,
+	         (* Controllo che l'utente non abbia inserito valori < 0, eccetto -1 *)
+	         answer < 0 && answer != -1,
 	           (CreateDialog[{TextCell["Non \[EGrave] possibile inserire valori negativi, eccezion fatta per -1."], 
 	               DefaultButton[]}, WindowSize -> {labelX, labelY}];), 
 
