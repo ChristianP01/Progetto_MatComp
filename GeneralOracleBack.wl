@@ -134,7 +134,7 @@ Module[
 	(* Costruisco una lista contenente le regole degli archi per il grafo che andr\[OGrave] a generare *)
 	For[i = 1, i < Length[list], i++, {
 		(* OddQ ritorna true se i \[EGrave] dispari, false se \[EGrave] pari *)
-		If[OddQ[i],label = "Was in", label = "With"];
+		If[OddQ[i],label = "Ha recitato in", label = "Con"];
    	 graphPlot = Append[graphPlot, {list[[i]]-> list[[i+1]], Style[label, Black]}];
     }];
 	(* LayeredGraphPlot utilizza le regole definite in graphPlot per generare graficamente il grafo relativo.

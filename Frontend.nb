@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     20576,        496]
-NotebookOptionsPosition[     17779,        435]
-NotebookOutlinePosition[     18217,        452]
-CellTagsIndexPosition[     18174,        449]
+NotebookDataLength[     20660,        497]
+NotebookOptionsPosition[     17863,        436]
+NotebookOutlinePosition[     18301,        453]
+CellTagsIndexPosition[     18258,        450]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -250,7 +250,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.8931491502053003`*^9, 3.8931491514582*^9}, {
   3.893237451451663*^9, 3.893237466519153*^9}, {3.893351199848407*^9, 
   3.893351203394071*^9}},
- CellLabel->"In[37]:=",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
+ CellLabel->"In[41]:=",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`inputActor1$$ = 
@@ -297,7 +297,9 @@ $CellContext`sp$$ =
 $CellContext`inputActor1$$, $CellContext`inputActor2$$]; 
            NotebookClose[$CellContext`outputWindow]; \
 $CellContext`outputWindow = CreateDocument[{
-               TextCell["Distance between actors is " <> ToString[Length[
+               TextCell[
+               "Il grado di separazione tra gli attori \[EGrave] " <> 
+                ToString[Length[
                     Part[$CellContext`sp$$, "entityPath"]] - 1], 
                 Magnification -> 2], 
                GeneralOracleBack`displaySolution[$CellContext`sp$$]}, 
@@ -348,7 +350,6 @@ $CellContext`inputActor2$$]; If[
              CreateDialog[{
                TextCell[$CellContext`cfOutput$$], 
                DefaultButton[]}, 
-              
               WindowSize -> {$CellContext`labelX, $CellContext`labelY}], \
 $CellContext`sp$$ = 
               GeneralOracleBack`CalcShortestPath[$CellContext`gr, \
@@ -403,8 +404,8 @@ $CellContext`seed$$]; $CellContext`inputActor1$$ =
    3.8933511934514604`*^9, 3.893351975954342*^9, {3.893387198852242*^9, 
    3.893387202204105*^9}, 3.893387460837192*^9, 3.8933875855616426`*^9, 
    3.893388877818713*^9, 3.893389326883965*^9, 3.893406066915249*^9, 
-   3.893410827464025*^9},
- CellLabel->"Out[37]=",ExpressionUUID->"460290a8-ba35-476b-83f9-47e8291071db"]
+   3.893410827464025*^9, 3.893411268618601*^9, 3.893411388928452*^9},
+ CellLabel->"Out[41]=",ExpressionUUID->"2b8c8f23-8708-4c95-af19-3e617fd78948"]
 }, Open  ]]
 }, Open  ]],
 
@@ -490,12 +491,12 @@ Cell[7837, 206, 1505, 30, 22, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd
 Cell[CellGroupData[{
 Cell[9367, 240, 511, 12, 22, "Code",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112",
  CellOpen->False],
-Cell[9881, 254, 6797, 152, 219, "Output",ExpressionUUID->"460290a8-ba35-476b-83f9-47e8291071db"]
+Cell[9881, 254, 6881, 153, 219, "Output",ExpressionUUID->"2b8c8f23-8708-4c95-af19-3e617fd78948"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16727, 412, 175, 3, 67, "Section",ExpressionUUID->"725f0582-cf25-4cea-b165-fcaec11e88fd"],
-Cell[16905, 417, 846, 14, 104, "Text",ExpressionUUID->"ee2d3366-f2c9-496c-b691-bf2eccaa34bc"]
+Cell[16811, 413, 175, 3, 67, "Section",ExpressionUUID->"725f0582-cf25-4cea-b165-fcaec11e88fd"],
+Cell[16989, 418, 846, 14, 104, "Text",ExpressionUUID->"ee2d3366-f2c9-496c-b691-bf2eccaa34bc"]
 }, Open  ]]
 }, Open  ]]
 }
