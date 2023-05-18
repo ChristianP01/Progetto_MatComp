@@ -62,10 +62,14 @@ showFrontend[] :=
             (* Chiude la finestra di output precedente, se presente *)
             NotebookClose[outputWindow];
 
-            (* Crea una nuova box di dialogo e stampa il grafo *)
-            outputWindow = CreateDocument[{Dynamic[displaySolution[sp]], Print["Distance between actors is ", 
-                Length[sp[["entityPath"]]]-1]}, WindowSize->{owX,owY}] 
-	         
+            (* Crea una nuova box di dialogo e stampa distanza e grafo *)
+	        outputWindow = CreateDocument[
+            {
+                TextCell["Distance between actors is " <> ToString[Length[sp[["entityPath"]]] - 1]],
+                displaySolution[sp]
+            },
+            WindowSize -> {owX, owY}
+                ]
 	     ]), ImageSize -> {buttonX, buttonY}],
 	     
 	     Button[Style["Reset", Medium], (

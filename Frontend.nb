@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     16501,        412]
-NotebookOptionsPosition[     13981,        358]
-NotebookOutlinePosition[     14427,        375]
-CellTagsIndexPosition[     14384,        372]
+NotebookDataLength[     16723,        416]
+NotebookOptionsPosition[     14212,        362]
+NotebookOutlinePosition[     14649,        379]
+CellTagsIndexPosition[     14606,        376]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -161,7 +161,7 @@ Cell[BoxData[
    3.8926287780286427`*^9}, {3.893237357034738*^9, 3.8932374045186*^9}, 
    3.893237472468752*^9, {3.8933511867577033`*^9, 3.8933511903222895`*^9}, 
    3.893351227659944*^9},
- CellLabel->"In[7]:=",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
+ CellLabel->"In[14]:=",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
 
 Cell[BoxData[{
  RowBox[{
@@ -172,7 +172,8 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"Import", " ", "dei", " ", 
      RowBox[{"file", " ", ".", "wl"}]}], ",", " ", 
-    RowBox[{"contenenti", " ", "le", " ", "funzioni", " ", "necessarie", " ", 
+    RowBox[{
+    "contenenti", " ", "le", " ", "funzioni", " ", "necessarie", " ", 
      RowBox[{"all", "'"}], "esecuzione", " ", "del", " ", "programma"}]}], 
    " ", "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
@@ -204,18 +205,20 @@ Cell[BoxData[
  CellChangeTimes->{{3.8931491502053003`*^9, 3.8931491514582*^9}, {
   3.893237451451663*^9, 3.893237466519153*^9}, {3.893351199848407*^9, 
   3.893351203394071*^9}},
- CellLabel->"In[6]:=",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
+ CellLabel->"In[8]:=",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`inputActor1$$ = 
-  Null, $CellContext`inputActor2$$ = Null, $CellContext`answer$$ = 
-  Null, $CellContext`seed$$ = Null, $CellContext`cfOutput$$ = 
-  True, $CellContext`sp$$ = <|
+  "Arlene Golonka", $CellContext`inputActor2$$ = 
+  "Gena Rowlands", $CellContext`answer$$, $CellContext`seed$$ = 
+  122, $CellContext`cfOutput$$ = True, $CellContext`sp$$ = <|
   "entityPath" -> {
-    "Roberto Benigni", "Alida Valli", "Silvana Mangano", "Dirk Bogarde", 
-     "Charlotte Rampling", "Pierfrancesco Favino"}, 
-   "groupsPath" -> {{"La Luna"}, {"Edipo re"}, {"Morte a Venezia"}, {
-     "La caduta degli dei"}, {"Le chiavi di casa"}}|>, $CellContext`re$$}, 
+    "Arlene Golonka", "Henry Fonda", "Claudia Cardinale", 
+     "Giancarlo Giannini", "Peter Falk", "Gena Rowlands"}, 
+   "groupsPath" -> {{"Welcome to Hard Times"}, {"C'era una volta il West"}, {
+     "A mezzanotte va la ronda del piacere"}, {"Lo sbarco di Anzio"}, {
+     "Gli intoccabili"}}|>, $CellContext`re$$ = {
+  "Arlene Golonka", "Gena Rowlands"}}, 
   PanelBox[
    TagBox[GridBox[{
       {
@@ -250,10 +253,10 @@ $CellContext`sp$$ =
 $CellContext`inputActor1$$, $CellContext`inputActor2$$]; 
            NotebookClose[$CellContext`outputWindow]; \
 $CellContext`outputWindow = CreateDocument[{
-               Dynamic[
-                GeneralOracleBack`displaySolution[$CellContext`sp$$]], 
-               Print["Distance between actors is ", Length[
-                  Part[$CellContext`sp$$, "entityPath"]] - 1]}, 
+               TextCell["Distance between actors is " <> ToString[Length[
+                    Part[$CellContext`sp$$, "entityPath"]] - 1], 
+                Magnification -> 2], 
+               GeneralOracleBack`displaySolution[$CellContext`sp$$]}, 
               WindowSize -> {$CellContext`owX, $CellContext`owY}]]),
         Evaluator->Automatic,
         ImageSize->{100, 50},
@@ -350,16 +353,17 @@ $CellContext`seed$$]; $CellContext`inputActor1$$ =
    3.8932212921084538`*^9, 3.8932213434045353`*^9, 3.893221448814789*^9, 
    3.893221594407728*^9, 3.893221755057733*^9, {3.893221813271448*^9, 
    3.893221842922428*^9}, 3.893240715409546*^9, 3.893240852577015*^9, 
-   3.8933511934514604`*^9, 3.893351975954342*^9},
- CellLabel->"Out[6]=",ExpressionUUID->"6970a181-ef84-4d34-bd56-39b3633cdeb0"]
+   3.8933511934514604`*^9, 3.893351975954342*^9, {3.893387198852242*^9, 
+   3.893387202204105*^9}, 3.893387460837192*^9, 3.8933875855616426`*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"ce1bdfd6-46d4-4cc0-94dd-7a9891ebda3f"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1141.2, 568.8},
+WindowSize->{1142, 569},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 TaggingRules-><|"TryRealOnly" -> False|>,
-FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+FrontEndVersion->"13.2 for Mac OS X x86 (64-bit) (January 30, 2023)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"f0a40eb4-f91c-4156-819c-a22d067d8762"
 ]
@@ -406,11 +410,11 @@ Cell[4392, 135, 199, 4, 35, "Text",ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-a45d
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[4640, 145, 215, 4, 67, "Section",ExpressionUUID->"7f347ff3-cdf0-46be-9dc7-3b90649750f9"],
-Cell[4858, 151, 637, 12, 50, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
-Cell[5498, 165, 1464, 27, 121, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67"],
+Cell[4858, 151, 638, 12, 52, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
+Cell[5499, 165, 1469, 28, 129, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67"],
 Cell[CellGroupData[{
-Cell[6987, 196, 474, 10, 50, "Code",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
-Cell[7464, 208, 6477, 145, 219, "Output",ExpressionUUID->"6970a181-ef84-4d34-bd56-39b3633cdeb0"]
+Cell[6993, 197, 474, 10, 52, "Code",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
+Cell[7470, 209, 6702, 148, 219, "Output",ExpressionUUID->"ce1bdfd6-46d4-4cc0-94dd-7a9891ebda3f"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
