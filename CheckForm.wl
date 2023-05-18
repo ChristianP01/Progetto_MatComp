@@ -38,6 +38,13 @@ CheckForm::usage = "CheckForm[graph, entity1, entity2] ritorna una stringa di er
 
 Begin["`Private`"]
 
+(*La seguente funzione prende in input una stringa e: 
+Converte tutta la stringa in minuscolo (ToLowerCase)
+Converte la prima lettera di ogni parola in maiuscolo (StringReplace[eccetera])
+Rimuove gli spazi iniziali e finali (StringTrim)
+Divide la stringa in una lista di parole (StringSplit)
+Infine le ricombina rimuovendo spazi iniziali e finali, inserendo uno spazio tra ogni parola (StringRiffle[eccetera])
+*)
 InputCorrection[string_]:=
 	StringRiffle[#, {"", " ", ""}]& @ StringSplit @ StringTrim @ StringReplace[
 		#, WordBoundary ~~ x_ :> ToUpperCase[x]]& @ ToLowerCase @ string
