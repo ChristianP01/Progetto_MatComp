@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     18894,        454]
-NotebookOptionsPosition[     16375,        400]
-NotebookOutlinePosition[     16812,        417]
-CellTagsIndexPosition[     16769,        414]
+NotebookDataLength[     20190,        487]
+NotebookOptionsPosition[     17393,        426]
+NotebookOutlinePosition[     17831,        443]
+CellTagsIndexPosition[     17788,        440]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -195,12 +195,14 @@ Cell[BoxData[
    RowBox[{
    "Terminazione", " ", "di", " ", "una", " ", "sessione", " ", "di", " ", 
     "Wolfram", " ", "Language", " ", "kernel"}], " ", "*)"}]}]], "Code",
+ Editable->False,
+ CellOpen->False,
  CellChangeTimes->{{3.892621033638291*^9, 3.8926210449536467`*^9}, {
    3.8926286729392776`*^9, 3.892628673681201*^9}, {3.89262877358202*^9, 
    3.8926287780286427`*^9}, {3.893237357034738*^9, 3.8932374045186*^9}, 
    3.893237472468752*^9, {3.8933511867577033`*^9, 3.8933511903222895`*^9}, 
    3.893351227659944*^9},
- CellLabel->"In[14]:=",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
+ CellLabel->"In[20]:=",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
 
 Cell[BoxData[{
  RowBox[{
@@ -220,6 +222,8 @@ Cell[BoxData[{
  RowBox[{"<<", " ", "ItalianActorPreprocessing`"}], "\[IndentingNewLine]", 
  RowBox[{"<<", " ", "CheckForm`"}], "\n", 
  RowBox[{"<<", " ", "Frontend`"}]}], "Code",
+ Editable->False,
+ CellOpen->False,
  CellChangeTimes->{{3.892621078361706*^9, 3.892621095849674*^9}, {
    3.892622202260297*^9, 3.892622270345435*^9}, {3.892622325118268*^9, 
    3.892622328547227*^9}, {3.8926224106210203`*^9, 3.892622411115341*^9}, {
@@ -241,19 +245,17 @@ Cell[BoxData[
    RowBox[{
    "Funzione", " ", "che", " ", "stampa", " ", "a", " ", "schermo", " ", "il",
      " ", "men\[UGrave]"}], " ", "*)"}]}]], "Code",
+ Editable->False,
+ CellOpen->False,
  CellChangeTimes->{{3.8931491502053003`*^9, 3.8931491514582*^9}, {
   3.893237451451663*^9, 3.893237466519153*^9}, {3.893351199848407*^9, 
   3.893351203394071*^9}},
- CellLabel->"In[19]:=",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
+ CellLabel->"In[6]:=",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
 
 Cell[BoxData[
- DynamicModuleBox[{$CellContext`inputActor1$$ = 
-  "Roberto Benigni", $CellContext`inputActor2$$ = 
-  "Roberto Benigni", $CellContext`answer$$ = 0, $CellContext`seed$$ = 
-  433, $CellContext`cfOutput$$ = True, $CellContext`sp$$ = <|
-  "entityPath" -> {"Roberto Benigni"}, 
-   "groupsPath" -> {}|>, $CellContext`re$$ = {
-  "David Hemmings", "Victor Buono"}}, 
+ DynamicModuleBox[{$CellContext`inputActor1$$, $CellContext`inputActor2$$, \
+$CellContext`answer$$, $CellContext`seed$$, $CellContext`cfOutput$$, \
+$CellContext`sp$$, $CellContext`re$$}, 
   PanelBox[
    TagBox[GridBox[{
       {
@@ -392,14 +394,38 @@ $CellContext`seed$$]; $CellContext`inputActor1$$ =
    3.893221842922428*^9}, 3.893240715409546*^9, 3.893240852577015*^9, 
    3.8933511934514604`*^9, 3.893351975954342*^9, {3.893387198852242*^9, 
    3.893387202204105*^9}, 3.893387460837192*^9, 3.8933875855616426`*^9, 
-   3.893388877818713*^9, 3.893389326883965*^9},
- CellLabel->"Out[19]=",ExpressionUUID->"21e68823-c706-40a5-969a-a3e755bbc4b4"]
+   3.893388877818713*^9, 3.893389326883965*^9, 3.893406066915249*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"f92d0fdf-b221-4916-832a-383fff6416ae"]
 }, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Conclusioni e Sviluppi Futuri", "Section",
+ CellChangeTimes->{{3.89340619973487*^9, 
+  3.8934062188073378`*^9}},ExpressionUUID->"725f0582-cf25-4cea-b165-\
+fcaec11e88fd"],
+
+Cell["\<\
+Questo progetto implementa un oracolo di Bacon per attori presenti in film di \
+lingua originale italiana. Lo sviluppo di pacchetti generici per il \
+trattamento di dataset dove sono individuabili gradi di separazione \
+calcolabili consentono lo sviluppo di progetti che possono usare questo come \
+scheletro, ma con dataset differenti. 
+Se in futuro dovesse essere introdotto in letteratura un dataset pi\[UGrave] \
+completo di quello utilizzato dal gruppo, sarebbe inoltre possibile estendere \
+questo progetto con ulteriori film e attori, rendendolo pi\[UGrave] preciso \
+di quanto sia attualmente.\
+\>", "Text",
+ CellChangeTimes->{{3.8934062843053017`*^9, 3.89340628717426*^9}, {
+  3.893406319561523*^9, 3.893406358655113*^9}, {3.893406509506309*^9, 
+  3.89340670483911*^9}},ExpressionUUID->"ee2d3366-f2c9-496c-b691-\
+bf2eccaa34bc"]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1142, 569},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowSize->{1225, 788},
+WindowMargins->{{0, Automatic}, {Automatic, 25}},
 TaggingRules-><|"TryRealOnly" -> False|>,
 FrontEndVersion->"13.2 for Mac OS X x86 (64-bit) (January 30, 2023)",
 StyleDefinitions->"Default.nb",
@@ -448,12 +474,19 @@ Cell[6511, 171, 382, 7, 35, "Text",ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-a45d
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[6942, 184, 215, 4, 67, "Section",ExpressionUUID->"7f347ff3-cdf0-46be-9dc7-3b90649750f9"],
-Cell[7160, 190, 638, 12, 52, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
-Cell[7801, 204, 1469, 28, 129, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67"],
+Cell[7160, 190, 674, 14, 22, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256",
+ CellOpen->False],
+Cell[7837, 206, 1505, 30, 22, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67",
+ CellOpen->False],
 Cell[CellGroupData[{
-Cell[9295, 236, 475, 10, 52, "Code",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
-Cell[9773, 248, 6562, 147, 219, "Output",ExpressionUUID->"21e68823-c706-40a5-969a-a3e755bbc4b4"]
+Cell[9367, 240, 510, 12, 22, "Code",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112",
+ CellOpen->False],
+Cell[9880, 254, 6412, 143, 219, "Output",ExpressionUUID->"f92d0fdf-b221-4916-832a-383fff6416ae"]
 }, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16341, 403, 175, 3, 67, "Section",ExpressionUUID->"725f0582-cf25-4cea-b165-fcaec11e88fd"],
+Cell[16519, 408, 846, 14, 104, "Text",ExpressionUUID->"ee2d3366-f2c9-496c-b691-bf2eccaa34bc"]
 }, Open  ]]
 }, Open  ]]
 }
