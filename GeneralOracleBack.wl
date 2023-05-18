@@ -124,7 +124,7 @@ displaySolution[output_]:=
 Module[
 	{list, graphPlot, imageSizeX, imageSizeY}
 	,
-	(* Variabili predefinite che definiscono le dimensioni dei vari componenti di uscita, sono state trovate sperimentalmente con diversi tentativi di test*)
+	(* Variabili predefinite che definiscono le dimensioni dei vari componenti di uscita *)
 	imageSizeX = 550;
 	imageSizeY = 1100;
 	(* Unisce due liste intervallandone gli elementi 
@@ -140,12 +140,12 @@ Module[
 	(* LayeredGraphPlot utilizza le regole definite in graphPlot per generare graficamente il grafo relativo.
 		VertexShapeFunction, EdgeLabels, EdgeShapeFunction permettono di definire lo stile del grafo. *)
 	LayeredGraphPlot[graphPlot,
-         VertexShapeFunction -> ({If[MemberQ[output[["entityPath"]], #2], (*Con questa funzione ho colori diversi per attori e film*)
+         VertexShapeFunction -> ({If[MemberQ[output[["entityPath"]], #2], 
             Text[Framed[Style[#2, 8, Black], Background -> LightBlue], #1],
             Text[Framed[Style[#2, 8, Black], Background -> LightGreen], #1]
          ]} &),
          EdgeLabels -> ({If[#3 =!= None, {Line[#], Inset[#3, Mean[#1], Automatic, Automatic, #[[1]] - #[[2]], Background -> White]}, Line[#]]} &),
-         EdgeShapeFunction -> None, (* Rimuove le frecce degli archi, in quanto hanno causato problemi nella rappresentazione grafica *)
+         EdgeShapeFunction -> None, (* Rimuove le frecce degli archi *)
          ImageSize -> {imageSizeX, imageSizeY}] 
 
 ];
