@@ -129,7 +129,7 @@ Module[
 	imageSizeY = 1100;
 	(* Unisce due liste intervallandone gli elementi 
 		Riffle[{Subscript[e, 1],Subscript[e, 2],\[Ellipsis]},{Subscript[x, 1],Subscript[x, 2],\[Ellipsis]}] = {e1,x1,e2,x2,\[Ellipsis]} *)
-	list = Riffle[output[["entityPath"]], output[["groupsPath"]]] //Flatten;
+	list = Riffle[output[["entityPath"]], Map[First, output[["groupsPath"]]]] //Flatten; (*Utilizzo map di first per avere un solo film dall'elenco*)
 	graphPlot = {};
 	(* Costruisco una lista contenente le regole degli archi per il grafo che andr\[OGrave] a generare *)
 	For[i = 1, i < Length[list], i++, {

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     20190,        487]
-NotebookOptionsPosition[     17393,        426]
-NotebookOutlinePosition[     17831,        443]
-CellTagsIndexPosition[     17788,        440]
+NotebookDataLength[     20576,        496]
+NotebookOptionsPosition[     17779,        435]
+NotebookOutlinePosition[     18217,        452]
+CellTagsIndexPosition[     18174,        449]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -250,12 +250,19 @@ Cell[BoxData[
  CellChangeTimes->{{3.8931491502053003`*^9, 3.8931491514582*^9}, {
   3.893237451451663*^9, 3.893237466519153*^9}, {3.893351199848407*^9, 
   3.893351203394071*^9}},
- CellLabel->"In[6]:=",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
+ CellLabel->"In[37]:=",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
 
 Cell[BoxData[
- DynamicModuleBox[{$CellContext`inputActor1$$, $CellContext`inputActor2$$, \
-$CellContext`answer$$, $CellContext`seed$$, $CellContext`cfOutput$$, \
-$CellContext`sp$$, $CellContext`re$$}, 
+ DynamicModuleBox[{$CellContext`inputActor1$$ = 
+  Null, $CellContext`inputActor2$$ = Null, $CellContext`answer$$ = 
+  Null, $CellContext`seed$$ = Null, $CellContext`cfOutput$$ = 
+  True, $CellContext`sp$$ = <|
+  "entityPath" -> {
+    "David Hemmings", "Dario Argento", "Alida Valli", "Burt Lancaster", 
+     "Terence Hill", "Victor Buono"}, 
+   "groupsPath" -> {{"Profondo Rosso"}, {"Suspiria"}, {"Novecento"}, {
+     "Il gattopardo"}, {"La collina degli stivali"}}|>, $CellContext`re$$ = {
+  "David Hemmings", "Victor Buono"}}, 
   PanelBox[
    TagBox[GridBox[{
       {
@@ -341,6 +348,7 @@ $CellContext`inputActor2$$]; If[
              CreateDialog[{
                TextCell[$CellContext`cfOutput$$], 
                DefaultButton[]}, 
+              
               WindowSize -> {$CellContext`labelX, $CellContext`labelY}], \
 $CellContext`sp$$ = 
               GeneralOracleBack`CalcShortestPath[$CellContext`gr, \
@@ -394,8 +402,9 @@ $CellContext`seed$$]; $CellContext`inputActor1$$ =
    3.893221842922428*^9}, 3.893240715409546*^9, 3.893240852577015*^9, 
    3.8933511934514604`*^9, 3.893351975954342*^9, {3.893387198852242*^9, 
    3.893387202204105*^9}, 3.893387460837192*^9, 3.8933875855616426`*^9, 
-   3.893388877818713*^9, 3.893389326883965*^9, 3.893406066915249*^9},
- CellLabel->"Out[6]=",ExpressionUUID->"f92d0fdf-b221-4916-832a-383fff6416ae"]
+   3.893388877818713*^9, 3.893389326883965*^9, 3.893406066915249*^9, 
+   3.893410827464025*^9},
+ CellLabel->"Out[37]=",ExpressionUUID->"460290a8-ba35-476b-83f9-47e8291071db"]
 }, Open  ]]
 }, Open  ]],
 
@@ -425,7 +434,7 @@ bf2eccaa34bc"]
 }, Open  ]]
 },
 WindowSize->{1225, 788},
-WindowMargins->{{0, Automatic}, {Automatic, 25}},
+WindowMargins->{{0, Automatic}, {34, Automatic}},
 TaggingRules-><|"TryRealOnly" -> False|>,
 FrontEndVersion->"13.2 for Mac OS X x86 (64-bit) (January 30, 2023)",
 StyleDefinitions->"Default.nb",
@@ -479,14 +488,14 @@ Cell[7160, 190, 674, 14, 22, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3
 Cell[7837, 206, 1505, 30, 22, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67",
  CellOpen->False],
 Cell[CellGroupData[{
-Cell[9367, 240, 510, 12, 22, "Code",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112",
+Cell[9367, 240, 511, 12, 22, "Code",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112",
  CellOpen->False],
-Cell[9880, 254, 6412, 143, 219, "Output",ExpressionUUID->"f92d0fdf-b221-4916-832a-383fff6416ae"]
+Cell[9881, 254, 6797, 152, 219, "Output",ExpressionUUID->"460290a8-ba35-476b-83f9-47e8291071db"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16341, 403, 175, 3, 67, "Section",ExpressionUUID->"725f0582-cf25-4cea-b165-fcaec11e88fd"],
-Cell[16519, 408, 846, 14, 104, "Text",ExpressionUUID->"ee2d3366-f2c9-496c-b691-bf2eccaa34bc"]
+Cell[16727, 412, 175, 3, 67, "Section",ExpressionUUID->"725f0582-cf25-4cea-b165-fcaec11e88fd"],
+Cell[16905, 417, 846, 14, 104, "Text",ExpressionUUID->"ee2d3366-f2c9-496c-b691-bf2eccaa34bc"]
 }, Open  ]]
 }, Open  ]]
 }
