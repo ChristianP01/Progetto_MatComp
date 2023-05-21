@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     21436,        513]
-NotebookOptionsPosition[     18639,        452]
-NotebookOutlinePosition[     19075,        469]
-CellTagsIndexPosition[     19032,        466]
+NotebookDataLength[     21475,        514]
+NotebookOptionsPosition[     18677,        453]
+NotebookOutlinePosition[     19114,        470]
+CellTagsIndexPosition[     19071,        467]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -210,7 +210,7 @@ Cell[BoxData[
    3.8926287780286427`*^9}, {3.893237357034738*^9, 3.8932374045186*^9}, 
    3.893237472468752*^9, {3.8933511867577033`*^9, 3.8933511903222895`*^9}, 
    3.893351227659944*^9},
- CellLabel->"In[20]:=",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
+ CellLabel->"In[1]:=",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
 
 Cell[BoxData[{
  RowBox[{
@@ -258,7 +258,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.8931491502053003`*^9, 3.8931491514582*^9}, {
   3.893237451451663*^9, 3.893237466519153*^9}, {3.893351199848407*^9, 
   3.893351203394071*^9}},
- CellLabel->"In[41]:=",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
+ CellLabel->"In[6]:=",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112"],
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`inputActor1$$ = 
@@ -266,10 +266,10 @@ Cell[BoxData[
   Null, $CellContext`seed$$ = Null, $CellContext`cfOutput$$ = 
   True, $CellContext`sp$$ = <|
   "entityPath" -> {
-    "David Hemmings", "Dario Argento", "Alida Valli", "Burt Lancaster", 
-     "Terence Hill", "Victor Buono"}, 
-   "groupsPath" -> {{"Profondo Rosso"}, {"Suspiria"}, {"Novecento"}, {
-     "Il gattopardo"}, {"La collina degli stivali"}}|>, $CellContext`re$$ = {
+    "Roberto Benigni", "Alida Valli", "Silvana Mangano", "Dirk Bogarde", 
+     "Charlotte Rampling", "Pierfrancesco Favino"}, 
+   "groupsPath" -> {{"La Luna"}, {"Edipo re"}, {"Morte a Venezia"}, {
+     "La caduta degli dei"}, {"Le chiavi di casa"}}|>, $CellContext`re$$ = {
   "David Hemmings", "Victor Buono"}}, 
   PanelBox[
    TagBox[GridBox[{
@@ -412,8 +412,9 @@ $CellContext`seed$$]; $CellContext`inputActor1$$ =
    3.8933511934514604`*^9, 3.893351975954342*^9, {3.893387198852242*^9, 
    3.893387202204105*^9}, 3.893387460837192*^9, 3.8933875855616426`*^9, 
    3.893388877818713*^9, 3.893389326883965*^9, 3.893406066915249*^9, 
-   3.893410827464025*^9, 3.893411268618601*^9, 3.893411388928452*^9},
- CellLabel->"Out[41]=",ExpressionUUID->"2b8c8f23-8708-4c95-af19-3e617fd78948"]
+   3.893410827464025*^9, 3.893411268618601*^9, 3.893411388928452*^9, 
+   3.8936743993186293`*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"86f505d9-89fe-4459-9f92-d9ae86bc655c"]
 }, Open  ]]
 }, Open  ]],
 
@@ -451,9 +452,9 @@ bf2eccaa34bc"]
 }, Open  ]]
 },
 WindowSize->{1440, 747},
-WindowMargins->{{0, Automatic}, {Automatic, -24}},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 TaggingRules-><|"TryRealOnly" -> False|>,
-FrontEndVersion->"13.2 for Linux x86 (64-bit) (January 31, 2023)",
+FrontEndVersion->"13.2 for Mac OS X x86 (64-bit) (January 30, 2023)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"f0a40eb4-f91c-4156-819c-a22d067d8762"
 ]
@@ -472,15 +473,15 @@ Cell[CellGroupData[{
 Cell[580, 22, 334, 7, 160, "Title",ExpressionUUID->"3009b2f4-301e-4fba-a648-5c205258bf66"],
 Cell[917, 31, 239, 6, 53, "Subtitle",ExpressionUUID->"9a04fdf7-003b-4472-98a5-27c811e52c95"],
 Cell[CellGroupData[{
-Cell[1181, 41, 169, 3, 68, "Section",ExpressionUUID->"87b13a26-9a99-4cf4-9ee6-04659ff4ee8e"],
+Cell[1181, 41, 169, 3, 67, "Section",ExpressionUUID->"87b13a26-9a99-4cf4-9ee6-04659ff4ee8e"],
 Cell[1353, 46, 1291, 22, 104, "Text",ExpressionUUID->"f084fac3-fe91-47cd-ae2c-53792a18ac82"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2681, 73, 159, 3, 68, "Section",ExpressionUUID->"7e97bb09-1829-43ec-b7ca-666a6d97d2ea"],
+Cell[2681, 73, 159, 3, 67, "Section",ExpressionUUID->"7e97bb09-1829-43ec-b7ca-666a6d97d2ea"],
 Cell[2843, 78, 1345, 22, 173, "Text",ExpressionUUID->"3f4be705-ac79-44f3-85da-4cbf163d1876"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4225, 105, 167, 3, 68, "Section",ExpressionUUID->"0ace0b0a-644a-4228-b477-4e836d644b4f"],
+Cell[4225, 105, 167, 3, 67, "Section",ExpressionUUID->"0ace0b0a-644a-4228-b477-4e836d644b4f"],
 Cell[CellGroupData[{
 Cell[4417, 112, 155, 3, 54, "Subsection",ExpressionUUID->"2c477141-b0c1-4f62-90ab-f8180c593ee7"],
 Cell[4575, 117, 823, 14, 81, "Text",ExpressionUUID->"ca9f17e1-f89d-454d-b7e0-ffa3c7c7d3a6"]
@@ -499,20 +500,20 @@ Cell[6964, 178, 434, 8, 35, "Text",ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-a45d
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7447, 192, 215, 4, 68, "Section",ExpressionUUID->"7f347ff3-cdf0-46be-9dc7-3b90649750f9"],
-Cell[7665, 198, 674, 14, 22, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256",
+Cell[7447, 192, 215, 4, 67, "Section",ExpressionUUID->"7f347ff3-cdf0-46be-9dc7-3b90649750f9"],
+Cell[7665, 198, 673, 14, 22, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256",
  CellOpen->False],
-Cell[8342, 214, 1505, 30, 22, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67",
+Cell[8341, 214, 1505, 30, 22, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67",
  CellOpen->False],
 Cell[CellGroupData[{
-Cell[9872, 248, 511, 12, 22, "Code",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112",
+Cell[9871, 248, 510, 12, 22, "Code",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112",
  CellOpen->False],
-Cell[10386, 262, 6881, 153, 219, "Output",ExpressionUUID->"2b8c8f23-8708-4c95-af19-3e617fd78948"]
+Cell[10384, 262, 6921, 154, 219, "Output",ExpressionUUID->"86f505d9-89fe-4459-9f92-d9ae86bc655c"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[17316, 421, 175, 3, 68, "Section",ExpressionUUID->"725f0582-cf25-4cea-b165-fcaec11e88fd"],
-Cell[17494, 426, 1117, 22, 104, "Text",ExpressionUUID->"ee2d3366-f2c9-496c-b691-bf2eccaa34bc"]
+Cell[17354, 422, 175, 3, 67, "Section",ExpressionUUID->"725f0582-cf25-4cea-b165-fcaec11e88fd"],
+Cell[17532, 427, 1117, 22, 104, "Text",ExpressionUUID->"ee2d3366-f2c9-496c-b691-bf2eccaa34bc"]
 }, Open  ]]
 }, Open  ]]
 }
