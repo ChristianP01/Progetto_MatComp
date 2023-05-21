@@ -5,7 +5,7 @@
 
 
 (* ::Text:: *)
-(*Questo pacchetto contiene tutte le funzioni utili al controllo dell'input inserito da utente.*)
+(*Questo pacchetto contiene le funzioni utilizzate per il controllo degli input inseriti dall'utente nel men\[UGrave] frontend.*)
 
 
 (* ::Subsection:: *)
@@ -13,7 +13,8 @@
 
 
 (* ::Text:: *)
-(*A partire da una stringa di input, ne restituisce una di output nella forma "Nome Cognome", eliminando eventuali spazi di troppo e correggendo un uso errato di maiuscole e minuscole. (Ad esempio la stringa "  noMe CoGnOme     " viene restituita come "Nome Cognome").*)
+(*Partendo da una stringa fornita in input, viene restituita in output una stringa nella forma "Nome Cognome", eliminando tutti gli spazi superflui (eccezion fatta per quelli tra nome e cognome).*)
+(*Inoltre, viene corretto un eventuale uso improprio di maiuscole e minuscole. (e.g. La stringa "  noMe CoGnOme     " viene modificata in "Nome Cognome").*)
 
 
 (* ::Subsection:: *)
@@ -30,21 +31,20 @@
 
 BeginPackage["CheckForm`"]
 
-InputCorrection::usage = "InputCorrection[string] ritorna una stringa formattata rimuovendo gli spazi 
-	in eccesso e capitalizzando le iniziali mantenendo gli altri caratteri in minuscolo.";
+InputCorrection::usage = "Ritorna una stringa formattata rimuovendo gli spazi in eccesso e capitalizzando le iniziali mantenendo gli altri caratteri in minuscolo.";
 
-CheckForm::usage = "CheckForm[graph, entity1, entity2] ritorna una stringa di errore in se l'input 
-	ricevuto non \[EGrave] adeguato, altrimenti ritorna True.";
+CheckForm::usage = "Ritorna una stringa di errore se l'input ricevuto non \[EGrave] adeguato, True altrimenti.";
 
 Begin["`Private`"]
 
 (*La seguente funzione prende in input una stringa e: 
-Converte tutta la stringa in minuscolo (ToLowerCase)
-Converte la prima lettera di ogni parola in maiuscolo (StringReplace[eccetera])
-Rimuove gli spazi iniziali e finali (StringTrim)
-Divide la stringa in una lista di parole (StringSplit)
-Infine le ricombina rimuovendo spazi iniziali e finali, inserendo uno spazio tra ogni parola (StringRiffle[eccetera])
+ - Converte tutta la stringa in minuscolo (ToLowerCase);
+ - Converte la prima lettera di ogni parola in maiuscolo (StringReplace);
+ - Rimuove gli spazi iniziali e finali (StringTrim);
+ - Divide la stringa in una lista di parole (StringSplit);
+ - Ricombina rimuovendo spazi iniziali e finali, inserendo uno spazio tra ogni parola (StringRiffle);
 *)
+
 InputCorrection[string_]:=
 	StringRiffle[#, {"", " ", ""}]& @ StringSplit @ StringTrim @ StringReplace[
 		#, WordBoundary ~~ x_ :> ToUpperCase[x]]& @ ToLowerCase @ string

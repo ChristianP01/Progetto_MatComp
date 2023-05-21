@@ -5,7 +5,7 @@
 
 
 (* ::Text:: *)
-(*Questo pacchetto contiene funzioni per la gestione generica di un database per il calcolo di gradi di separazione, e potrebbe essere usato anche nel caso in cui si dovesse creare un progetto su un differente Database (ad esempio giocatori di club sportivi, ricercatori che hanno pubblicato articoli insieme, amici sui social, ecc...).*)
+(*Questo pacchetto contiene funzioni per la gestione generica di un database per il calcolo di gradi di separazione, e potrebbe essere usato anche nel caso in cui si dovesse creare un progetto su un differente dataset (ad esempio giocatori di club sportivi, ricercatori che hanno pubblicato articoli insieme, amici sui social, ...).*)
 
 
 (* ::Subsection:: *)
@@ -13,7 +13,7 @@
 
 
 (* ::Text:: *)
-(*Funzione che ritorna all'utente un grafo a partire da un dataset i cui nodi sono gli elementi della colonna entityName e gli archi costituiti dagli elementi della colonna groupingAttribute (Ad esempio, nel caso del database degli attori i nodi sono gli attori mentre gli archi i film).*)
+(*Funzione che ritorna un grafo a partire da un dataset i cui nodi sono gli elementi della colonna entityName e gli archi costituiti dagli elementi della colonna groupingAttribute (e.g. in questo caso, i nodi sono gli attori, mentre gli archi i film).*)
 
 
 (* ::Subsection:: *)
@@ -21,7 +21,7 @@
 
 
 (* ::Text:: *)
-(*Ritorna una lista di associazioni con le chiavi entityPath e groupsPath, contenenti, rispettivamente, i nodi e gli archi del cammino minimo tra firstEntity e secondEntity (Ad esempio il cammino minimo tra due attori inseriti dall'utente).*)
+(*Ritorna una lista di associazioni con le chiavi entityPath e groupsPath contenenti, rispettivamente, i nodi e gli archi del cammino minimo tra firstEntity e secondEntity (e.g., il cammino minimo tra due attori inseriti dall'utente).*)
 
 
 (* ::Subsection:: *)
@@ -29,7 +29,7 @@
 
 
 (* ::Text:: *)
-(*Ritorna una lista di due entit\[AGrave] estratte casualmente  da un grafo usando un seed fornito in input.*)
+(*Ritorna una coppia di entit\[AGrave] estratte casualmente  da un grafo, utilizzando un seed fornito in input.*)
 
 
 (* ::Subsection:: *)
@@ -46,19 +46,15 @@
 
 BeginPackage["GeneralOracleBack`"]
 
-GenerateGraph::usage = "GenerateGraph[dataset, entityName, groupingAttribute] ritorna un grafo, a partire 
-	dal dataset, i cui nodi sono gli elementi della colonna entityName e gli archi sono costituiti dagli 
+GenerateGraph::usage = "Ritorna un grafo, a partire dal dataset, i cui nodi sono gli elementi della colonna entityName e gli archi sono costituiti dagli 
 	elementi della colonna groupingAttribute.";
 
-CalcShortestPath::usage = "CalcShortestPath[graph, firstEntity, secondEntity] ritorna una lista di 
-	associazioni con le chiavi entityPath e groupsPath, contenenti, rispettivamente, i nodi e gli 
+CalcShortestPath::usage = "Ritorna una lista di associazioni con le chiavi entityPath e groupsPath contenenti, rispettivamente, i nodi e gli 
 	archi del percorso pi\[UGrave] breve tra firstEntity e secondEntity.";
 
-RandomExtract::usage = "RandomExtract[graph, seed] ritorna una lista di due entit\[AGrave] estratte casualmente 
-	da un grafo usando un seed.";
+RandomExtract::usage = "Ritorna una lista di due entit\[AGrave] estratte casualmente da un grafo usando un seed.";
 
-displaySolution::usage = "displaySolution[output] mostra graficamente la lista ritornata dalla funzione 
-	CalcShortestPath.";
+displaySolution::usage = "Mostra graficamente la lista ritornata dalla funzione CalcShortestPath.";
 
 Begin["`Private`"]
 GenerateGraph[dataset_, entityName_, groupingAttribute_] :=

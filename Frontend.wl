@@ -5,22 +5,21 @@
 
 
 (* ::Text:: *)
-(*Pacchetto dedicato alla costruzione del men\[UGrave] utilizzabile nel notebook, con annessa implementazione delle funzionalit\[AGrave] dei bottoni. *)
+(*Pacchetto dedicato alla costruzione del men\[UGrave] utilizzabile nel notebook, con annessa implementazione delle funzionalit\[AGrave] dei pulsanti. *)
 
 
 (* ::Section:: *)
 (*Implementazione*)
 
 
-showFrontend::usage = "showFrontend[] ritorna una struttura grafica utilizzata per interagire con il 
-	programma.";
+showFrontend::usage = "Ritorna una struttura grafica utilizzata per interagire con il software.";
 
 
 italianFilms = GetDataset[];
 gr = GenerateGraph[italianFilms, "Actor", "OriginalTitle"];
 
 
-(* Hardcoded variables defining the size of various frontend components *)
+(* Variabili hardcoded utilizzate per definire la dimensione dei vari componenti del frontend. *)
 buttonX = 100;
 buttonY = 50;
 
@@ -49,7 +48,7 @@ showFrontend[] :=
 	   },
 	   
 	   {
-	   (* Bottone che calcola la distanza tra due attori forniti in input *)
+	   (* Pulsante che calcola la distanza tra due attori forniti in input *)
 	     Button[Style["Calcola", Medium], (
 	     inputActor1 = InputCorrection[inputActor1]; (* Correzione nomi attori *)
 	     inputActor2 = InputCorrection[inputActor2];

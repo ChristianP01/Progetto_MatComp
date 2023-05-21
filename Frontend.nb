@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     20660,        497]
-NotebookOptionsPosition[     17863,        436]
-NotebookOutlinePosition[     18301,        453]
-CellTagsIndexPosition[     18258,        450]
+NotebookDataLength[     21436,        513]
+NotebookOptionsPosition[     18639,        452]
+NotebookOutlinePosition[     19075,        469]
+CellTagsIndexPosition[     19032,        466]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -44,25 +44,28 @@ Cell["Descrizione del progetto", "Section",
   3.893235741540801*^9}},ExpressionUUID->"87b13a26-9a99-4cf4-9ee6-\
 04659ff4ee8e"],
 
-Cell["\<\
-Il progetto \[EGrave] un\[CloseCurlyQuote]implementazione nel linguaggio \
-Mathematica dell\[CloseCurlyQuote]Oracolo di Bacon \
-(https://oracleofbacon.org/).\[LineSeparator]L\[CloseCurlyQuote]Oracolo di \
-Bacon \[EGrave] in grado, dati nome e cognome di due attori, di fornire all\
-\[CloseCurlyQuote]utente la \[OpenCurlyDoubleQuote]distanza\
-\[CloseCurlyDoubleQuote] tra di essi, oltre che il percorso che li collega.  
-Nel nostro progetto abbiamo utilizzato un database di 10.000 attori, filtrato \
-solo su film in lingua originale italiana, e offriamo \
-all\[CloseCurlyQuote]utente finale la possibilit\[AGrave] di utilizzare su di \
-esso 4 funzionalit\[AGrave] a partire da un men\[UGrave] con 4 input e 4 \
-bottoni.\
-\>", "Text",
+Cell[TextData[{
+ "Il progetto \[EGrave] un\[CloseCurlyQuote]implementazione nel linguaggio \
+Mathematica dell\[CloseCurlyQuote]",
+ "Oracolo di Bacon",
+ " (https://oracleofbacon.org/).\[LineSeparator]L\[CloseCurlyQuote]Oracolo di \
+Bacon \[EGrave] in grado di fornire, dati nome e cognome di due attori, la ",
+ StyleBox["distanza",
+  FontSlant->"Italic"],
+ " tra essi.  \n\[CapitalEGrave] stato utilizzato un database di 10.000 \
+attori, filtrato  sui film in lingua originale italiana, offrendo all\
+\[CloseCurlyQuote]utente la possibilit\[AGrave] di utilizzare su di esso \
+quattro funzionalit\[AGrave] a partire da un men\[UGrave] con 4 input e 4 \
+pulsanti. Quest\[CloseCurlyQuote]ultime verranno presentate successivamente."
+}], "Text",
  CellChangeTimes->{{3.8932358207466*^9, 3.893235874241817*^9}, {
    3.893235980484462*^9, 3.893236029686389*^9}, {3.893236104220552*^9, 
    3.8932361199330263`*^9}, {3.8932361946341133`*^9, 3.893236337263832*^9}, {
    3.893236414452976*^9, 3.893236442690774*^9}, 3.893237843876914*^9, {
-   3.8932378824350557`*^9, 
-   3.893237891131298*^9}},ExpressionUUID->"f084fac3-fe91-47cd-ae2c-\
+   3.8932378824350557`*^9, 3.893237891131298*^9}, {3.8936594621318903`*^9, 
+   3.8936594982588243`*^9}, {3.893659765043334*^9, 3.893659848685334*^9}, {
+   3.8936603714452753`*^9, 
+   3.893660371940111*^9}},ExpressionUUID->"f084fac3-fe91-47cd-ae2c-\
 53792a18ac82"]
 }, Open  ]],
 
@@ -74,26 +77,27 @@ Cell["Celle di input", "Section",
 666a6d97d2ea"],
 
 Cell["\<\
-Le celle di input sono ottenute con un InputField che al suo interno contiene \
-dati Dynamic, quindi aggiornati dinamicamente dall\[CloseCurlyQuote]utente o \
-dalle funzioni di correzione sviluppate dal gruppo.
-
+L\[CloseCurlyQuote]utente pu\[OGrave] interagire con il software inserendo, \
+negli appositi box di testo, i valori richiesti da \
+quest\[CloseCurlyQuote]ultimi.  
 All\[CloseCurlyQuote]interno delle celle \[EGrave] possibile inserire:\
-\[LineSeparator]\tNome e Cognome del primo attore di cui si vuole calcolare \
-la distanza.
-\tNome e Cognome del secondo attore di cui si vuole calcolare la distanza.
-\tUn numero, per provare a indovinare la distanza (\[CapitalEGrave] possibile \
-inserire -1 se si pensa che gli attori non siano collegati, ma non altri \
-numeri negativi).
-\tUn numero utilizzato come seed casuale per ottenere nelle celle di input \
-due attori casuali attraverso il bottone Casuale.\
+\[LineSeparator]\t- Nome e Cognome del primo attore di cui si vuole calcolare \
+la distanza;
+\t- Nome e Cognome del secondo attore di cui si vuole calcolare la distanza;
+\t- Un numero, per provare ad indovinare la distanza tra la precedente coppia \
+di attori inserita. I valori accettati sono strettamente positivi, eccezion \
+fatta per 0 nel caso i due attori siano la stessa persona, e -1, nel caso non \
+sia possibile creare alcun persorso tra la coppia di attori inserita;
+\t- Un numero utilizzato come seed per estrarre semi-casualmente due attori \
+dal dataset.\
 \>", "Text",
  CellChangeTimes->{{3.893236511959878*^9, 3.8932365386316423`*^9}, {
   3.8932365924621077`*^9, 3.893236598521015*^9}, {3.893387928480261*^9, 
   3.893388107633919*^9}, {3.893388138308378*^9, 3.893388139106585*^9}, {
   3.893388211335889*^9, 3.893388241676141*^9}, {3.893388499066409*^9, 
-  3.8933885404294147`*^9}, {3.8933885891541843`*^9, 
-  3.893388613420195*^9}},ExpressionUUID->"3f4be705-ac79-44f3-85da-\
+  3.8933885404294147`*^9}, {3.8933885891541843`*^9, 3.893388613420195*^9}, {
+  3.893659887198214*^9, 3.893660362908222*^9}, {3.893660394994878*^9, 
+  3.893660397469186*^9}},ExpressionUUID->"3f4be705-ac79-44f3-85da-\
 4cbf163d1876"]
 }, Open  ]],
 
@@ -112,18 +116,19 @@ Cell["Calcola", "Subsection",
 f8180c593ee7"],
 
 Cell["\<\
-Se presenti due attori nelle celle di input, calcola in una nuova finestra \
-(chiudendo la precedente, se presente) la distanza tra di essi, stampando \
-inoltre il grafico che mostra il loro collegamento. Si occupa inoltre di \
-correggere eventuali errori nell\[CloseCurlyQuote]input per riportarli alla \
-forma \[OpenCurlyDoubleQuote]Nome Cognome\[CloseCurlyDoubleQuote], nel caso \
-in cui fossero inseriti spazi superflui o maiuscole e minuscole in posizioni \
-errate. \[CapitalEGrave] inoltre segnalato un errore nel caso in cui gli \
-attori scritti in input non fossero presenti nel dataset.\
+Calcola, aprendo una nuova finestra, la distanza tra la coppia di attori \
+inserita, stampando inoltre il grafico che mostra il loro collegamento.
+Si occupa inoltre di correggere eventuali errori nell\[CloseCurlyQuote]input \
+per riportarli alla forma \[OpenCurlyDoubleQuote]Nome Cognome\
+\[CloseCurlyDoubleQuote] nel caso in cui fossero inseriti spazi superflui o \
+maiuscole e minuscole in posizioni errate.
+Segnaler\[AGrave] inoltre un errore nel caso in cui gli attori inseriti in \
+input non venissero trovati nel dataset.\
 \>", "Text",
  CellChangeTimes->{{3.893236742875012*^9, 3.893236756850257*^9}, {
   3.893389461694746*^9, 3.8933896801191053`*^9}, {3.893389723076981*^9, 
-  3.893389736497149*^9}},ExpressionUUID->"ca9f17e1-f89d-454d-b7e0-\
+  3.893389736497149*^9}, {3.893660440505876*^9, 
+  3.893660516150422*^9}},ExpressionUUID->"ca9f17e1-f89d-454d-b7e0-\
 ffa3c7c7d3a6"]
 }, Open  ]],
 
@@ -150,15 +155,17 @@ Cell["Indovina", "Subsection",
 375187218438"],
 
 Cell["\<\
-Se presenti un numero nella cella di input e i due attori, segnala all\
-\[CloseCurlyQuote]utente se ha indovinato la distanza tra di essi. (Nel caso \
-in cui l\[CloseCurlyQuote]utente pensi che non \[EGrave] presente un \
-collegamento tra essi pu\[OGrave] scrivere -1, ma non altri numeri negativi).\
-\
+Permette all\[CloseCurlyQuote]utente di provare ad indovinare la distanza tra \
+una coppia di attori. \[CapitalEGrave] necessario che \
+l\[CloseCurlyQuote]utente inserisca la coppia di attori da indovinare ed il \
+tentativo nel relativo box di testo.
+Il numero verr\[AGrave] sottoposto ai vincoli precedentemente presentati. L\
+\[CloseCurlyQuote]esito della risposta apparir\[AGrave] sotto forma di \
+finestra pop-up a schermo.\
 \>", "Text",
  CellChangeTimes->{{3.893236937723926*^9, 3.8932369385535173`*^9}, {
-  3.8933897546782293`*^9, 
-  3.893389848496717*^9}},ExpressionUUID->"9e7a8cb4-4d1d-488e-bd65-\
+  3.8933897546782293`*^9, 3.893389848496717*^9}, {3.893660565958407*^9, 
+  3.8936606666261053`*^9}},ExpressionUUID->"9e7a8cb4-4d1d-488e-bd65-\
 8f29c5e63f2e"]
 }, Open  ]],
 
@@ -170,12 +177,13 @@ Cell["Casuale", "Subsection",
 503a6a1b12f7"],
 
 Cell["\<\
-Se presente un seed, estrae in base a esso due attori dal dataset e li \
-inserisce nelle celle di input del primo e del secondo attore.\
+Permette di estrarre una coppia di attori semi-casualmente dal dataset, in \
+funzione di un seed specificato dall\[CloseCurlyQuote]utente.\
 \>", "Text",
  CellChangeTimes->{{3.8932369580647907`*^9, 3.893236959013611*^9}, {
   3.893237323638069*^9, 3.893237348052678*^9}, {3.893389856294259*^9, 
-  3.893389895030031*^9}},ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-\
+  3.893389895030031*^9}, {3.893660672033091*^9, 
+  3.893660730083596*^9}},ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-\
 a45d9897f190"]
 }, Open  ]]
 }, Open  ]],
@@ -416,28 +424,36 @@ Cell["Conclusioni e Sviluppi Futuri", "Section",
   3.8934062188073378`*^9}},ExpressionUUID->"725f0582-cf25-4cea-b165-\
 fcaec11e88fd"],
 
-Cell["\<\
-Questo progetto implementa un oracolo di Bacon per attori presenti in film di \
-lingua originale italiana. Lo sviluppo di pacchetti generici per il \
-trattamento di dataset dove sono individuabili gradi di separazione \
-calcolabili consentono lo sviluppo di progetti che possono usare questo come \
-scheletro, ma con dataset differenti. 
-Se in futuro dovesse essere introdotto in letteratura un dataset pi\[UGrave] \
-completo di quello utilizzato dal gruppo, sarebbe inoltre possibile estendere \
-questo progetto con ulteriori film e attori, rendendolo pi\[UGrave] preciso \
-di quanto sia attualmente.\
-\>", "Text",
+Cell[TextData[{
+ "Questo progetto implementa un oracolo di Bacon per attori che hanno \
+partecipato a film aventi  lingua originale italiana.\nSono stati sviluppati \
+pacchetti ",
+ StyleBox["generici, ",
+  FontSlant->"Italic"],
+ "permettendo ad altri sviluppatori di poterne implementare una versione \
+utilizzando entit\[AGrave] differenti (e.g. calciatori, ricercatori, ...). \
+Sar\[AGrave] necessario fornire in input un dataset adatto allo scopo.\nL\
+\[CloseCurlyQuote]attuale precisione del software \[EGrave] strettamente \
+collegata con l\[CloseCurlyQuote]ampiezza e precisione del dataset \
+utilizzato. Un\[CloseCurlyQuote]estensione di quest\[CloseCurlyQuote]ultimo \
+pu\[OGrave] fornire risultati pi\[UGrave] accurati ed ",
+ StyleBox["efficienti",
+  FontSlant->"Italic"],
+ "."
+}], "Text",
  CellChangeTimes->{{3.8934062843053017`*^9, 3.89340628717426*^9}, {
   3.893406319561523*^9, 3.893406358655113*^9}, {3.893406509506309*^9, 
-  3.89340670483911*^9}},ExpressionUUID->"ee2d3366-f2c9-496c-b691-\
+  3.89340670483911*^9}, {3.893660749394206*^9, 3.893660814164196*^9}, {
+  3.893660848215681*^9, 
+  3.893660991090384*^9}},ExpressionUUID->"ee2d3366-f2c9-496c-b691-\
 bf2eccaa34bc"]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1225, 788},
-WindowMargins->{{0, Automatic}, {34, Automatic}},
+WindowSize->{1440, 747},
+WindowMargins->{{0, Automatic}, {Automatic, -24}},
 TaggingRules-><|"TryRealOnly" -> False|>,
-FrontEndVersion->"13.2 for Mac OS X x86 (64-bit) (January 30, 2023)",
+FrontEndVersion->"13.2 for Linux x86 (64-bit) (January 31, 2023)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"f0a40eb4-f91c-4156-819c-a22d067d8762"
 ]
@@ -456,47 +472,47 @@ Cell[CellGroupData[{
 Cell[580, 22, 334, 7, 160, "Title",ExpressionUUID->"3009b2f4-301e-4fba-a648-5c205258bf66"],
 Cell[917, 31, 239, 6, 53, "Subtitle",ExpressionUUID->"9a04fdf7-003b-4472-98a5-27c811e52c95"],
 Cell[CellGroupData[{
-Cell[1181, 41, 169, 3, 67, "Section",ExpressionUUID->"87b13a26-9a99-4cf4-9ee6-04659ff4ee8e"],
-Cell[1353, 46, 1143, 19, 104, "Text",ExpressionUUID->"f084fac3-fe91-47cd-ae2c-53792a18ac82"]
+Cell[1181, 41, 169, 3, 68, "Section",ExpressionUUID->"87b13a26-9a99-4cf4-9ee6-04659ff4ee8e"],
+Cell[1353, 46, 1291, 22, 104, "Text",ExpressionUUID->"f084fac3-fe91-47cd-ae2c-53792a18ac82"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2533, 70, 159, 3, 67, "Section",ExpressionUUID->"7e97bb09-1829-43ec-b7ca-666a6d97d2ea"],
-Cell[2695, 75, 1195, 21, 196, "Text",ExpressionUUID->"3f4be705-ac79-44f3-85da-4cbf163d1876"]
+Cell[2681, 73, 159, 3, 68, "Section",ExpressionUUID->"7e97bb09-1829-43ec-b7ca-666a6d97d2ea"],
+Cell[2843, 78, 1345, 22, 173, "Text",ExpressionUUID->"3f4be705-ac79-44f3-85da-4cbf163d1876"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3927, 101, 167, 3, 67, "Section",ExpressionUUID->"0ace0b0a-644a-4228-b477-4e836d644b4f"],
+Cell[4225, 105, 167, 3, 68, "Section",ExpressionUUID->"0ace0b0a-644a-4228-b477-4e836d644b4f"],
 Cell[CellGroupData[{
-Cell[4119, 108, 155, 3, 54, "Subsection",ExpressionUUID->"2c477141-b0c1-4f62-90ab-f8180c593ee7"],
-Cell[4277, 113, 842, 13, 81, "Text",ExpressionUUID->"ca9f17e1-f89d-454d-b7e0-ffa3c7c7d3a6"]
+Cell[4417, 112, 155, 3, 54, "Subsection",ExpressionUUID->"2c477141-b0c1-4f62-90ab-f8180c593ee7"],
+Cell[4575, 117, 823, 14, 81, "Text",ExpressionUUID->"ca9f17e1-f89d-454d-b7e0-ffa3c7c7d3a6"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5156, 131, 153, 3, 54, "Subsection",ExpressionUUID->"662e80ad-7090-4b9a-b3e9-f63b77a8d5b6"],
-Cell[5312, 136, 302, 5, 35, "Text",ExpressionUUID->"3c95bbb4-2d59-42d8-8980-2ac842429277"]
+Cell[5435, 136, 153, 3, 54, "Subsection",ExpressionUUID->"662e80ad-7090-4b9a-b3e9-f63b77a8d5b6"],
+Cell[5591, 141, 302, 5, 35, "Text",ExpressionUUID->"3c95bbb4-2d59-42d8-8980-2ac842429277"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5651, 146, 158, 3, 54, "Subsection",ExpressionUUID->"d7be7479-0b0f-4832-b24b-375187218438"],
-Cell[5812, 151, 504, 10, 58, "Text",ExpressionUUID->"9e7a8cb4-4d1d-488e-bd65-8f29c5e63f2e"]
+Cell[5930, 151, 158, 3, 54, "Subsection",ExpressionUUID->"d7be7479-0b0f-4832-b24b-375187218438"],
+Cell[6091, 156, 678, 12, 58, "Text",ExpressionUUID->"9e7a8cb4-4d1d-488e-bd65-8f29c5e63f2e"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6353, 166, 155, 3, 54, "Subsection",ExpressionUUID->"9d2d0105-cfb9-4fce-9a9f-503a6a1b12f7"],
-Cell[6511, 171, 382, 7, 35, "Text",ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-a45d9897f190"]
+Cell[6806, 173, 155, 3, 54, "Subsection",ExpressionUUID->"9d2d0105-cfb9-4fce-9a9f-503a6a1b12f7"],
+Cell[6964, 178, 434, 8, 35, "Text",ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-a45d9897f190"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6942, 184, 215, 4, 67, "Section",ExpressionUUID->"7f347ff3-cdf0-46be-9dc7-3b90649750f9"],
-Cell[7160, 190, 674, 14, 22, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256",
+Cell[7447, 192, 215, 4, 68, "Section",ExpressionUUID->"7f347ff3-cdf0-46be-9dc7-3b90649750f9"],
+Cell[7665, 198, 674, 14, 22, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256",
  CellOpen->False],
-Cell[7837, 206, 1505, 30, 22, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67",
+Cell[8342, 214, 1505, 30, 22, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67",
  CellOpen->False],
 Cell[CellGroupData[{
-Cell[9367, 240, 511, 12, 22, "Code",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112",
+Cell[9872, 248, 511, 12, 22, "Code",ExpressionUUID->"b4360295-0fd5-4bef-af1c-ecb041d72112",
  CellOpen->False],
-Cell[9881, 254, 6881, 153, 219, "Output",ExpressionUUID->"2b8c8f23-8708-4c95-af19-3e617fd78948"]
+Cell[10386, 262, 6881, 153, 219, "Output",ExpressionUUID->"2b8c8f23-8708-4c95-af19-3e617fd78948"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16811, 413, 175, 3, 67, "Section",ExpressionUUID->"725f0582-cf25-4cea-b165-fcaec11e88fd"],
-Cell[16989, 418, 846, 14, 104, "Text",ExpressionUUID->"ee2d3366-f2c9-496c-b691-bf2eccaa34bc"]
+Cell[17316, 421, 175, 3, 68, "Section",ExpressionUUID->"725f0582-cf25-4cea-b165-fcaec11e88fd"],
+Cell[17494, 426, 1117, 22, 104, "Text",ExpressionUUID->"ee2d3366-f2c9-496c-b691-bf2eccaa34bc"]
 }, Open  ]]
 }, Open  ]]
 }
