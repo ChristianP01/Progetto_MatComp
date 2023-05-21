@@ -141,7 +141,8 @@ Module[
             Text[Framed[Style[#2, 8, Black], Background -> LightGreen], #1]
          ]} &),
          EdgeLabels -> ({If[#3 =!= None, {Line[#], Inset[#3, Mean[#1], Automatic, Automatic, #[[1]] - #[[2]], Background -> White]}, Line[#]]} &),
-         EdgeShapeFunction -> None, (* Rimuove le frecce degli archi *)
+         (* EdgeShapeFunction -> None, Rimuove le frecce degli archi *)
+         DirectedEdges->false,
          ImageSize -> {imageSizeX, imageSizeY}] 
 
 ];

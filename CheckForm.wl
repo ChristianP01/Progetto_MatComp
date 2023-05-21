@@ -63,10 +63,11 @@ CheckForm[graph_, entity1_, entity2_] :=
               "Errore, uno o pi\[UGrave] nomi contengono caratteri non validi. Sono ammessi solo caratteri alfabetici e '-'",
 
 			 (* Controlla se le entit\[AGrave] appartengono al grafo *)
-			 MemberQ[VertexList[graph], entity1] == False 
-			    || MemberQ[VertexList[graph], entity2] == False,
-				"Errore, il valore immesso non \[EGrave] presente nel dataset",
-
+			 MemberQ[VertexList[graph], entity1] == False, 
+			   (* || MemberQ[VertexList[graph], entity2] == False,*)
+				"Errore, il valore immesso (" <> entity1 <> ") non \[EGrave] presente nel dataset",
+			 MemberQ[VertexList[graph], entity2] == False,
+			    "Errore, il valore immesso (" <> entity2 <> ") non \[EGrave] presente nel dataset",
 	         (* Campo default, in caso l'input sia corretto *)
 	         True,
 	            True
@@ -77,3 +78,6 @@ CheckForm[graph_, entity1_, entity2_] :=
 End[]
 
 EndPackage[]
+
+
+
