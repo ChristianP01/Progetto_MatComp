@@ -52,12 +52,13 @@ InputCorrection[string_]:=
 CheckForm[graph_, entity1_, entity2_] :=
 	Module[
 		{},
-		(Which[
-			 (* Controlla se le entit\[AGrave] sono stringhe vuote *)
+		(
+		Which[
+		(* Controlla se le entit\[AGrave] sono stringhe vuote *)
 	         StringLength[entity1] == 0 || StringLength[entity2] == 0,
 	            "Errore, uno o pi\[UGrave] box di testo risultano vuoti.",
 	         
-	         (* Controlla se le entit\[AGrave] contengono SOLO caratteri alfabetici e '-'*)
+	         (* Controlla che i valori inseriti dall'utente corrispondano a caratteri dell'alfabeto latino esteso, comprendendo inoltre '.', '-' e ' *)
 			  StringMatchQ[entity1, RegularExpression["[[:alpha:].' -]+"]] == False
                     || StringMatchQ[entity2, RegularExpression["[[:alpha:].' -]+"]] == False,
               "Errore, uno o pi\[UGrave] nomi contengono caratteri non validi. Sono ammessi solo caratteri alfabetici e '-'",
@@ -78,4 +79,5 @@ CheckForm[graph_, entity1_, entity2_] :=
 End[]
 
 EndPackage[]
+
 

@@ -48,8 +48,13 @@ showFrontend[] :=
 	   },
 	   
 	   {
-	   (* Pulsante che calcola la distanza tra due attori forniti in input *)
+	   (* Pulsante che calcola la distanza tra due attori forniti in input. *)
 	     Button[Style["Calcola", Medium], (
+	     
+	     (* Controlla che l'utente abbia inserito valori in entrambe le InputField. *)
+	     If[StringQ[inputActor1] == False || StringQ[inputActor1] == False,
+	       CreateDialog[{TextCell["\[CapitalEGrave] necessario inserire entrambi gli attori."]}],
+	       (
 	     inputActor1 = InputCorrection[inputActor1]; (* Correzione nomi attori *)
 	     inputActor2 = InputCorrection[inputActor2];
 	     cfOutput = CheckForm[gr, inputActor1, inputActor2];
@@ -75,6 +80,7 @@ showFrontend[] :=
             },
             WindowSize -> {owX, owY}
                 ]
+	     ])
 	     ]), ImageSize -> {buttonX, buttonY}],
 	     
 	     Button[Style["Reset", Medium], (

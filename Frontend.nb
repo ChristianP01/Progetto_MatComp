@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     21385,        500]
-NotebookOptionsPosition[     18723,        443]
-NotebookOutlinePosition[     19169,        460]
-CellTagsIndexPosition[     19126,        457]
+NotebookDataLength[     21378,        506]
+NotebookOptionsPosition[     18729,        449]
+NotebookOutlinePosition[     19163,        466]
+CellTagsIndexPosition[     19120,        463]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -122,12 +122,14 @@ per riportarli alla forma \[OpenCurlyDoubleQuote]Nome Cognome\
 \[CloseCurlyDoubleQuote] nel caso in cui fossero inseriti spazi superflui o \
 maiuscole e minuscole in posizioni errate.
 Segnaler\[AGrave] inoltre un errore nel caso in cui gli attori inseriti in \
-input non venissero trovati nel dataset.\
+input non venissero trovati nel dataset o se, addirittura, non verranno \
+inseriti.\
 \>", "Text",
  CellChangeTimes->{{3.893236742875012*^9, 3.893236756850257*^9}, {
   3.893389461694746*^9, 3.8933896801191053`*^9}, {3.893389723076981*^9, 
-  3.893389736497149*^9}, {3.893660440505876*^9, 
-  3.893660516150422*^9}},ExpressionUUID->"ca9f17e1-f89d-454d-b7e0-\
+  3.893389736497149*^9}, {3.893660440505876*^9, 3.893660516150422*^9}, {
+  3.893748806695765*^9, 
+  3.893748820500432*^9}},ExpressionUUID->"ca9f17e1-f89d-454d-b7e0-\
 ffa3c7c7d3a6"]
 }, Open  ]],
 
@@ -222,7 +224,8 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"Import", " ", "dei", " ", 
      RowBox[{"file", " ", ".", "wl"}]}], ",", " ", 
-    RowBox[{"contenenti", " ", "le", " ", "funzioni", " ", "necessarie", " ", 
+    RowBox[{
+    "contenenti", " ", "le", " ", "funzioni", " ", "necessarie", " ", 
      RowBox[{"all", "'"}], "esecuzione", " ", "del", " ", "programma"}]}], 
    " ", "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
@@ -253,12 +256,16 @@ Cell[BoxData[{
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`inputActor1$$ = 
-  "Stephen Baldwin", $CellContext`inputActor2$$ = 
-  "Leelee Sobieski", $CellContext`answer$$, $CellContext`seed$$ = 
-  32, $CellContext`cfOutput$$ = True, $CellContext`sp$$ = <|
-  "entityPath" -> {}, "groupsPath" -> {}|>, $CellContext`re$$ = {
-  "Stephen Baldwin", "Leelee Sobieski"}, $CellContext`outputMessage$$ = 
-  "Gli attori non hanno nessun collegamento."}, 
+  "Roberto Benigni", $CellContext`inputActor2$$ = 
+  "Pierfrancesco Favino", $CellContext`answer$$, $CellContext`seed$$, \
+$CellContext`cfOutput$$ = True, $CellContext`sp$$ = <|
+  "entityPath" -> {
+    "Roberto Benigni", "Alida Valli", "Silvana Mangano", "Dirk Bogarde", 
+     "Charlotte Rampling", "Pierfrancesco Favino"}, 
+   "groupsPath" -> {{"La Luna"}, {"Edipo re"}, {"Morte a Venezia"}, {
+     "La caduta degli dei"}, {
+     "Le chiavi di casa"}}|>, $CellContext`re$$, $CellContext`outputMessage$$ \
+= "Il grado di separazione tra gli attori \[EGrave] 5"}, 
   PanelBox[
    TagBox[GridBox[{
       {
@@ -276,33 +283,40 @@ Cell[BoxData[
          StripOnInput->False,
          FontSize->Medium],
         Appearance->Automatic,
-        ButtonFunction:>($CellContext`inputActor1$$ = 
-          CheckForm`InputCorrection[$CellContext`inputActor1$$]; \
+        ButtonFunction:>If[
+          Or[
+          StringQ[$CellContext`inputActor1$$] == False, 
+           StringQ[$CellContext`inputActor1$$] == False], 
+          CreateDialog[{
+            TextCell[
+            "\[CapitalEGrave] necessario inserire entrambi gli attori."]}], \
+$CellContext`inputActor1$$ = 
+           CheckForm`InputCorrection[$CellContext`inputActor1$$]; \
 $CellContext`inputActor2$$ = 
-          CheckForm`InputCorrection[$CellContext`inputActor2$$]; \
+           CheckForm`InputCorrection[$CellContext`inputActor2$$]; \
 $CellContext`cfOutput$$ = 
-          CheckForm`CheckForm[$CellContext`gr, $CellContext`inputActor1$$, \
+           CheckForm`CheckForm[$CellContext`gr, $CellContext`inputActor1$$, \
 $CellContext`inputActor2$$]; If[
-           StringQ[$CellContext`cfOutput$$], 
-           CreateDialog[{
-             TextCell[$CellContext`cfOutput$$], 
-             DefaultButton[]}, 
-            WindowSize -> {$CellContext`labelX, $CellContext`labelY}], \
+            StringQ[$CellContext`cfOutput$$], 
+            CreateDialog[{
+              TextCell[$CellContext`cfOutput$$], 
+              DefaultButton[]}, 
+             WindowSize -> {$CellContext`labelX, $CellContext`labelY}], \
 $CellContext`sp$$ = 
-            GeneralOracleBack`CalcShortestPath[$CellContext`gr, \
+             GeneralOracleBack`CalcShortestPath[$CellContext`gr, \
 $CellContext`inputActor1$$, $CellContext`inputActor2$$]; 
-           NotebookClose[$CellContext`outputWindow]; If[Length[
-                Part[$CellContext`sp$$, "entityPath"]] - 
-              1 == -1, $CellContext`outputMessage$$ = 
-             "Gli attori non hanno nessun collegamento.", \
+            NotebookClose[$CellContext`outputWindow]; If[Length[
+                 Part[$CellContext`sp$$, "entityPath"]] - 
+               1 == -1, $CellContext`outputMessage$$ = 
+              "Gli attori non hanno nessun collegamento.", \
 $CellContext`outputMessage$$ = 
-             "Il grado di separazione tra gli attori \[EGrave] " <> 
-              ToString[Length[
-                  Part[$CellContext`sp$$, "entityPath"]] - 
-                1]]; $CellContext`outputWindow = CreateDocument[{
-               TextCell[$CellContext`outputMessage$$, Magnification -> 2], 
-               GeneralOracleBack`displaySolution[$CellContext`sp$$]}, 
-              WindowSize -> {$CellContext`owX, $CellContext`owY}]]),
+              "Il grado di separazione tra gli attori \[EGrave] " <> 
+               ToString[Length[
+                   Part[$CellContext`sp$$, "entityPath"]] - 
+                 1]]; $CellContext`outputWindow = CreateDocument[{
+                TextCell[$CellContext`outputMessage$$, Magnification -> 2], 
+                GeneralOracleBack`displaySolution[$CellContext`sp$$]}, 
+               WindowSize -> {$CellContext`owX, $CellContext`owY}]]],
         Evaluator->Automatic,
         ImageSize->{100, 50},
         Method->"Preemptive"], 
@@ -330,6 +344,7 @@ $CellContext`outputMessage$$ =
 indovinare."], 
               DefaultButton[]}, 
              WindowSize -> {$CellContext`labelX, $CellContext`labelY}]; Null, 
+           
            And[$CellContext`answer$$ < 0, $CellContext`answer$$ != -1], 
            CreateDialog[{
               TextCell[
@@ -393,18 +408,9 @@ $CellContext`seed$$]; $CellContext`inputActor1$$ =
     "Grid"],
    ImageSize->{900, 200}],
   DynamicModuleValues:>{}]], "Output",
- CellChangeTimes->{
-  3.893219770659094*^9, 3.893220219774426*^9, 3.893220903065804*^9, 
-   3.893220971124543*^9, 3.893221009004833*^9, 3.893221093777492*^9, 
-   3.8932212921084538`*^9, 3.8932213434045353`*^9, 3.893221448814789*^9, 
-   3.893221594407728*^9, 3.893221755057733*^9, {3.893221813271448*^9, 
-   3.893221842922428*^9}, 3.893240715409546*^9, 3.893240852577015*^9, 
-   3.8933511934514604`*^9, 3.893351975954342*^9, {3.893387198852242*^9, 
-   3.893387202204105*^9}, 3.893387460837192*^9, 3.8933875855616426`*^9, 
-   3.893388877818713*^9, 3.893389326883965*^9, 3.893406066915249*^9, 
-   3.893410827464025*^9, 3.893411268618601*^9, 3.893411388928452*^9, 
-   3.8936743993186293`*^9, 3.8937445676273317`*^9},
- CellLabel->"Out[6]=",ExpressionUUID->"c39a6da9-d088-4445-8ecf-c9d4bb9cb0d3"]
+ CellChangeTimes->{3.893746962264544*^9, 3.893747044170908*^9, 
+  3.893747571655817*^9, 3.893747881353799*^9, 3.8937492745009623`*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"95f07ddd-cc3b-4169-83e2-2ceb45211d49"]
 }, Open  ]]
 }, Open  ]],
 
@@ -441,10 +447,10 @@ bf2eccaa34bc"]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1141.2, 568.8},
+WindowSize->{1440, 747},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 TaggingRules-><|"TryRealOnly" -> False|>,
-FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 30, 2023)",
+FrontEndVersion->"13.2 for Linux x86 (64-bit) (January 31, 2023)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"f0a40eb4-f91c-4156-819c-a22d067d8762"
 ]
@@ -463,43 +469,43 @@ Cell[CellGroupData[{
 Cell[580, 22, 334, 7, 160, "Title",ExpressionUUID->"3009b2f4-301e-4fba-a648-5c205258bf66"],
 Cell[917, 31, 239, 6, 53, "Subtitle",ExpressionUUID->"9a04fdf7-003b-4472-98a5-27c811e52c95"],
 Cell[CellGroupData[{
-Cell[1181, 41, 169, 3, 67, "Section",ExpressionUUID->"87b13a26-9a99-4cf4-9ee6-04659ff4ee8e"],
+Cell[1181, 41, 169, 3, 68, "Section",ExpressionUUID->"87b13a26-9a99-4cf4-9ee6-04659ff4ee8e"],
 Cell[1353, 46, 1335, 21, 104, "Text",ExpressionUUID->"f084fac3-fe91-47cd-ae2c-53792a18ac82"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2725, 72, 159, 3, 67, "Section",ExpressionUUID->"7e97bb09-1829-43ec-b7ca-666a6d97d2ea"],
+Cell[2725, 72, 159, 3, 68, "Section",ExpressionUUID->"7e97bb09-1829-43ec-b7ca-666a6d97d2ea"],
 Cell[2887, 77, 1345, 22, 173, "Text",ExpressionUUID->"3f4be705-ac79-44f3-85da-4cbf163d1876"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4269, 104, 167, 3, 67, "Section",ExpressionUUID->"0ace0b0a-644a-4228-b477-4e836d644b4f"],
+Cell[4269, 104, 167, 3, 68, "Section",ExpressionUUID->"0ace0b0a-644a-4228-b477-4e836d644b4f"],
 Cell[CellGroupData[{
 Cell[4461, 111, 155, 3, 54, "Subsection",ExpressionUUID->"2c477141-b0c1-4f62-90ab-f8180c593ee7"],
-Cell[4619, 116, 823, 14, 104, "Text",ExpressionUUID->"ca9f17e1-f89d-454d-b7e0-ffa3c7c7d3a6"]
+Cell[4619, 116, 915, 16, 81, "Text",ExpressionUUID->"ca9f17e1-f89d-454d-b7e0-ffa3c7c7d3a6"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5479, 135, 153, 3, 54, "Subsection",ExpressionUUID->"662e80ad-7090-4b9a-b3e9-f63b77a8d5b6"],
-Cell[5635, 140, 302, 5, 35, "Text",ExpressionUUID->"3c95bbb4-2d59-42d8-8980-2ac842429277"]
+Cell[5571, 137, 153, 3, 54, "Subsection",ExpressionUUID->"662e80ad-7090-4b9a-b3e9-f63b77a8d5b6"],
+Cell[5727, 142, 302, 5, 35, "Text",ExpressionUUID->"3c95bbb4-2d59-42d8-8980-2ac842429277"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5974, 150, 158, 3, 54, "Subsection",ExpressionUUID->"d7be7479-0b0f-4832-b24b-375187218438"],
-Cell[6135, 155, 678, 12, 81, "Text",ExpressionUUID->"9e7a8cb4-4d1d-488e-bd65-8f29c5e63f2e"]
+Cell[6066, 152, 158, 3, 54, "Subsection",ExpressionUUID->"d7be7479-0b0f-4832-b24b-375187218438"],
+Cell[6227, 157, 678, 12, 58, "Text",ExpressionUUID->"9e7a8cb4-4d1d-488e-bd65-8f29c5e63f2e"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6850, 172, 155, 3, 54, "Subsection",ExpressionUUID->"9d2d0105-cfb9-4fce-9a9f-503a6a1b12f7"],
-Cell[7008, 177, 434, 8, 35, "Text",ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-a45d9897f190"]
+Cell[6942, 174, 155, 3, 54, "Subsection",ExpressionUUID->"9d2d0105-cfb9-4fce-9a9f-503a6a1b12f7"],
+Cell[7100, 179, 434, 8, 35, "Text",ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-a45d9897f190"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7491, 191, 215, 4, 67, "Section",ExpressionUUID->"7f347ff3-cdf0-46be-9dc7-3b90649750f9"],
-Cell[7709, 197, 753, 14, 50, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
+Cell[7583, 193, 215, 4, 68, "Section",ExpressionUUID->"7f347ff3-cdf0-46be-9dc7-3b90649750f9"],
+Cell[7801, 199, 753, 14, 53, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
 Cell[CellGroupData[{
-Cell[8487, 215, 1818, 36, 156, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67"],
-Cell[10308, 253, 7043, 153, 219, "Output",ExpressionUUID->"c39a6da9-d088-4445-8ecf-c9d4bb9cb0d3"]
+Cell[8579, 217, 1823, 37, 172, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67"],
+Cell[10405, 256, 6952, 156, 219, "Output",ExpressionUUID->"95f07ddd-cc3b-4169-83e2-2ceb45211d49"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[17400, 412, 175, 3, 67, "Section",ExpressionUUID->"725f0582-cf25-4cea-b165-fcaec11e88fd"],
-Cell[17578, 417, 1117, 22, 127, "Text",ExpressionUUID->"ee2d3366-f2c9-496c-b691-bf2eccaa34bc"]
+Cell[17406, 418, 175, 3, 68, "Section",ExpressionUUID->"725f0582-cf25-4cea-b165-fcaec11e88fd"],
+Cell[17584, 423, 1117, 22, 104, "Text",ExpressionUUID->"ee2d3366-f2c9-496c-b691-bf2eccaa34bc"]
 }, Open  ]]
 }, Open  ]]
 }
