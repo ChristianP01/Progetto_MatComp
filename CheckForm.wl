@@ -58,8 +58,8 @@ CheckForm[graph_, entity1_, entity2_] :=
 	            "Errore, uno o pi\[UGrave] box di testo risultano vuoti.",
 	         
 	         (* Controlla se le entit\[AGrave] contengono SOLO caratteri alfabetici e '-'*)
-			  StringMatchQ[entity1, RegularExpression["^[a-zA-Z\\- ]+$"]] == False
-                    || StringMatchQ[entity2, RegularExpression["^[a-zA-Z\\- ]+$"]] == False,
+			  StringMatchQ[entity1, RegularExpression["[[:alpha:].' -]+"]] == False
+                    || StringMatchQ[entity2, RegularExpression["[[:alpha:].' -]+"]] == False,
               "Errore, uno o pi\[UGrave] nomi contengono caratteri non validi. Sono ammessi solo caratteri alfabetici e '-'",
 
 			 (* Controlla se le entit\[AGrave] appartengono al grafo *)
@@ -78,6 +78,4 @@ CheckForm[graph_, entity1_, entity2_] :=
 End[]
 
 EndPackage[]
-
-
 
