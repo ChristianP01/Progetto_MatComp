@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     21378,        506]
-NotebookOptionsPosition[     18729,        449]
-NotebookOutlinePosition[     19163,        466]
-CellTagsIndexPosition[     19120,        463]
+NotebookDataLength[     21045,        501]
+NotebookOptionsPosition[     18393,        444]
+NotebookOutlinePosition[     18830,        461]
+CellTagsIndexPosition[     18787,        458]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -256,16 +256,10 @@ Cell[BoxData[{
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`inputActor1$$ = 
-  "Roberto Benigni", $CellContext`inputActor2$$ = 
-  "Pierfrancesco Favino", $CellContext`answer$$, $CellContext`seed$$, \
-$CellContext`cfOutput$$ = True, $CellContext`sp$$ = <|
-  "entityPath" -> {
-    "Roberto Benigni", "Alida Valli", "Silvana Mangano", "Dirk Bogarde", 
-     "Charlotte Rampling", "Pierfrancesco Favino"}, 
-   "groupsPath" -> {{"La Luna"}, {"Edipo re"}, {"Morte a Venezia"}, {
-     "La caduta degli dei"}, {
-     "Le chiavi di casa"}}|>, $CellContext`re$$, $CellContext`outputMessage$$ \
-= "Il grado di separazione tra gli attori \[EGrave] 5"}, 
+  Null, $CellContext`inputActor2$$ = Null, $CellContext`answer$$ = 
+  Null, $CellContext`seed$$ = 
+  Null, $CellContext`cfOutput$$, $CellContext`sp$$, $CellContext`re$$, \
+$CellContext`outputMessage$$}, 
   PanelBox[
    TagBox[GridBox[{
       {
@@ -286,7 +280,7 @@ $CellContext`cfOutput$$ = True, $CellContext`sp$$ = <|
         ButtonFunction:>If[
           Or[
           StringQ[$CellContext`inputActor1$$] == False, 
-           StringQ[$CellContext`inputActor1$$] == False], 
+           StringQ[$CellContext`inputActor2$$] == False], 
           CreateDialog[{
             TextCell[
             "\[CapitalEGrave] necessario inserire entrambi gli attori."]}], \
@@ -409,8 +403,9 @@ $CellContext`seed$$]; $CellContext`inputActor1$$ =
    ImageSize->{900, 200}],
   DynamicModuleValues:>{}]], "Output",
  CellChangeTimes->{3.893746962264544*^9, 3.893747044170908*^9, 
-  3.893747571655817*^9, 3.893747881353799*^9, 3.8937492745009623`*^9},
- CellLabel->"Out[6]=",ExpressionUUID->"95f07ddd-cc3b-4169-83e2-2ceb45211d49"]
+  3.893747571655817*^9, 3.893747881353799*^9, 3.8937492745009623`*^9, 
+  3.89377142640147*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"a68d742b-656c-4c43-861e-e3e1f9e4eacf"]
 }, Open  ]]
 }, Open  ]],
 
@@ -450,7 +445,7 @@ bf2eccaa34bc"]
 WindowSize->{1440, 747},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 TaggingRules-><|"TryRealOnly" -> False|>,
-FrontEndVersion->"13.2 for Linux x86 (64-bit) (January 31, 2023)",
+FrontEndVersion->"13.2 for Mac OS X x86 (64-bit) (January 30, 2023)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"f0a40eb4-f91c-4156-819c-a22d067d8762"
 ]
@@ -469,15 +464,15 @@ Cell[CellGroupData[{
 Cell[580, 22, 334, 7, 160, "Title",ExpressionUUID->"3009b2f4-301e-4fba-a648-5c205258bf66"],
 Cell[917, 31, 239, 6, 53, "Subtitle",ExpressionUUID->"9a04fdf7-003b-4472-98a5-27c811e52c95"],
 Cell[CellGroupData[{
-Cell[1181, 41, 169, 3, 68, "Section",ExpressionUUID->"87b13a26-9a99-4cf4-9ee6-04659ff4ee8e"],
+Cell[1181, 41, 169, 3, 67, "Section",ExpressionUUID->"87b13a26-9a99-4cf4-9ee6-04659ff4ee8e"],
 Cell[1353, 46, 1335, 21, 104, "Text",ExpressionUUID->"f084fac3-fe91-47cd-ae2c-53792a18ac82"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2725, 72, 159, 3, 68, "Section",ExpressionUUID->"7e97bb09-1829-43ec-b7ca-666a6d97d2ea"],
+Cell[2725, 72, 159, 3, 67, "Section",ExpressionUUID->"7e97bb09-1829-43ec-b7ca-666a6d97d2ea"],
 Cell[2887, 77, 1345, 22, 173, "Text",ExpressionUUID->"3f4be705-ac79-44f3-85da-4cbf163d1876"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4269, 104, 167, 3, 68, "Section",ExpressionUUID->"0ace0b0a-644a-4228-b477-4e836d644b4f"],
+Cell[4269, 104, 167, 3, 67, "Section",ExpressionUUID->"0ace0b0a-644a-4228-b477-4e836d644b4f"],
 Cell[CellGroupData[{
 Cell[4461, 111, 155, 3, 54, "Subsection",ExpressionUUID->"2c477141-b0c1-4f62-90ab-f8180c593ee7"],
 Cell[4619, 116, 915, 16, 81, "Text",ExpressionUUID->"ca9f17e1-f89d-454d-b7e0-ffa3c7c7d3a6"]
@@ -496,16 +491,16 @@ Cell[7100, 179, 434, 8, 35, "Text",ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-a45d
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7583, 193, 215, 4, 68, "Section",ExpressionUUID->"7f347ff3-cdf0-46be-9dc7-3b90649750f9"],
-Cell[7801, 199, 753, 14, 53, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
+Cell[7583, 193, 215, 4, 67, "Section",ExpressionUUID->"7f347ff3-cdf0-46be-9dc7-3b90649750f9"],
+Cell[7801, 199, 753, 14, 52, "Code",ExpressionUUID->"96aa7e3f-05b8-4a39-a181-8d3c2c56c256"],
 Cell[CellGroupData[{
-Cell[8579, 217, 1823, 37, 172, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67"],
-Cell[10405, 256, 6952, 156, 219, "Output",ExpressionUUID->"95f07ddd-cc3b-4169-83e2-2ceb45211d49"]
+Cell[8579, 217, 1823, 37, 167, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67"],
+Cell[10405, 256, 6616, 151, 219, "Output",ExpressionUUID->"a68d742b-656c-4c43-861e-e3e1f9e4eacf"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[17406, 418, 175, 3, 68, "Section",ExpressionUUID->"725f0582-cf25-4cea-b165-fcaec11e88fd"],
-Cell[17584, 423, 1117, 22, 104, "Text",ExpressionUUID->"ee2d3366-f2c9-496c-b691-bf2eccaa34bc"]
+Cell[17070, 413, 175, 3, 67, "Section",ExpressionUUID->"725f0582-cf25-4cea-b165-fcaec11e88fd"],
+Cell[17248, 418, 1117, 22, 104, "Text",ExpressionUUID->"ee2d3366-f2c9-496c-b691-bf2eccaa34bc"]
 }, Open  ]]
 }, Open  ]]
 }

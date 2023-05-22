@@ -52,7 +52,7 @@ showFrontend[] :=
 	     Button[Style["Calcola", Medium], (
 	     
 	     (* Controlla che l'utente abbia inserito valori in entrambe le InputField. *)
-	     If[StringQ[inputActor1] == False || StringQ[inputActor1] == False,
+	     If[StringQ[inputActor1] == False || StringQ[inputActor2] == False,
 	       CreateDialog[{TextCell["\[CapitalEGrave] necessario inserire entrambi gli attori."]}],
 	       (
 	     inputActor1 = InputCorrection[inputActor1]; (* Correzione nomi attori *)
