@@ -36,7 +36,7 @@ outputWindow = Null;
 
 showFrontend[] := 
 	DynamicModule[
-	{inputActor1, inputActor2, answer, seed, cfOutput, sp, re}, 
+	{inputActor1, inputActor2, answer, seed, cfOutput, sp, re, outputMessage}, 
 	
 		Panel[
 	 Grid[{
@@ -61,10 +61,16 @@ showFrontend[] :=
             (* Chiude la finestra di output precedente, se presente *)
             NotebookClose[outputWindow];
 
+			(* Controlla se la coppia di attori presenta un collegamento, altrimenti stampa un messaggio all'utente. *)
+			If[Length[sp[["entityPath"]]] - 1 == -1,
+				outputMessage = "Gli attori non hanno nessun collegamento.",
+				outputMessage = "Il grado di separazione tra gli attori \[EGrave] " <> ToString[Length[sp[["entityPath"]]] - 1]
+			];
+			
             (* Crea una nuova box di dialogo e stampa distanza e grafo *)
 	        outputWindow = CreateDocument[
             {
-                TextCell["Il grado di separazione tra gli attori \[EGrave] " <> ToString[Length[sp[["entityPath"]]] - 1], Magnification->2],
+                TextCell[outputMessage, Magnification->2],
                 displaySolution[sp]
             },
             WindowSize -> {owX, owY}
