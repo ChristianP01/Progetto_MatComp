@@ -37,7 +37,7 @@ CheckForm::usage = "Ritorna una stringa di errore se l'input ricevuto non \[EGra
 
 Begin["`Private`"]
 
-(*La seguente funzione prende in input una stringa e: 
+(*La seguente funzione (InputCorrection) prende in input una stringa e: 
  - Converte tutta la stringa in minuscolo (ToLowerCase);
  - Converte la prima lettera di ogni parola in maiuscolo (StringReplace);
  - Rimuove gli spazi iniziali e finali (StringTrim);
@@ -49,10 +49,17 @@ InputCorrection[string_]:=
 	StringRiffle[#, {"", " ", ""}]& @ StringSplit @ StringTrim @ StringReplace[
 		#, WordBoundary ~~ x_ :> ToUpperCase[x]]& @ ToLowerCase @ string
 
+
+(*La seguente funzione (CheckForm) prende in input un grafo e due entit\[AGrave]: 
+ - Il grafo viene ottenuto tramite il metodo GenerateGraph, dal modulo GeneralOracleBack.
+ - entity1 ed entity2 sono stringhe contenenti "Nome Cognome" di una coppia di attori del dataset.
+*)
+
 CheckForm[graph_, entity1_, entity2_] :=
 	Module[
 		{},
 		(
+		(* Utilizziamo un which, avendo diverse condizioni da controllare *)
 		Which[
 		(* Controlla se le entit\[AGrave] sono stringhe vuote *)
 	         StringLength[entity1] == 0 || StringLength[entity2] == 0,
@@ -64,9 +71,9 @@ CheckForm[graph_, entity1_, entity2_] :=
               "Errore, uno o pi\[UGrave] nomi contengono caratteri non validi. Sono ammessi solo caratteri alfabetici e '-'",
 
 			 (* Controlla se le entit\[AGrave] appartengono al grafo *)
-			 MemberQ[VertexList[graph], entity1] == False, 
-			   (* || MemberQ[VertexList[graph], entity2] == False,*)
+			 MemberQ[VertexList[graph], entity1] == False,
 				"Errore, il valore immesso (" <> entity1 <> ") non \[EGrave] presente nel dataset",
+				
 			 MemberQ[VertexList[graph], entity2] == False,
 			    "Errore, il valore immesso (" <> entity2 <> ") non \[EGrave] presente nel dataset",
 	         (* Campo default, in caso l'input sia corretto *)
@@ -79,5 +86,3 @@ CheckForm[graph_, entity1_, entity2_] :=
 End[]
 
 EndPackage[]
-
-
