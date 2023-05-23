@@ -197,7 +197,7 @@ showFrontend[] :=
                  Se vuoto, viene stampato un messaggio di errore.
                  Altrimenti, viene utilizzato il metodo RandomExtract, definito in GeneralOracleBack, per estrarre una coppia di attori dal dataset.
              *)
-             If[NumberQ[seed] == True,
+             If[NumberQ[seed] == False,
                  (CreateDialog[{TextCell["\[CapitalEGrave] necessario inserire un seed per generare risultati casuali."], 
                   DefaultButton[]}, WindowSize -> {labelX, labelY}];),
                  
