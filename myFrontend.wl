@@ -12,39 +12,14 @@
 (*Implementazione*)
 
 
+BeginPackage["myFrontend`"]
 showFrontend::usage = "Ritorna una struttura grafica utilizzata per interagire con il software.";
 
 
-italianFilms = GetDataset[]; (* Utilizziamo il metodo GetDataset, definito in GeneralOracleBack, per estrarre e salvare in una variabile il dataset ottenuto a partire dall'unione dei due file .csv *)
-
-(* 
-	Utilizziamo il metodo GenerateGraph, definito in GeneralOracleBack, per creare il grafo a partire dal dataset appena calcolato.
-	"Actor" rappresenta la colonna del dataset su cui verranno definiti i nodi del grafo.
-	"OriginalTitle" rappresenta la colonna del dataset attraverso cui verranno congiunti i nodi, ovvero gli archi del grafo.
-*)
-gr = GenerateGraph[italianFilms, "Actor", "OriginalTitle"];
-
-
-(* Variabili hardcoded utilizzate per definire la dimensione dei vari componenti del frontend. *)
-
-(* Dimensione dei pulsanti *)
-buttonX = 100;
-buttonY = 50;
-
-(* Dimensioni delle label *)
-labelX = 300;
-labelY = 90;
-
-(* Dimensioni dei pannelli *)
-panelX = 900;
-panelY = 200;
-
-(*  *)
-owX = 550;
-owY = 1100;
-
-(*  *)
-outputWindow = Null;
+Begin["Private`"]
+Needs["GeneralOracleBack`"]; (*Inserisco le dipendenze per richiamare funzioni definite in altri pacchetti come GetDataset[], GenerateGraph[], ...*)
+Needs["ItalianActorPreprocessing`"];
+Needs["CheckForm`"];
 
 
 (*
@@ -66,8 +41,37 @@ outputWindow = Null;
 
 showFrontend[] := 
 	DynamicModule[
-	{inputActor1, inputActor2, answer, seed, cfOutput, sp, re, outputMessage}, 
-	
+	{inputActor1, inputActor2, answer, seed, cfOutput, sp, re, outputMessage, italianFilms,
+	gr, buttonX, buttonY, labelX, labelY, panelX, panelY, owX, owY, outputWindow}, 
+	italianFilms = GetDataset[]; (* Utilizziamo il metodo GetDataset, definito in GeneralOracleBack, per estrarre e salvare in una variabile il dataset ottenuto a partire dall'unione dei due file .csv *)
+    gr = GenerateGraph[italianFilms, "Actor", "OriginalTitle"];
+    (* Variabili hardcoded utilizzate per definire la dimensione dei vari componenti del frontend. *)
+    (* 
+	Utilizziamo il metodo GenerateGraph, definito in GeneralOracleBack, per creare il grafo a partire dal dataset appena calcolato.
+	"Actor" rappresenta la colonna del dataset su cui verranno definiti i nodi del grafo.
+	"OriginalTitle" rappresenta la colonna del dataset attraverso cui verranno congiunti i nodi, ovvero gli archi del grafo.
+     *)
+    gr = GenerateGraph[italianFilms, "Actor", "OriginalTitle"];
+    (* Dimensione dei pulsanti *)
+    buttonX = 100;
+    buttonY = 50;
+
+    (* Dimensioni delle label *)
+    labelX = 300;
+    labelY = 90;
+
+    (* Dimensioni dei pannelli *)
+    panelX = 900;
+    panelY = 200;
+
+    (*Dimensioni finestra di output per "Calcola"*)
+    owX = 550;
+    owY = 1100;
+
+    (*Variabile che verifica o meno la presenza della finestra di output*)
+    outputWindow = Null;
+    
+    
 		Panel[
 	 Grid[{
 	   {
@@ -216,3 +220,6 @@ showFrontend[] :=
 	],ImageSize -> {panelX, panelY}
   ]
 ]
+
+End[]
+EndPackage[]
