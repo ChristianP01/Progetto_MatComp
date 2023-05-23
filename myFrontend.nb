@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     15025,        363]
-NotebookOptionsPosition[     12359,        305]
-NotebookOutlinePosition[     12797,        322]
-CellTagsIndexPosition[     12754,        319]
+NotebookDataLength[     15980,        388]
+NotebookOptionsPosition[     13091,        326]
+NotebookOutlinePosition[     13529,        343]
+CellTagsIndexPosition[     13486,        340]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -300,6 +300,27 @@ pu\[OGrave] fornire risultati pi\[UGrave] accurati ed ",
   3.893660848215681*^9, 
   3.893660991090384*^9}},ExpressionUUID->"ee2d3366-f2c9-496c-b691-\
 bf2eccaa34bc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Bibliografia", "Section",
+ CellChangeTimes->{{3.893842602676849*^9, 3.8938426061440907`*^9}, 
+   3.893842636700295*^9},ExpressionUUID->"65e5949e-b819-464b-aaa3-\
+9ea403c5ca1e"],
+
+Cell["\<\
+Sito Oracolo di Bacon: https://oracleofbacon.org/ 
+Sito in cui \[EGrave] reperibile il Dataset con gli attori: \
+https://www.kaggle.com/datasets/darinhawley/imdb-films-by-actor-for-10k-\
+actors
+Sito in cui \[EGrave] reperibile il Dataset con film e lingua originale: \
+https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset?select=movies_\
+metadata.csv\
+\>", "Text",
+ CellChangeTimes->{{3.893842644823543*^9, 
+  3.893842758530437*^9}},ExpressionUUID->"1eb19161-81ef-4219-807e-\
+7e8c058e40f7"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -363,6 +384,10 @@ Cell[10760, 262, 227, 6, 24, "Print",ExpressionUUID->"4329d67e-2bec-4a24-b177-fa
 Cell[CellGroupData[{
 Cell[11036, 274, 175, 3, 67, "Section",ExpressionUUID->"725f0582-cf25-4cea-b165-fcaec11e88fd"],
 Cell[11214, 279, 1117, 22, 104, "Text",ExpressionUUID->"ee2d3366-f2c9-496c-b691-bf2eccaa34bc"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12368, 306, 182, 3, 67, "Section",ExpressionUUID->"65e5949e-b819-464b-aaa3-9ea403c5ca1e"],
+Cell[12553, 311, 510, 11, 81, "Text",ExpressionUUID->"1eb19161-81ef-4219-807e-7e8c058e40f7"]
 }, Open  ]]
 }, Open  ]]
 }
