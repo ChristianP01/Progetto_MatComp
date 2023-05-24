@@ -44,6 +44,15 @@
 (*Implementazione*)
 
 
+(* :Title: GeneralOracleBack *)
+(* :Context: GeneralOracleBack` *)
+(* :Author: Michele Bianco, Chiara Mengoli, Akira Petrolini, Christian Preti, Riccardo Scotti *)
+(* :Summary: pacchetto che permette di generare un grafo per calcolare i gradi di separazione tra entit\[AGrave] secondo un attributo di raggruppamento *)
+(* :Copyright: MB/CM/AP/CP/RS 2023 *)
+(* :Package Version: 1 *)
+(* :Mathematica Version: 13 *)
+(* :History: last modified 24/05/2023 *)
+
 BeginPackage["GeneralOracleBack`"]
 
 GenerateGraph::usage = "Ritorna un grafo, a partire dal dataset, i cui nodi sono gli elementi della colonna entityName e gli archi sono costituiti dagli 
@@ -57,36 +66,46 @@ RandomExtract::usage = "Ritorna una lista di due entit\[AGrave] estratte casualm
 displaySolution::usage = "Mostra graficamente la lista ritornata dalla funzione CalcShortestPath.";
 
 Begin["`Private`"]
+(* Il parametro dataset deve essere un tipo di dato Dataset (built-in di Mathematica) *)
+(* entityName \[EGrave] una stringa che indica la colonna del dataset in cui sono memorizzate le entit\[AGrave] *)
+(* groupingAttribute \[EGrave] una stringa che indica la colonna del dataset in cui sono memorizzati gli elementi che connettono pi\[UGrave] entit\[AGrave] *)
+(* Esempio: per i gradi di separazione tra attori, le entit\[AGrave] sono gli attori e gli elementi che li connettono sono i film, per gli 
+sportivi sono le gare/partite, per i ricercatori sono le pubblicazioni ecc. *)
 GenerateGraph[dataset_, entityName_, groupingAttribute_] :=
     Module[
         {entities, groups, edges, buildEdge}
         ,
         (* Lista, senza duplicati, di tutte le entit\[AGrave] della colonna entityName nel dataset *)
         entities =
-            dataset[All, entityName] //
-            Normal //
-            DeleteDuplicates;
+            dataset[All, entityName] //  (* Seleziona tutti gli elementi della colonna con titolo uguale al valore di entityName *)
+            Normal // (* La funzione Normal converte vari tipi di dato (in questo caso Dataset) in liste associative *)
+            DeleteDuplicates; (* Si rimuovono i duplicati per avere una lista di entit\[AGrave] uniche *)
+            
         (* Lista di associazioni contenente tutte le entit\[AGrave] correlate a un determinato gruppo, 
             nella forma <|group -> {entity_1, ..., entity_n}|> *)
         groups = Flatten /@ Normal @ dataset[GroupBy[groupingAttribute
-            ], List, entityName];
-        (* Funzione che crea un arco tra ogni entit\[AGrave] di un gruppo, assegnando il nome del gruppo 
-            come tag dell'arco *)
-        buildEdge[groupName_, group_] :=
-            Module[{subsets},
-                subsets = Normal @ Subsets[group, {2}];
-                UndirectedEdge[#[[1]], #[[2]], groupName]& /@ subsets
-            ];
-        (* Mappando la funzione precedente sull'intera lista di gruppi  *)
+            ], List, entityName]; (* La funzione GroupBy permette di raggruppare le tuple di un dataset secondo una delle colonne 
+            (in questo caso entityName); il dataset risultante viene poi convertito in una lista di liste associative da Normal e successivamente la 
+            funzione Flatten lo trasforma in una lista associativa *)
+        
+        (* Si mappa la funzione BuildEdge sull'intera lista di gruppi  *)
         edges =
             (* Viene usata KeyValueMap al posto di Map dato che i gruppi sono una lista di 
-                 associazioni *)
-            KeyValueMap[buildEdge, groups] //
+                 associazioni; KeyValueMap mappa una funzione F di due parametri su una lista di associazioni,
+                 usando la chiave come primo parametro di F e il relativo valore come secondo parametro di F.
+                 Esempio: se l = <|a -> b, c -> d|> e F una funzione che accetta due parametri,
+                 KeyValueMap[F, l] equivale alla lista {F[a, b], F[c, d]}       *)
+            (* La funzione BuildEdge costruisce un arco tra tutte le entit\[AGrave] dello stesso gruppo, impostando il nome
+            del gruppo come tag (un tag \[EGrave] un attributo che si pu\[OGrave] assegnare all'arco di un grafo) *)
+            KeyValueMap[BuildEdge, groups] // 
             Flatten //
             DeleteDuplicates;
         (* Creazione del grafo *)
+        (* Il parametro opzionale EdgeLabels permette di impostare che le etichette degli archi siano i tag, cos\[IGrave] come costruito nella funzione
+        BuildEdge *)
         Graph[edges, VertexLabels -> "Name", EdgeLabels -> "EdgeTag"]
     ];
+
 
 CalcShortestPath[graph_, firstEntity_, secondEntity_] :=
     Module[
@@ -145,6 +164,18 @@ Module[
          DirectedEdges->false,
          ImageSize -> {imageSizeX, imageSizeY}] 
 
+];
+
+
+(* Funzione che crea un arco tra ogni entit\[AGrave] di un gruppo, assegnando il nome del gruppo come tag dell'arco *)
+(* Questa funzione non \[EGrave] esportata in quanto \[EGrave] solamente di supporto alla funzione GenerateGraph *)
+BuildEdge[groupName_, group_] := Module[{subsets},
+	(* Vengono estratti tutti i possibili sottoinsiemi di due elementi delle entit\[AGrave] contenute in un gruppo *)
+	subsets = Normal @ Subsets[group, {2}]; (* La funzione Subsets permette di costruire i sottoinsiemi di un insieme, 
+	specificandone eventualmente il numero di elementi; Normal converte il risultato in lista *)
+	UndirectedEdge[#[[1]], #[[2]], groupName]& /@ subsets (* Si costruisce una funzione anonima che crea, attraverso UndirectedEdge, un arco tra i 
+	due elementi di un sottoinsieme precedentemente creato, assegnando il nome del gruppo come tag; la funzione anonima viene poi mappata
+	sull'intero insieme di sottoinsiemi precedentemente creati *)
 ];
 
 
