@@ -141,28 +141,39 @@ Module[
 	,
 	(* Variabili predefinite che definiscono le dimensioni dei vari componenti di uscita *)
 	imageSizeX = 550;
-	imageSizeY = 1100;
+	imageSizeY = 100;
 	(* Unisce due liste intervallandone gli elementi 
 		Riffle[{Subscript[e, 1],Subscript[e, 2],\[Ellipsis]},{Subscript[x, 1],Subscript[x, 2],\[Ellipsis]}] = {e1,x1,e2,x2,\[Ellipsis]} *)
 	list = Riffle[output[["entityPath"]], Map[First, output[["groupsPath"]]]] //Flatten; (*Utilizzo map di first per avere un solo film dall'elenco*)
 	graphPlot = {};
-	(* Costruisco una lista contenente le regole degli archi per il grafo che andr\[OGrave] a generare *)
+	(* 
+	Costruisco una lista contenente le regole degli archi per il grafo che andr\[OGrave] a generare. 
+	Ogni elemento della lista ha la seguente struttura {nodo1-> nodo2, label dell'arco}.
+	*)
 	For[i = 1, i < Length[list], i++, {
-		(* OddQ ritorna true se i \[EGrave] dispari, false se \[EGrave] pari *)
+		(* OddQ ritorna true se i \[EGrave] dispari, false se \[EGrave] pari*)
 		If[OddQ[i],label = "Ha recitato in", label = "Con"];
    	 graphPlot = Append[graphPlot, {list[[i]]-> list[[i+1]], Style[label, Black]}];
     }];
-	(* LayeredGraphPlot utilizza le regole definite in graphPlot per generare graficamente il grafo relativo.
-		VertexShapeFunction, EdgeLabels, EdgeShapeFunction permettono di definire lo stile del grafo. *)
+	(* 
+		LayeredGraphPlot utilizza le regole definite in graphPlot per generare graficamente il grafo relativo.
+		Tramite le seguenti propriet\[AGrave] andiamo a definire lo stile del grafo:
+			VertexShapeFunction ->  definisce lo stile dei nodi; se il nodo corrisponde ad un attore il background del frame sar\[AGrave] blu, 
+									mentre se il nodo corrisponde ad un film il background sar\[AGrave] verde.
+			EdgeLabels ->  definisce lo stile delle labels degli archi. Inset rappresenta un oggetto inserito in un grafico, 
+						in questo caso la label, definendone la posizione e la dimensione.
+			DirectedEdges -> se true il grafo sar\[AGrave] un grafo diretto, quindi gli archi saranno delle frecce, se false sar\[AGrave] un grafo 
+							indiretto e gli archi saranno privi di frecce.
+		    ImageSize -> definisce le dimensioni del grafico. L'altezza viene calcolata in base al numero di nodi.
+	*)
 	LayeredGraphPlot[graphPlot,
          VertexShapeFunction -> ({If[MemberQ[output[["entityPath"]], #2], 
             Text[Framed[Style[#2, 8, Black], Background -> LightBlue], #1],
             Text[Framed[Style[#2, 8, Black], Background -> LightGreen], #1]
          ]} &),
          EdgeLabels -> ({If[#3 =!= None, {Line[#], Inset[#3, Mean[#1], Automatic, Automatic, #[[1]] - #[[2]], Background -> White]}, Line[#]]} &),
-         (* EdgeShapeFunction -> None, Rimuove le frecce degli archi *)
          DirectedEdges->false,
-         ImageSize -> {imageSizeX, imageSizeY}] 
+         ImageSize -> {imageSizeX, imageSizeY + (50 * Length[graphPlot])}] 
 
 ];
 
