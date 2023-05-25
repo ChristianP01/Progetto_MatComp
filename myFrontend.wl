@@ -12,15 +12,14 @@
 (*Implementazione*)
 
 
-(*Copyright: GS2023*)
-(*Authors: 
-    Michele Bianco (Curriculum A)
-	Chiara Mengoli (Curriculum A)
-	Akira Petrolini (Curriculum B)
-	Christian Preti (Curriculum A)
-	Riccardo Scotti (Curriculum A)
-	*)
-(*Mathematica Version: 13*)
+(* :Title: myFrontend*)
+(* :Context: myFrontend`*)
+(* :Author: Michele Bianco, Chiara Mengoli, Akira Petrolini, Christian Preti, Riccardo Scotti *)
+(* :Summary: Pacchetto dedicato alla costruzione del men\[UGrave] utilizzabile nel notebook, con annessa implementazione delle funzionalit\[AGrave] dei pulsanti. *)
+(* :Copyright: MB/CM/AP/CP/RS 2023 *)
+(* :Package Version: 1 *)
+(* :Mathematica Version: 13 *)
+(* :History: last modified 25/05/2023 *)
 BeginPackage["myFrontend`"]
 showFrontend::usage = "Ritorna una struttura grafica utilizzata per interagire con il software.";
 

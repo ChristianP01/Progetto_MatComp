@@ -29,15 +29,14 @@
 (*Implementazione*)
 
 
-(*Copyright: GS2023*)
-(*Authors: 
-    Michele Bianco (Curriculum A)
-	Chiara Mengoli (Curriculum A)
-	Akira Petrolini (Curriculum B)
-	Christian Preti (Curriculum A)
-	Riccardo Scotti (Curriculum A)
-	*)
-(*Mathematica Version: 13*)
+(* :Title: CheckForm *)
+(* :Context: CheckForm` *)
+(* :Author: Michele Bianco, Chiara Mengoli, Akira Petrolini, Christian Preti, Riccardo Scotti *)
+(* :Summary: Questo pacchetto contiene le funzioni utilizzate per il controllo degli input inseriti dall'utente nel men\[UGrave] frontend.*)
+(* :Copyright: MB/CM/AP/CP/RS 2023 *)
+(* :Package Version: 1 *)
+(* :Mathematica Version: 13 *)
+(* :History: last modified 25/05/2023 *)
 BeginPackage["CheckForm`"]
 
 InputCorrection::usage = "Ritorna una stringa formattata rimuovendo gli spazi in eccesso e capitalizzando le iniziali mantenendo gli altri caratteri in minuscolo.";
