@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     18080,        417]
-NotebookOptionsPosition[     15219,        357]
-NotebookOutlinePosition[     15660,        374]
-CellTagsIndexPosition[     15617,        371]
+NotebookDataLength[     18774,        428]
+NotebookOptionsPosition[     15917,        368]
+NotebookOutlinePosition[     16354,        385]
+CellTagsIndexPosition[     16311,        382]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -37,7 +37,7 @@ Progetto d\[CloseCurlyQuote]esame di Matematica Computazionale, Universit\
 
 Cell["\<\
 Autori: 
-\tMichele Bianco
+\tMichele Bianco (Curriculum A)
 \tChiara Mengoli (Curriculum A)
 \tAkira Petrolini (Curriculum B)
 \tChristian Preti (Curriculum A)
@@ -47,7 +47,8 @@ Autori:
   3.893843043186037*^9, 3.8938430498422527`*^9}, {3.893843116826311*^9, 
   3.8938431197607594`*^9}, {3.893905795619068*^9, 3.893905871937749*^9}, {
   3.893908762188662*^9, 3.8939087663564043`*^9}, {3.893949246518065*^9, 
-  3.893949246832868*^9}},ExpressionUUID->"9a04fdf7-003b-4472-98a5-\
+  3.893949246832868*^9}, {3.8940105921453533`*^9, 
+  3.894010598228176*^9}},ExpressionUUID->"9a04fdf7-003b-4472-98a5-\
 27c811e52c95"],
 
 Cell[CellGroupData[{
@@ -200,12 +201,13 @@ Cell["Casuale", "Subsection",
 
 Cell["\<\
 Permette di estrarre una coppia di attori semi-casualmente dal dataset, in \
-funzione di un seed specificato dall\[CloseCurlyQuote]utente.\
+funzione di un seed numerico specificato dall\[CloseCurlyQuote]utente.\
 \>", "Text",
  CellChangeTimes->{{3.8932369580647907`*^9, 3.893236959013611*^9}, {
   3.893237323638069*^9, 3.893237348052678*^9}, {3.893389856294259*^9, 
-  3.893389895030031*^9}, {3.893660672033091*^9, 
-  3.893660730083596*^9}},ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-\
+  3.893389895030031*^9}, {3.893660672033091*^9, 3.893660730083596*^9}, {
+  3.894009555271184*^9, 
+  3.894009560668642*^9}},ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-\
 a45d9897f190"]
 }, Open  ]]
 }, Open  ]],
@@ -226,11 +228,14 @@ Se sei un utente Linux/Mac, clicca Command(Cmd) + A, in seguito Maiuscolo e \
 Invio.
 Per le istruzioni del men\[UGrave], controllare la sezione precedente \
 Funzionalit\[AGrave].
+Attenzione! Potrebbe volerci qualche secondo affinch\[EAcute] sia caricato il \
+database, quindi non preoccupatevi!
 Buon divertimento!\
 \>", "Text",
  CellChangeTimes->{{3.8938404356238203`*^9, 3.89384065002247*^9}, {
   3.893843708671462*^9, 3.893843738890533*^9}, {3.893905896359171*^9, 
-  3.8939059047100286`*^9}},ExpressionUUID->"841a0ff0-12b8-424d-8f79-\
+  3.8939059047100286`*^9}, {3.894010386159*^9, 
+  3.894010461520248*^9}},ExpressionUUID->"841a0ff0-12b8-424d-8f79-\
 26f63081888b"],
 
 Cell[BoxData[{
@@ -276,7 +281,7 @@ Cell[BoxData[{
    3.89383988177878*^9, 3.8938399080496693`*^9}, {3.8938399627499857`*^9, 
    3.893839974465448*^9}, {3.893840012723032*^9, 3.893840015867346*^9}, 
    3.893840201545351*^9, {3.8938402324652042`*^9, 3.893840250523897*^9}},
- CellLabel->"In[13]:=",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67"]
+ CellLabel->"In[7]:=",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -308,17 +313,22 @@ aventi lingua originale italiana. \[CapitalEGrave] stato quindi sfruttato l\
   FontSlant->"Italic"],
  " i due dataset tra loro. In questo modo, \[EGrave] stato possibile \
 ottenere, per ogni film, la lingua originale, il titolo originale ed altre \
-informazioni, utilizzabili per altri progetti o estensioni.",
- "\n\nSono stati sviluppati pacchetti ",
+informazioni, utilizzabili per altri progetti o estensioni.\n\nSono stati \
+sviluppati pacchetti ",
  StyleBox["generici, ",
   FontSlant->"Italic"],
  "permettendo ad altri sviluppatori di poterne implementare una versione \
 utilizzando entit\[AGrave] differenti (e.g. calciatori, ricercatori, ...). \
-Sar\[AGrave] necessario fornire in input un dataset adatto allo scopo.\nL\
-\[CloseCurlyQuote]attuale precisione del software \[EGrave] strettamente \
-collegata con l\[CloseCurlyQuote]ampiezza e precisione del dataset \
-utilizzato. Un\[CloseCurlyQuote]estensione di quest\[CloseCurlyQuote]ultimo \
-pu\[OGrave] fornire risultati pi\[UGrave] accurati ed ",
+Sar\[AGrave] necessario fornire in input un dataset adatto allo scopo.\n\nLa \
+decisione di utilizzare direttamente la funzione showFrontend[] con evaluate \
+Notebook \[EGrave] stata presa rispetto all\[CloseCurlyQuote]utilizzo di un \
+button in quanto quest\[CloseCurlyQuote]ultimo, una volta cliccato, non \
+stampava il men\[UGrave] con cui l\[CloseCurlyQuote]utente dovrebbe \
+interagire. \nL\[CloseCurlyQuote]attuale precisione del software \[EGrave] \
+strettamente collegata con l\[CloseCurlyQuote]ampiezza e precisione del \
+dataset utilizzato. Un\[CloseCurlyQuote]estensione di \
+quest\[CloseCurlyQuote]ultimo pu\[OGrave] fornire risultati pi\[UGrave] \
+accurati ed ",
  StyleBox["efficienti",
   FontSlant->"Italic"],
  "."
@@ -328,8 +338,9 @@ pu\[OGrave] fornire risultati pi\[UGrave] accurati ed ",
   3.89340670483911*^9}, {3.893660749394206*^9, 3.893660814164196*^9}, {
   3.893660848215681*^9, 3.893660991090384*^9}, {3.893906420411677*^9, 
   3.89390645172276*^9}, {3.893906485714329*^9, 3.8939066984914494`*^9}, {
-  3.893906729888083*^9, 
-  3.893906762234108*^9}},ExpressionUUID->"ee2d3366-f2c9-496c-b691-\
+  3.893906729888083*^9, 3.893906762234108*^9}, {3.89400944192984*^9, 
+  3.89400951340345*^9}, {3.89400957463655*^9, 
+  3.8940096232772427`*^9}},ExpressionUUID->"ee2d3366-f2c9-496c-b691-\
 bf2eccaa34bc"]
 }, Open  ]],
 
@@ -355,7 +366,7 @@ metadata.csv\
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1141.2, 574.8},
+WindowSize->{1359, 847},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 TaggingRules-><|"TryRealOnly" -> False|>,
 FrontEndVersion->"13.2 for Mac OS X x86 (64-bit) (January 30, 2023)",
@@ -376,47 +387,47 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 240, 4, 98, "Title",ExpressionUUID->"59d79c9f-1657-44c0-9e5d-0f7d54cb3640"],
 Cell[823, 28, 337, 7, 53, "Subtitle",ExpressionUUID->"3009b2f4-301e-4fba-a648-5c205258bf66"],
-Cell[1163, 37, 557, 13, 213, "Subtitle",ExpressionUUID->"9a04fdf7-003b-4472-98a5-27c811e52c95"],
+Cell[1163, 37, 623, 14, 213, "Subtitle",ExpressionUUID->"9a04fdf7-003b-4472-98a5-27c811e52c95"],
 Cell[CellGroupData[{
-Cell[1745, 54, 169, 3, 67, "Section",ExpressionUUID->"87b13a26-9a99-4cf4-9ee6-04659ff4ee8e"],
-Cell[1917, 59, 1920, 29, 173, "Text",ExpressionUUID->"f084fac3-fe91-47cd-ae2c-53792a18ac82"]
+Cell[1811, 55, 169, 3, 67, "Section",ExpressionUUID->"87b13a26-9a99-4cf4-9ee6-04659ff4ee8e"],
+Cell[1983, 60, 1920, 29, 173, "Text",ExpressionUUID->"f084fac3-fe91-47cd-ae2c-53792a18ac82"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3874, 93, 159, 3, 67, "Section",ExpressionUUID->"7e97bb09-1829-43ec-b7ca-666a6d97d2ea"],
-Cell[4036, 98, 1345, 22, 173, "Text",ExpressionUUID->"3f4be705-ac79-44f3-85da-4cbf163d1876"]
+Cell[3940, 94, 159, 3, 67, "Section",ExpressionUUID->"7e97bb09-1829-43ec-b7ca-666a6d97d2ea"],
+Cell[4102, 99, 1345, 22, 173, "Text",ExpressionUUID->"3f4be705-ac79-44f3-85da-4cbf163d1876"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5418, 125, 167, 3, 67, "Section",ExpressionUUID->"0ace0b0a-644a-4228-b477-4e836d644b4f"],
+Cell[5484, 126, 167, 3, 67, "Section",ExpressionUUID->"0ace0b0a-644a-4228-b477-4e836d644b4f"],
 Cell[CellGroupData[{
-Cell[5610, 132, 155, 3, 54, "Subsection",ExpressionUUID->"2c477141-b0c1-4f62-90ab-f8180c593ee7"],
-Cell[5768, 137, 915, 16, 81, "Text",ExpressionUUID->"ca9f17e1-f89d-454d-b7e0-ffa3c7c7d3a6"]
+Cell[5676, 133, 155, 3, 54, "Subsection",ExpressionUUID->"2c477141-b0c1-4f62-90ab-f8180c593ee7"],
+Cell[5834, 138, 915, 16, 81, "Text",ExpressionUUID->"ca9f17e1-f89d-454d-b7e0-ffa3c7c7d3a6"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6720, 158, 153, 3, 54, "Subsection",ExpressionUUID->"662e80ad-7090-4b9a-b3e9-f63b77a8d5b6"],
-Cell[6876, 163, 302, 5, 35, "Text",ExpressionUUID->"3c95bbb4-2d59-42d8-8980-2ac842429277"]
+Cell[6786, 159, 153, 3, 54, "Subsection",ExpressionUUID->"662e80ad-7090-4b9a-b3e9-f63b77a8d5b6"],
+Cell[6942, 164, 302, 5, 35, "Text",ExpressionUUID->"3c95bbb4-2d59-42d8-8980-2ac842429277"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7215, 173, 158, 3, 54, "Subsection",ExpressionUUID->"d7be7479-0b0f-4832-b24b-375187218438"],
-Cell[7376, 178, 678, 12, 58, "Text",ExpressionUUID->"9e7a8cb4-4d1d-488e-bd65-8f29c5e63f2e"]
+Cell[7281, 174, 158, 3, 54, "Subsection",ExpressionUUID->"d7be7479-0b0f-4832-b24b-375187218438"],
+Cell[7442, 179, 678, 12, 58, "Text",ExpressionUUID->"9e7a8cb4-4d1d-488e-bd65-8f29c5e63f2e"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8091, 195, 155, 3, 54, "Subsection",ExpressionUUID->"9d2d0105-cfb9-4fce-9a9f-503a6a1b12f7"],
-Cell[8249, 200, 434, 8, 35, "Text",ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-a45d9897f190"]
+Cell[8157, 196, 155, 3, 54, "Subsection",ExpressionUUID->"9d2d0105-cfb9-4fce-9a9f-503a6a1b12f7"],
+Cell[8315, 201, 492, 9, 35, "Text",ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-a45d9897f190"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8732, 214, 215, 4, 68, "Section",ExpressionUUID->"7f347ff3-cdf0-46be-9dc7-3b90649750f9"],
-Cell[8950, 220, 652, 13, 150, "Text",ExpressionUUID->"841a0ff0-12b8-424d-8f79-26f63081888b"],
-Cell[9605, 235, 2230, 43, 19, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67",
+Cell[8856, 216, 215, 4, 67, "Section",ExpressionUUID->"7f347ff3-cdf0-46be-9dc7-3b90649750f9"],
+Cell[9074, 222, 814, 16, 173, "Text",ExpressionUUID->"841a0ff0-12b8-424d-8f79-26f63081888b"],
+Cell[9891, 240, 2229, 43, 19, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67",
  CellOpen->False]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11872, 283, 175, 3, 68, "Section",ExpressionUUID->"725f0582-cf25-4cea-b165-fcaec11e88fd"],
-Cell[12050, 288, 2409, 44, 334, "Text",ExpressionUUID->"ee2d3366-f2c9-496c-b691-bf2eccaa34bc"]
+Cell[12157, 288, 175, 3, 67, "Section",ExpressionUUID->"725f0582-cf25-4cea-b165-fcaec11e88fd"],
+Cell[12335, 293, 2822, 50, 403, "Text",ExpressionUUID->"ee2d3366-f2c9-496c-b691-bf2eccaa34bc"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14496, 337, 182, 3, 68, "Section",ExpressionUUID->"65e5949e-b819-464b-aaa3-9ea403c5ca1e"],
-Cell[14681, 342, 510, 11, 81, "Text",ExpressionUUID->"1eb19161-81ef-4219-807e-7e8c058e40f7"]
+Cell[15194, 348, 182, 3, 67, "Section",ExpressionUUID->"65e5949e-b819-464b-aaa3-9ea403c5ca1e"],
+Cell[15379, 353, 510, 11, 81, "Text",ExpressionUUID->"1eb19161-81ef-4219-807e-7e8c058e40f7"]
 }, Open  ]]
 }, Open  ]]
 }

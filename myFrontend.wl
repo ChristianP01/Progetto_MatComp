@@ -12,6 +12,15 @@
 (*Implementazione*)
 
 
+(*Copyright: GS2023*)
+(*Authors: 
+    Michele Bianco (Curriculum A)
+	Chiara Mengoli (Curriculum A)
+	Akira Petrolini (Curriculum B)
+	Christian Preti (Curriculum A)
+	Riccardo Scotti (Curriculum A)
+	*)
+(*Mathematica Version: 13*)
 BeginPackage["myFrontend`"]
 showFrontend::usage = "Ritorna una struttura grafica utilizzata per interagire con il software.";
 
