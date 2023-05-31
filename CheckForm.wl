@@ -69,7 +69,7 @@ CheckForm[graph_, entity1_, entity2_] :=
 		(
 		(* Utilizziamo un which, avendo diverse condizioni da controllare *)
 		Which[
-		(* Controlla se le entit\[AGrave] sono stringhe vuote, altrimenti ritorna un messaggio di errore *)
+		(* Controlla se le entit\[AGrave] sono stringhe vuote, ritorna un messaggio di errore *)
 	         StringLength[entity1] == 0 || StringLength[entity2] == 0,
 	            "Errore, uno o pi\[UGrave] box di testo risultano vuoti.",
 	         

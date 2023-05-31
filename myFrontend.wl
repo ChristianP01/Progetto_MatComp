@@ -158,7 +158,6 @@ showFrontend[] :=
 	       
 	       (* Vengono effettuati vari controlli sull'input inserito dall'utente. *)
 	       Which[
-	       
 	          (* Controllo che l'utente abbia inserito un valore. *)
 	          Not[NumberQ[answer]],
 	           (CreateDialog[{TextCell["\[CapitalEGrave] necessario inserire un numero per provare ad indovinare."], 
@@ -181,22 +180,21 @@ showFrontend[] :=
 		       
 		       If[StringQ[cfOutput], 
 	              (CreateDialog[{TextCell[cfOutput], DefaultButton[]}, WindowSize -> {labelX, labelY}]), 
-	              sp = CalcShortestPath[gr, inputActor1, inputActor2];
-	           ];
-	           
-	           
-	           (*
+	              (sp = CalcShortestPath[gr, inputActor1, inputActor2];
+	              (*
 	               answer \[EGrave] il Dynamic collegato all'InputField di "Indovina".
 	               Se il tentativo inserito dall'utente \[EGrave] uguale alla risposta corretta, viene stampato un messaggio di "successo".
 	               Altrimenti, verr\[AGrave] invitato l'utente a fare un altro tentativo.
-	           *)
-	           If[answer == Length[sp[["entityPath"]]]-1,
-	                (CreateDialog[{TextCell["Complimenti, hai indovinato!"], DefaultButton[]}, 
-	                WindowSize -> {labelX, labelY}];),
+	               *)
+	              If[answer == Length[sp[["entityPath"]]]-1,
+	                   (CreateDialog[{TextCell["Complimenti, hai indovinato!"], DefaultButton[]}, 
+	                   WindowSize -> {labelX, labelY}];),
 	                
-	                (CreateDialog[{TextCell["Peccato, risposta errata!"], DefaultButton[]}, 
-	                WindowSize -> {labelX, labelY}];)
-	          ]
+	                   (CreateDialog[{TextCell["Peccato, risposta errata!"], DefaultButton[]}, 
+	                   WindowSize -> {labelX, labelY}];)
+	             ]
+	              )
+	           ];
 	         )
 	       ]; 
 	     ), ImageSize->{buttonX, buttonY}], 
