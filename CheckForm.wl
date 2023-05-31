@@ -76,7 +76,7 @@ CheckForm[graph_, entity1_, entity2_] :=
 	         (* Controlla che i valori inseriti dall'utente corrispondano a caratteri dell'alfabeto latino esteso, comprendendo inoltre '.', '-' e ' *)
 			  StringMatchQ[entity1, RegularExpression["[[:alpha:].' -]+"]] == False (*Controllo che i due entity corrispondano a espressioni regolari che contengano i valori indicati nel commento precedente*)
                     || StringMatchQ[entity2, RegularExpression["[[:alpha:].' -]+"]] == False,
-              "Errore, uno o pi\[UGrave] nomi contengono caratteri non validi. Sono ammessi solo caratteri alfabetici e '-'",
+              "Errore, uno o pi\[UGrave] nomi contengono caratteri non validi. Sono ammessi solo caratteri alfabetici, '-', '.', e '''",
 
 			 (* Controlla se le entit\[AGrave] appartengono al grafo *)
 			 MemberQ[VertexList[graph], entity1] == False, (*MemberQ verifica che entity1 sia contenuto nell'elenco di nodi del grafo*)
