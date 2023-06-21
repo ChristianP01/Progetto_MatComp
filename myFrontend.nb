@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     20083,        454]
-NotebookOptionsPosition[     17212,        394]
-NotebookOutlinePosition[     17658,        411]
-CellTagsIndexPosition[     17615,        408]
+NotebookDataLength[     26793,        582]
+NotebookOptionsPosition[     23457,        514]
+NotebookOutlinePosition[     23903,        531]
+CellTagsIndexPosition[     23860,        528]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -99,6 +99,126 @@ italiani anche molto famosi."
    3.893843647359727*^9}, {3.894465213434236*^9, 
    3.894465351143508*^9}},ExpressionUUID->"f084fac3-fe91-47cd-ae2c-\
 53792a18ac82"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["L\[CloseCurlyQuote]oracolo di Bacon", "Section",
+ CellChangeTimes->{{3.8963644141707253`*^9, 3.896364533710373*^9}, {
+  3.896364571507199*^9, 3.896364608106804*^9}, {3.8963651299938955`*^9, 
+  3.8963651304739575`*^9}, {3.896367995173341*^9, 
+  3.896367995293949*^9}},ExpressionUUID->"08d44d0a-6887-4878-adb4-\
+2780b6440a22"],
+
+Cell[TextData[{
+ "L\[CloseCurlyQuote]Oracolo di Bacon \[EGrave] un gioco in cui si cerca di \
+indovinare la distanza tra qualsiasi attore o attrice di Hollywood e l\
+\[CloseCurlyQuote]attore Kevin Bacon. L\[CloseCurlyQuote]idea originale \
+\[EGrave] nata negli anni \[OpenCurlyQuote]90, quando alcuni studenti, \
+appassionati di cinema, hanno notato che Kevin Bacon aveva lavorato con cos\
+\[IGrave] tanti attori che sembrava essere collegato, in un modo o nell\
+\[CloseCurlyQuote]altro, a tutti. Questo li ha portati a indagarsi se ci \
+fossero attori che non avessero recitato con lui e, in tal caso, se avessero \
+almeno recitato con qualcuno che lo aveva fatto con lui.\n\nDa allora, il \
+gioco ha raggiunto una grande popolarit\[AGrave] fra gli appassionati di \
+cinema; siti web e database specializzati sono stati creati per tracciare e \
+calcolare il ",
+ StyleBox["\[LeftGuillemet]numero di Bacon\[RightGuillemet]",
+  FontWeight->"Bold"],
+ " di un attore, che rappresenta il numero minimo di film o collaborazioni \
+necessarie per collegare quell\[CloseCurlyQuote]attore a Kevin Bacon. Il \
+gioco pu\[OGrave] essere ovviamente esteso a qualsiasi altro attore o coppia \
+di attori, ma \[EGrave] solo con attori particolarmente prolifici che esso \
+diventa pi\[UGrave] interessante (e difficile).\n\nL\[CloseCurlyQuote]Oracolo \
+di Bacon \[EGrave], fra le altre cose, un\[CloseCurlyQuote]interessante \
+dimostrazione della teoria dei sei gradi di separazione, applicata all\
+\[CloseCurlyQuote]industria cinematografica e alla sua rete di attori e \
+attrici. "
+}], "Text",
+ CellChangeTimes->{{3.8963651244090014`*^9, 3.8963651284011135`*^9}, {
+  3.8963652597572837`*^9, 3.8963653946462*^9}, {3.8963654409558306`*^9, 
+  3.8963656238543*^9}, {3.896365704639357*^9, 3.8963657865369387`*^9}, {
+  3.8963675232898417`*^9, 3.8963675245424585`*^9}, {3.8963676262044945`*^9, 
+  3.896367705015423*^9}, {3.8963678160994453`*^9, 3.89636831122272*^9}, {
+  3.8963683473338633`*^9, 3.8963683759763556`*^9}, {3.8963684363532476`*^9, 
+  3.89636849742634*^9}, {3.896368607148513*^9, 
+  3.8963686090062113`*^9}},ExpressionUUID->"7b6b41b6-3b7f-4a52-8ad1-\
+91eb801b34e6"],
+
+Cell[CellGroupData[{
+
+Cell["La teoria dei sei gradi di separazione e il numero di \
+Erd\[ODoubleAcute]s", "Subsubsection",
+ CellChangeTimes->{{3.896364668073883*^9, 3.8963646756789207`*^9}, {
+  3.896364793145973*^9, 3.8963647938421965`*^9}, {3.8963648854024706`*^9, 
+  3.8963648870744057`*^9}, {3.8963649960422883`*^9, 3.896365007661936*^9}, {
+  3.896368386982461*^9, 
+  3.8963683892708955`*^9}},ExpressionUUID->"598c650c-f15e-4af5-81f4-\
+8d6ad430e08c"],
+
+Cell[TextData[{
+ "La teoria dei sei gradi di separazione fu formulata per la prima volta nel \
+1929 dallo scrittore ungherese Frigyes Karinthy, probabilmente ispirato da \
+Guglielmo Marconi, secondo il quale fra due persone qualsiasi vi sarebbero \
+non pi\[UGrave] di sei gradi di separazione; una persona ha ",
+ StyleBox["un grado di separazione",
+  FontWeight->"Bold"],
+ " da un\[CloseCurlyQuote]altra se la conosce, ",
+ StyleBox["due gradi di separazione",
+  FontWeight->"Bold"],
+ " se conosce una persona che ha un grado di separazione dall\
+\[CloseCurlyQuote]altra e, in generale, ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox["n",
+    FontWeight->"Bold"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "db2949f2-db0d-405d-947c-a170ded798c3"],
+ " ",
+ StyleBox["gradi di separazione",
+  FontWeight->"Bold"],
+ " se conosce una persona che ha ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{"n", " ", "-", " ", "1"}], ")"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "db9217a2-17d0-4b6f-8cd7-51fdf31758b8"],
+ " gradi di separazione dall\[CloseCurlyQuote]altra.\n\nQuesta teoria ha \
+suscitato l\[CloseCurlyQuote]interesse di studiosi delle discipline pi\
+\[UGrave] disparate, dalla matematica alle scienze sociali. Negli anni \
+\[OpenCurlyQuote]60 il sociologo Stanley Milgram condusse il famoso ",
+ StyleBox["\[LeftGuillemet]small-world experiment\[RightGuillemet]",
+  FontWeight->"Bold"],
+ " (esperimento del mondo piccolo), tramite il quale egli tent\[OGrave] di \
+stimare la distanza media tra due abitanti di alcuni degli stati degli Stati \
+Uniti, concludendo che effettivamente essa risultava essere circa 6.\n\nUna \
+prima applicazione della teoria dei sei gradi di separazione a una specifica \
+rete sociale si ebbe sempre negli anni \[OpenCurlyQuote]60, con il cosiddetto \
+",
+ StyleBox["\[LeftGuillemet]numero di Erd\[ODoubleAcute]s\[RightGuillemet]",
+  FontWeight->"Bold"],
+ ". Esso fa riferimento al celebre matematico ungherese P\[AAcute]l Erd\
+\[ODoubleAcute]s, uno dei pi\[UGrave] prolifici ed eclettici matematici del \
+XX secolo; proprio in virt\[UGrave] del suo vastissimo numero di \
+pubblicazioni (pi\[UGrave] di 1500, insieme a non meno di 500 altri \
+ricercatori) in tutte le maggiori branche della matematica, divenne un \
+passatempo diffuso tra i matematici quello di calcolare la propria \
+\[LeftGuillemet]distanza di pubblicazione\[RightGuillemet] da Erd\
+\[ODoubleAcute]s, detta appunto numero di Erd\[ODoubleAcute]s.  "
+}], "Text",
+ CellChangeTimes->{{3.8963647979358006`*^9, 3.896364851034254*^9}, {
+  3.8963650163367944`*^9, 3.896365078367262*^9}, {3.8963654183916655`*^9, 
+  3.8963654271648045`*^9}, {3.8963658192779365`*^9, 3.896365903204812*^9}, {
+  3.896365947037643*^9, 3.8963659727538776`*^9}, {3.8963660049269886`*^9, 
+  3.8963661487464437`*^9}, {3.8963661827649975`*^9, 3.8963662591657023`*^9}, {
+  3.896367165005927*^9, 3.896367190124629*^9}, {3.896367239999199*^9, 
+  3.896367489348137*^9}, {3.8963675341917963`*^9, 3.896367577081277*^9}, {
+  3.8963684024209085`*^9, 3.8963684272219553`*^9}, {3.8963685301945534`*^9, 
+  3.8963686994499855`*^9}, {3.8963688304288855`*^9, 
+  3.896369186596402*^9}},ExpressionUUID->"33d28f31-9547-4ab0-8a37-\
+0fd5462d981b"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -419,41 +539,49 @@ Cell[1811, 55, 169, 3, 67, "Section",ExpressionUUID->"87b13a26-9a99-4cf4-9ee6-04
 Cell[1983, 60, 2359, 40, 219, "Text",ExpressionUUID->"f084fac3-fe91-47cd-ae2c-53792a18ac82"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4379, 105, 159, 3, 67, "Section",ExpressionUUID->"7e97bb09-1829-43ec-b7ca-666a6d97d2ea"],
-Cell[4541, 110, 1465, 25, 173, "Text",ExpressionUUID->"3f4be705-ac79-44f3-85da-4cbf163d1876"]
-}, Open  ]],
+Cell[4379, 105, 330, 5, 67, "Section",ExpressionUUID->"08d44d0a-6887-4878-adb4-2780b6440a22"],
+Cell[4712, 112, 2155, 33, 265, "Text",ExpressionUUID->"7b6b41b6-3b7f-4a52-8ad1-91eb801b34e6"],
 Cell[CellGroupData[{
-Cell[6043, 140, 167, 3, 67, "Section",ExpressionUUID->"0ace0b0a-644a-4228-b477-4e836d644b4f"],
-Cell[CellGroupData[{
-Cell[6235, 147, 155, 3, 54, "Subsection",ExpressionUUID->"2c477141-b0c1-4f62-90ab-f8180c593ee7"],
-Cell[6393, 152, 915, 16, 104, "Text",ExpressionUUID->"ca9f17e1-f89d-454d-b7e0-ffa3c7c7d3a6"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[7345, 173, 153, 3, 54, "Subsection",ExpressionUUID->"662e80ad-7090-4b9a-b3e9-f63b77a8d5b6"],
-Cell[7501, 178, 302, 5, 35, "Text",ExpressionUUID->"3c95bbb4-2d59-42d8-8980-2ac842429277"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[7840, 188, 158, 3, 54, "Subsection",ExpressionUUID->"d7be7479-0b0f-4832-b24b-375187218438"],
-Cell[8001, 193, 678, 12, 81, "Text",ExpressionUUID->"9e7a8cb4-4d1d-488e-bd65-8f29c5e63f2e"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[8716, 210, 155, 3, 54, "Subsection",ExpressionUUID->"9d2d0105-cfb9-4fce-9a9f-503a6a1b12f7"],
-Cell[8874, 215, 492, 9, 35, "Text",ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-a45d9897f190"]
+Cell[6892, 149, 431, 7, 45, "Subsubsection",ExpressionUUID->"598c650c-f15e-4af5-81f4-8d6ad430e08c"],
+Cell[7326, 158, 3249, 61, 311, "Text",ExpressionUUID->"33d28f31-9547-4ab0-8a37-0fd5462d981b"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9415, 230, 262, 4, 67, "Section",ExpressionUUID->"7f347ff3-cdf0-46be-9dc7-3b90649750f9"],
-Cell[9680, 236, 1177, 21, 196, "Text",ExpressionUUID->"841a0ff0-12b8-424d-8f79-26f63081888b"],
-Cell[10860, 259, 2588, 51, 22, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67",
+Cell[10624, 225, 159, 3, 67, "Section",ExpressionUUID->"7e97bb09-1829-43ec-b7ca-666a6d97d2ea"],
+Cell[10786, 230, 1465, 25, 173, "Text",ExpressionUUID->"3f4be705-ac79-44f3-85da-4cbf163d1876"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12288, 260, 167, 3, 67, "Section",ExpressionUUID->"0ace0b0a-644a-4228-b477-4e836d644b4f"],
+Cell[CellGroupData[{
+Cell[12480, 267, 155, 3, 54, "Subsection",ExpressionUUID->"2c477141-b0c1-4f62-90ab-f8180c593ee7"],
+Cell[12638, 272, 915, 16, 104, "Text",ExpressionUUID->"ca9f17e1-f89d-454d-b7e0-ffa3c7c7d3a6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13590, 293, 153, 3, 54, "Subsection",ExpressionUUID->"662e80ad-7090-4b9a-b3e9-f63b77a8d5b6"],
+Cell[13746, 298, 302, 5, 35, "Text",ExpressionUUID->"3c95bbb4-2d59-42d8-8980-2ac842429277"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14085, 308, 158, 3, 54, "Subsection",ExpressionUUID->"d7be7479-0b0f-4832-b24b-375187218438"],
+Cell[14246, 313, 678, 12, 81, "Text",ExpressionUUID->"9e7a8cb4-4d1d-488e-bd65-8f29c5e63f2e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14961, 330, 155, 3, 54, "Subsection",ExpressionUUID->"9d2d0105-cfb9-4fce-9a9f-503a6a1b12f7"],
+Cell[15119, 335, 492, 9, 35, "Text",ExpressionUUID->"4b4a77e2-4bbd-4016-84a6-a45d9897f190"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15660, 350, 262, 4, 67, "Section",ExpressionUUID->"7f347ff3-cdf0-46be-9dc7-3b90649750f9"],
+Cell[15925, 356, 1177, 21, 196, "Text",ExpressionUUID->"841a0ff0-12b8-424d-8f79-26f63081888b"],
+Cell[17105, 379, 2588, 51, 22, "Code",ExpressionUUID->"35d58db8-440f-4e81-a654-cd302ffa4d67",
  CellOpen->False]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[13485, 315, 175, 3, 67, "Section",ExpressionUUID->"725f0582-cf25-4cea-b165-fcaec11e88fd"],
-Cell[13663, 320, 2789, 49, 449, "Text",ExpressionUUID->"ee2d3366-f2c9-496c-b691-bf2eccaa34bc"]
+Cell[19730, 435, 175, 3, 67, "Section",ExpressionUUID->"725f0582-cf25-4cea-b165-fcaec11e88fd"],
+Cell[19908, 440, 2789, 49, 449, "Text",ExpressionUUID->"ee2d3366-f2c9-496c-b691-bf2eccaa34bc"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16489, 374, 182, 3, 67, "Section",ExpressionUUID->"65e5949e-b819-464b-aaa3-9ea403c5ca1e"],
-Cell[16674, 379, 510, 11, 81, "Text",ExpressionUUID->"1eb19161-81ef-4219-807e-7e8c058e40f7"]
+Cell[22734, 494, 182, 3, 67, "Section",ExpressionUUID->"65e5949e-b819-464b-aaa3-9ea403c5ca1e"],
+Cell[22919, 499, 510, 11, 81, "Text",ExpressionUUID->"1eb19161-81ef-4219-807e-7e8c058e40f7"]
 }, Open  ]]
 }, Open  ]]
 }
