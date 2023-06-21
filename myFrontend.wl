@@ -168,7 +168,11 @@ showFrontend[] :=
 	         answer < 0 && answer != -1,
 	           (CreateDialog[{TextCell["Non \[EGrave] possibile inserire valori negativi, eccezion fatta per -1."], 
 	            DefaultButton[]}, WindowSize -> {labelX, labelY}];), 
-
+	            
+	         (* Controllo che l'utente abbia inserito una coppia di attori. *)
+			 StringQ[inputActor1] == False || StringQ[inputActor2] == False,
+			   (CreateDialog[{TextCell["\[CapitalEGrave] necessario inserire entrambi gli attori."], 
+	            DefaultButton[]}, WindowSize -> {labelX, labelY}];), 
 
 	         (* Campo default, in caso l'input sia corretto *)
 	         True, (
